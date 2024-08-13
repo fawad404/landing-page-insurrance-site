@@ -11,7 +11,7 @@ const Herosecond = () => {
         <p className="text-orange-500 font-semibold mb-5 text-sm md:text-xl font-sans">
           Per Onlinemeeting schnell im Thema drin sein!
         </p>
-        <p className="text-gray-700 mb-4 text-sm md:text-xl font-serif md:w-4/5">
+        <p className="text-gray-700 mb-4 text-sm md:text-xl font-serif lg:w-4/5 ">
           Wir bieten einen umfangreichen Systemvergleich zwischen der
           gesetzlichen oder privaten Krankenversicherung per Onlineberatung.
           Wir stellen die wichtigen entscheidungsrelevanten Punkte in der
@@ -31,7 +31,7 @@ const Herosecond = () => {
         <img
           src="/a-landing-page-removebg-preview.png"
           alt="PKV - GKV Check"
-          className="h-56 md:h-96"
+          className="h-56 md:h-72 lg:h-96"
         />
       </div>
     </div>
