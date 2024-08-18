@@ -10,19 +10,19 @@ const Informationthird = () => {
   };
 
   return (
-    <div className='p-1 md:p-32'>
-      <div className="p-6 bg-gray-50 w-full mx-auto my-6 rounded-lg">
-        <h2 className="font-bold text-orange-600 md:text-xl">
+    <div className='p-1 md:p-32 md:pt-2'>
+      <div className="p-6 w-full mx-auto my-6 rounded-lg">
+        <h2 className="font-bold text-[#ed8b55] md:text-xl">
           HINWEIS: Wichtiges aus dem Vermittlerrecht
         </h2>
         <p className="mt-4 max-w-xl mb-2 text-sm md:text-lg font-serif">
           Ich bin verpflichtet, Ihnen Auskünfte zu meiner Person zu geben. Sowohl Ihr Schutz als Verbraucher sowie auch gesetzliche Regelungen halten mich dazu an. Ich biete Beratung an, für die Versicherungsvermittlung erhalte ich Provision, ferner sonstige Zuwendungen.
         </p>
-        <a href="#" className="text-blue-500 underline cursor-pointer text-sm md:text-lg" onClick={toggleVisibility}>
+        <a href="#" className="text-[#c25115] cursor-pointer text-sm md:text-lg" onClick={toggleVisibility}>
           Mehr Informationen
         </a>
         {isVisible && (
-          <div className="mt-4 p-2 md:p-4 bg-white border border-orange-600 text-sm md:text-lg font-serif">
+          <div className="mt-4 p-2 md:p-4 bg-white border border-[#ed8b55] text-sm md:text-lg font-serif">
             <p>
               Ich bin als gebundener Versicherungsvertreter mit Erlaubnis nach § 34d Abs.7 GewO im Vermittlerregister:
               <br />

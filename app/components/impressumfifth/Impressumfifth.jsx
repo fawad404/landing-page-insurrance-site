@@ -3,13 +3,13 @@ export default function Impressumfifth() {
     return (
         <div className="w-full flex flex-col items-center">
         {/* Header Section */}
-        <div className="w-full bg-orange-300 p-4">
-          <h1 className="text-white text-2xl font-semibold">Kontakt</h1>
+        <div className="w-full bg-[#f2aa84] p-10 md:pl-36">
+          <h1 className="text-white text-2xl font-semibold">Impressum</h1>
         </div>
   
-          <div className="md:p-24">
+          <div className="md:px-20">
         {/* Contact Section */}
-        <div className="flex md:justify-between items-start w-full p-6 md:p-16">
+        <div className="flex md:justify-between items-start w-full p-6 md:p-12 md:pb-4">
           <div className="mt-2">
             <p className="md:text-2xl text-lg mt-6">Ralf Poggensee</p>
             <p className="md:text-2xl text-lg mt-6">Große Bäckerstraße 10</p>
@@ -22,7 +22,7 @@ export default function Impressumfifth() {
             />
           </div>
         </div>
-        <div className="w-full text-sm md:text-base p-6 md:p-12 md:pb-0 pt-0">
+        <div className="w-full text-sm md:text-base p-6 md:p-12 md:pt-0 md:pb-0 pt-0">
         <p className="mt-2">
         Ich bin als gebundener Versicherungsvertreter mit Erlaubnis nach § 34d Abs.7 GewO im Vermittlerregister:</p>
         <p className="mt-2">
