@@ -14,7 +14,14 @@ const UserAppointment = () => {
 
     const handleSubmit = async(e) => {
         e.preventDefault();
-
+        if (!name || !email || !phone || !selectedDate || !selectedTime) {
+            alert('Please fill all details');
+            return;
+        }
+        if (!agreement) {
+            alert('Please checkmark the agreement');
+            return;
+        }
         // Extract only the date part (YYYY-MM-DD)
         const formattedDate = selectedDate ? selectedDate.toISOString().split('T')[0] : null;
 
@@ -27,7 +34,7 @@ const UserAppointment = () => {
         };
 
         try {
-            const response = await fetch('http://localhost:3000/api/sendMailer', {
+            const response = await fetch('https://landing-page-insurrance-site.vercel.app/api/sendMailer', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
