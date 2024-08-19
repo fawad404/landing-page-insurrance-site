@@ -15,11 +15,15 @@ const TestFifth = () => {
             
           </label>
           <label className="mt-6 text-[#df8556] text-base md:text-2xl font-semibold md:ml-56 flex items-center justify-start">
-          <input type="checkbox" className="form-checkbox h-5 w-5 text-[#df8556] mr-2" />
+          <input type="checkbox" 
+
+          className="form-checkbox h-5 w-5 text-[#df8556] mr-2" />
           verheiratet​
               </label>
               <label className="mt-6 text-[#df8556] text-base md:text-2xl font-semibold md:ml-56 flex items-center justify-start">
-          <input type="checkbox" className="form-checkbox h-5 w-5 text-[#df8556] mr-2" />
+          <input type="checkbox" 
+
+          className="form-checkbox h-5 w-5 text-[#df8556] mr-2" />
           ledig / geschieden / verwitwet​
               </label>
           <label className="mt-6 text-[#df8556] text-lg md:text-2xl font-semibold flex md:ml-56 items-center justify-start">
@@ -28,6 +32,7 @@ const TestFifth = () => {
           <div className="mt-6  text-[#df8556] text-lg md:text-2xl font-semibold flex md:ml-56 items-center justify-start">
                 <input
                     type="text"
+
                     className="bg-[#f2aa84] text-lg text-white placeholder-white rounded-md border-none px-2 py-0 focus:outline-none focus:ring-2 focus:ring-[#df8556] focus:ring-opacity-50 shadow-md w-full max-w-xs md:max-w-40"
                     placeholder=""
                 />
@@ -36,17 +41,8 @@ const TestFifth = () => {
           <div className="">
             
           </div>
-
-          <div className="flex justify-around md:justify-between mt-8">
-            <button className="bg-[#c04f15] text-white font-semibold py-2 px-4 rounded-lg hover:bg-orange-700 focus:outline-none">
-              Zurück
-            </button>
-            <button className="bg-[#c04f15] text-white font-semibold py-2 px-4 rounded-lg hover:bg-orange-700 focus:outline-none">
-              Weiter
-            </button>
-          </div>
         </div>
-        <p className="text-center text-[#c04f15] mt-0 md:-mt-4">Frage 5 von 17</p>
+        
       </div>
     </>
   )

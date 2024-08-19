@@ -44,19 +44,7 @@ const TestFourth = () => {
           <div className="">
             
           </div>
-
-          
-
-          <div className="flex justify-around md:justify-between mt-12">
-            <button className="bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-orange-700 focus:outline-none">
-              Zurück
-            </button>
-            <button className="bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-orange-700 focus:outline-none">
-              Weiter
-            </button>
-          </div>
         </div>
-        <p className="text-center text-orange-600 mt-4">Frage 4 von 17</p>
       </div>
     </>
   )

@@ -2,7 +2,7 @@ import React from 'react'
 
 const ComHeader = () => {
   return (
-    <header className="bg-[#f2aa84] h-20 flex justify-between items-center p-6 relative h-32 w-full">
+    <header className="bg-[#f2aa84] flex justify-between items-center p-6 relative h-20 w-full">
     
       <img
         src="/a-landing-page-removebg-preview.png"
