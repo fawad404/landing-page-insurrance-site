@@ -7,6 +7,10 @@ import TestFourth from '../components/testFourth/TestFourth';
 import TestFifth from '../components/testFifth/TestFifth';
 import TestSix from '../components/testSix/TestSix';
 import TestFooter from '../components/testFooter/TestFooter';
+import TestSeven from '../components/testSeven/TestSeven';
+import TestEight from '../components/testEight/TestEight';
+import TestNine from '../components/testNine/TestNine';
+import TestTen from '../components/testTen/TestTen';
 
 const Page = () => {
   const [currentComponentIndex, setCurrentComponentIndex] = useState(0);
@@ -43,7 +47,11 @@ const Page = () => {
     <TestThird key="TestThird" data={formData} onChange={handleInputChange} />,
     <TestFourth key="TestFourth" data={formData} onChange={handleInputChange} />,
     <TestFifth key="TestFifth" data={formData} onChange={handleInputChange} />,
-    <TestSix key="TestSix" data={formData} onChange={handleInputChange} />
+    <TestSix key="TestSix" data={formData} onChange={handleInputChange} />,
+    <TestSeven key="TestSix" data={formData} onChange={handleInputChange} />,
+    <TestEight key="TestSix" data={formData} onChange={handleInputChange} />,
+    <TestNine key="TestSix" data={formData} onChange={handleInputChange} />,
+    <TestTen key="TestSix" data={formData} onChange={handleInputChange} />,
   ];
   // Calculate progress bar width
   const progressBarWidth = ((currentComponentIndex + 1) / components.length) * 100;
