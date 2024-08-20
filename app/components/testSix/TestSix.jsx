@@ -9,7 +9,7 @@ const TestSix = () => {
         Eintrittsvoraussetzungen
       </h2>
       <div className="p-2  md:p-4 flex flex-col items-center">
-        <div className="bg-white w-full max-w-4xl p-8 pt-0 md:p-20 md:pt-0 rounded-lg">
+        <div className="bg-white w-full max-w-4xl p-8 pt-0 md:p-20 md:pb-0 md:pt-0 rounded-lg">
           <label className="text-[#c04f15] text-lg italic md:text-xl flex items-center justify-start relative">
             Gesundheitsstatus
             <span className="inline-block ml-1 group">
@@ -33,7 +33,7 @@ const TestSix = () => {
             <span className="text-xs ml-4 -mt-2">Sehr gesund</span>
             <input
                     type="text"
-                    className="bg-[#f2aa84] ml-4  mr-4 text-lg text-white placeholder-white rounded-md border-none px-2 py-0 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 shadow-md w-full max-w-20 md:max-w-20"
+                    className="bg-[#fbe3d6] ml-4  mr-4 text-lg text-white placeholder-white rounded-md border-none px-2 py-0 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 w-full max-w-20 md:max-w-20"
                     placeholder=""
                 />
             </div>
@@ -41,7 +41,7 @@ const TestSix = () => {
             <span className="text-xs ml-4 -mt-2">Sehr krank​</span>
             <input
                     type="text"
-                    className="bg-[#f2aa84] ml-4  mr-4 text-lg text-white placeholder-white rounded-md border-none px-2 py-0 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 shadow-md w-full max-w-20 md:max-w-20"
+                    className="bg-[#fbe3d6] ml-4  mr-4 text-lg text-white placeholder-white rounded-md border-none px-2 py-0 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 w-full max-w-20 md:max-w-20"
                     placeholder=""
                 />
             </div>
@@ -66,13 +66,14 @@ const TestSix = () => {
           </label>
           <div className="mt-2">
             <textarea
-              className="mt-6 bg-[#f2aa84] text-lg text-white placeholder-white rounded-md border-none px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 shadow-md w-full h-16"
+              className="mt-6 bg-[#fbe3d6] text-lg text-white placeholder-white rounded-md border-none px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 w-full h-16"
               placeholder=""
             />
           </div>
 
         </div>
       </div>
+      
     </>
   )
 }

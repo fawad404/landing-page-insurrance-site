@@ -16,7 +16,7 @@ const TestFirst = ({ data, onChange }) => {
       <h2 className="p-20 md:p-10 pb-0 md:pb-2 text-[#c04f15] italic text-xl md:text-2xl lg:text-3xl mb-6 flex md:block md:justify-start -ml-8 md:-ml-0">
         Eintrittsvoraussetzungen
       </h2>
-      <div className="mb-6 flex flex-col items-center md:items-stretch md:mt-16 lg:mb-40">
+      <div className="mb-6 flex flex-col items-center md:items-stretch md:mt-16 lg:mb-16">
         <label className="text-[#c04f15] text-lg md:text-2xl mb-2 block text-left w-11/12 sm:w-2/4 md:w-2/4 lg:w-2/5 mx-auto">
           Berufsstatus
         </label>

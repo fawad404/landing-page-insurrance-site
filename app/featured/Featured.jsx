@@ -6,12 +6,12 @@ const Featured = () => {
     const router = useRouter();
   return (
     <>
-    <header className="bg-white flex justify-between items-center p-6 relative h-16 md:h-24 w-full z-10">
+    <header className="bg-white flex justify-between items-center p-6 relative h-16 md:h-20 w-full z-10">
     
     <img
       src="/a-landing-page-removebg-preview.png"
       alt="PKV-GKV Logo"
-      className="object-cover absolute h-24 md:h-36 top-3 md:top-5 start-2 md:start-8 "
+      className="object-cover absolute h-24 md:h-36 top-2 md:top-3 start-2 md:start-8 "
       />
   
 </header>

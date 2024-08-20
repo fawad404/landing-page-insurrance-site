@@ -15,11 +15,11 @@ const UserAppointment = () => {
     const handleSubmit = async(e) => {
         e.preventDefault();
         if (!name || !email || !phone || !selectedDate || !selectedTime) {
-            alert('Please fill all details');
+            alert('Please fill all details!');
             return;
         }
         if (!agreement) {
-            alert('Please checkmark the agreement');
+            alert('Kindly checkmark privacy policy!');
             return;
         }
         // Extract only the date part (YYYY-MM-DD)
@@ -83,7 +83,7 @@ const UserAppointment = () => {
             <section className="bg-white py-4 md:p-10">
                 <div className="w-full mx-auto flex flex-col md:flex-row items-center bg-white p-6 rounded-lg">
                     <div className="md:w-2/4 md:p-16 p-2 pb-0">
-                        <p className="text-[#c25115] font-semibold mb-4 text-sm md:text-2xl font-sans">
+                        <p className="text-[#c04f15] font-semibold mb-4 text-sm md:text-2xl font-sans">
                             - Markt- Tarifvergleich
                         </p>
                         <p className="text-gray-700 mb-4 text-sm md:text-xl font-serif lg:w-4/5">
@@ -101,7 +101,7 @@ const UserAppointment = () => {
                         <div className="max-w-md mx-auto p-6 rounded-md">
                             <form className="space-y-6" onSubmit={handleSubmit}>
                                 <div>
-                                    <label htmlFor="name" className="block text-sm font-medium text-[#c25115]">
+                                    <label htmlFor="name" className="block text-sm font-medium text-[#c04f15]">
                                         Vorname, Nachname
                                     </label>
                                     <input
@@ -109,12 +109,12 @@ const UserAppointment = () => {
                                         id="name"
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
-                                        className="mt-1 block w-full bg-[#FBEDE5] border border-[#c25115] rounded-md py-2 px-3 text-base text-[#c25115] placeholder-[#c25115] focus:outline-none focus:ring-2 focus:ring-[#c25115]"
+                                        className="mt-1 block w-full bg-[#FBEDE5] border border-[#c04f15] rounded-md py-2 px-3 text-base text-[#c04f15] placeholder-[#c04f15] focus:outline-none focus:ring-2 focus:ring-[#c04f15]"
                                         placeholder=""
                                     />
                                 </div>
                                 <div>
-                                    <label htmlFor="email" className="block text-sm font-medium text-[#c25115]">
+                                    <label htmlFor="email" className="block text-sm font-medium text-[#c04f15]">
                                         Email-Adresse
                                     </label>
                                     <input
@@ -122,12 +122,12 @@ const UserAppointment = () => {
                                         id="email"
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
-                                        className="mt-1 block w-full bg-[#FBEDE5] border border-[#c25115] rounded-md py-2 px-3 text-base text-[#c25115] placeholder-[#c25115] focus:outline-none focus:ring-2 focus:ring-[#c25115]"
+                                        className="mt-1 block w-full bg-[#FBEDE5] border border-[#c04f15] rounded-md py-2 px-3 text-base text-[#c04f15] placeholder-[#c04f15] focus:outline-none focus:ring-2 focus:ring-[#c04f15]"
                                         placeholder=""
                                     />
                                 </div>
                                 <div>
-                                    <label htmlFor="phone" className="block text-sm font-medium text-[#c25115]">
+                                    <label htmlFor="phone" className="block text-sm font-medium text-[#c04f15]">
                                         Telefon-/Mobilnummer
                                     </label>
                                     <input
@@ -135,30 +135,30 @@ const UserAppointment = () => {
                                         id="phone"
                                         value={phone}
                                         onChange={(e) => setPhone(e.target.value)}
-                                        className="mt-1 block w-full bg-[#FBEDE5] border border-[#c25115] rounded-md py-2 px-3 text-base text-[#c25115] placeholder-[#c25115] focus:outline-none focus:ring-2 focus:ring-[#c25115]"
+                                        className="mt-1 block w-full bg-[#FBEDE5] border border-[#c04f15] rounded-md py-2 px-3 text-base text-[#c04f15] placeholder-[#c04f15] focus:outline-none focus:ring-2 focus:ring-[#c04f15]"
                                         placeholder=""
                                     />
                                 </div>
                                 <div>
-                                    <label htmlFor="date" className="block text-sm font-medium text-[#c25115]">
+                                    <label htmlFor="date" className="block text-sm font-medium text-[#c04f15]">
                                         Select Date
                                     </label>
                                     <DatePicker
                                         selected={selectedDate}
                                         onChange={(date) => setSelectedDate(date)}
-                                        className="mt-1 block w-full bg-[#FBEDE5] border border-[#c25115] rounded-md py-2 px-3 text-base text-[#c25115] focus:outline-none focus:ring-2 focus:ring-[#c25115]"
+                                        className="mt-1 block w-full bg-[#FBEDE5] border border-[#c04f15] rounded-md py-2 px-3 text-base text-[#c04f15] focus:outline-none focus:ring-2 focus:ring-[#c04f15]"
                                         placeholderText="Choose a date"
                                     />
                                 </div>
                                 <div>
-                                    <label htmlFor="time" className="block text-sm font-medium text-[#c25115]">
+                                    <label htmlFor="time" className="block text-sm font-medium text-[#c04f15]">
                                         Select Time
                                     </label>
                                     <select
                                         id="time"
                                         value={selectedTime}
                                         onChange={(e) => setSelectedTime(e.target.value)}
-                                        className="mt-1 block w-full bg-[#FBEDE5] border border-[#c25115] rounded-md py-2 px-3 text-base text-[#c25115] focus:outline-none focus:ring-2 focus:ring-[#c25115]"
+                                        className="mt-1 block w-full bg-[#FBEDE5] border border-[#c04f15] rounded-md py-2 px-3 text-base text-[#c04f15] focus:outline-none focus:ring-2 focus:ring-[#c04f15]"
                                     >
                                         {timeOptions.map((time) => (
                                             <option key={time} value={time}>
@@ -168,7 +168,7 @@ const UserAppointment = () => {
                                     </select>
                                 </div>
                                 <div className=''>
-                                    <label htmlFor="agreement" className="font-medium text-[#c25115]">
+                                    <label htmlFor="agreement" className="font-medium text-[#c04f15]">
                                         Datenschutzerklärung
                                     </label>
                                 </div>
@@ -179,11 +179,11 @@ const UserAppointment = () => {
                                             type="checkbox"
                                             checked={agreement}
                                             onChange={(e) => setAgreement(e.target.checked)}
-                                            className="focus:ring-[#c25115] h-4 w-4 text-[#c25115] border border-[#c25115] rounded"
+                                            className="focus:ring-[#c04f15] h-4 w-4 text-[#c04f15] border border-[#c04f15] rounded"
                                         />
                                     </div>
                                     <div className="ml-3 text-sm">
-                                        <p className="text-[#c25115]">
+                                        <p className="text-[#c04f15]">
                                             Ja, ich habe die Informationen zum Datenschutz zur Kenntnis genommen und bin einverstanden.
                                         </p>
                                     </div>
@@ -191,7 +191,7 @@ const UserAppointment = () => {
                                 <div className="flex justify-center mt-4">
                                     <button
                                         type="submit"
-                                        className="bg-orange-500 text-white px-6 py-2 rounded-md hover:bg-orange-700 italic"
+                                        className="bg-[#c04f15] text-white px-6 py-2 rounded-md hover:bg-orange-700 italic"
                                         disabled={success}
                                     >
                                         Submit

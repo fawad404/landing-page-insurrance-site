@@ -5,11 +5,11 @@ const TestSecond = () => {
   return (
     <>
       <ComHeader />
-      <h2 className="p-12 mt-8 md:mt-0 pb-4 text-[#c04f15] text-xl md:text-2xl lg:text-3xl italic mb-0 md:mb-2">
+      <h2 className="p-20 md:p-10 pb-0 md:pb-2 text-[#c04f15] text-xl md:text-2xl lg:text-3xl italic mb-6 flex md:block md:justify-start -ml-10 md:-ml-0">
         Eintrittsvoraussetzungen
       </h2>
       <div className="p-4 pb-0 flex flex-col items-center">
-        <div className="bg-white w-full max-w-4xl px-8 py-2 md:py-10 pb-0 rounded-lg">
+        <div className="bg-white w-full max-w-4xl px-8 py-2 md:py-8 md:pb-0 rounded-lg">
           <label className="text-[#c04f15] relative italic text-lg md:text-2xl sm:ml-20 md:ml-56 flex items-center justify-start mb-6">
             GKV-Versichertenstatus
             <span className=" inline-block ml-1 group">
@@ -17,7 +17,8 @@ const TestSecond = () => {
                 <img src='/info-circle-svgrepo-com (1).svg' className='h-5 w-5 text-red-900' />
               </span>
               <div className="-ml-44 md:-ml-8 absolute hidden group-hover:block bg-white border border border-orange-500 text-black text-sm rounded p-2 whitespace-normal md:max-w-xs lg:max-w-sm z-10">
-                <p>
+              <p className='p-2'>
+              <img src='/info-circle-svgrepo-com (1).svg' className='h-4 w-4 mb-2' />
                   Aufgrund gesetzlicher Vorgaben ist man nur zwischen den Systemen
                   wahlberechtigt, wenn man in der GKV als freiwilliges Mitglied
                   geführt wird. „Freiwillig“ ist man in der GKV, wenn man verbeamtet
