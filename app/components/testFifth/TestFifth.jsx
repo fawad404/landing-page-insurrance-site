@@ -5,7 +5,7 @@ const TestFifth = () => {
   return (
     <>
       <ComHeader />
-      <h2 className="p-20 md:p-10 pb-0 md:pb-0 text-[#c04f15] text-xl md:text-2xl lg:text-3xl italic mb-6 flex md:block md:justify-start -ml-8 md:-ml-0">
+      <h2 className="p-20 md:p-10 pb-0 md:pb-0 text-[#c04f15] text-xl md:text-2xl lg:text-3xl italic mb-6 flex md:block md:justify-start -ml-10 md:-ml-0">
       Eintrittsvoraussetzungen
       </h2>
       <div className="flex flex-col items-center">

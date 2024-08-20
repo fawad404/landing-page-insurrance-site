@@ -13,14 +13,14 @@ const TestFirst = ({ data, onChange }) => {
   return (
     <>
       <ComHeader />
-      <h2 className="p-20 md:p-10 pb-0 md:pb-2 text-[#c04f15] italic text-xl md:text-2xl lg:text-3xl mb-6 flex md:block md:justify-start -ml-8 md:-ml-0">
+      <h2 className="p-20 md:p-10 pb-0 md:pb-2 text-[#c04f15] italic text-xl md:text-2xl lg:text-3xl mb-6 w-1/2 md:w-full text-center md:text-start	 mx-auto -ml-8 md:-ml-0">
         Eintrittsvoraussetzungen
       </h2>
       <div className="mb-6 flex flex-col items-center md:items-stretch md:mt-16 lg:mb-16">
-        <label className="text-[#c04f15] text-lg md:text-2xl mb-2 block text-left w-11/12 sm:w-2/4 md:w-2/4 lg:w-2/5 mx-auto">
+        <label className="text-[#c04f15] text-lg md:text-2xl mb-2 block flex justify-center items-center ">
           Berufsstatus
         </label>
-        <div className="flex flex-wrap items-center justify-center md:justify-center space-x-4 md:-ml-12 mt-8 md:mt-16">
+        <div className="flex flex-col md:flex-row items-center justify-start md:justify-center space-x-4 md:-ml-12 mt-8 md:mt-16">
           <label className="text-[#c04f15] text-lg md:text-2xl mb-2">
             <input
               type="checkbox"

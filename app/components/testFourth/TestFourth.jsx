@@ -16,7 +16,7 @@ const TestFourth = () => {
             <span className="text-orange-600 absolute -top-4 -right-5">
                 <img src='/info-circle-svgrepo-com (1).svg' className='h-5 w-5 text-red-900' />
               </span>
-              <div className="-ml-44 md:-ml-8 absolute hidden group-hover:block bg-white border border border-orange-500 text-black text-sm rounded p-2 whitespace-normal md:max-w-xs lg:max-w-sm z-10">
+              <div className="-ml-20 mt-3 md:-ml-8 absolute hidden group-hover:block bg-white border border border-orange-500 text-black text-sm rounded p-2 whitespace-normal md:max-w-xs lg:max-w-sm z-10">
                 <p className='p-2'>
                   <img src='/info-circle-svgrepo-com (1).svg' className='h-4 w-4 mb-2' />
                   Aufgrund gesetzlicher Vorgaben ist man nur zwischen den Systemen
