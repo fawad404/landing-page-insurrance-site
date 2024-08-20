@@ -74,7 +74,7 @@ const Page = () => {
               </button>
             )}
           </div>
-          <div className="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-[#c04f15] mt-16 mx-auto" style={{width: '50%'}}>
+          <div className="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700 mt-16 mx-auto" style={{width: '50%'}}>
             <div
               className="bg-[#c04f15] h-1.5 rounded-full dark:[#c04f15]"
               style={{ width: `${progressBarWidth}%` }}
