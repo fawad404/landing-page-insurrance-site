@@ -1,6 +1,8 @@
+import { useRouter } from 'next/navigation';
 import React from 'react'
 
 const Herothird = () => {
+  const router = useRouter();
   return (
 <section className="bg-[#fae0d2] py-10 md:p-20">
   <div className="w-full mx-auto flex flex-col-reverse md:flex-row items-center bg-[#fae0d2]  p-6 rounded-lg">
@@ -30,7 +32,9 @@ const Herothird = () => {
         selektieren. Buchen Sie noch heute einen Termin.
       </p>
       <div className="flex justify-center mt-8">
-        <button className="bg-[#c25115] text-white px-6 py-2 rounded-md hover:bg-orange-700 italic">
+        <button 
+        onClick={()=> router.push('/testpage')}
+        className="bg-[#c25115] text-white px-6 py-2 rounded-md hover:bg-orange-700 italic">
           Termin buchen
         </button>
       </div>

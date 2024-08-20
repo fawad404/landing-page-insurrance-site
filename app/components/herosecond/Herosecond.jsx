@@ -1,6 +1,8 @@
+import { useRouter } from 'next/navigation';
 import React from 'react'
 
 const Herosecond = () => {
+  const router = useRouter();
   return (
     <>
     <header className="bg-[#f2aa84] flex justify-between items-center p-6 h-24 w-full">
@@ -25,7 +27,9 @@ const Herosecond = () => {
           heute einen Termin!
         </p>
         <div className="flex justify-center mt-8">
-  <button className="bg-[#c25115] text-white px-6 py-2 rounded-md hover:bg-orange-700 italic">
+  <button 
+  onClick={()=> router.push('/testpage')}
+  className="bg-[#c25115] text-white px-6 py-2 rounded-md hover:bg-orange-700 italic">
     Termin buchen
   </button>
 </div>
