@@ -8,7 +8,7 @@ const TestTen = () => {
     Familienplanung
       </h2>
 
-      <div class="text-textColor flex items-center justify-center p-4  md:ml-8">
+      <div class="text-textColor flex items-center justify-center min-h-[55vh] p-4  md:ml-8">
         <div class="w-full max-w-3xl relative">
             <div>
               

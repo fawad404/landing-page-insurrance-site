@@ -9,7 +9,7 @@ const TestSeven = () => {
     <h2 className="p-20 md:p-10 pb-0 md:pb-0 text-[#c04f15] text-2xl md:text-2xl lg:text-3xl italic mb-6 flex md:block md:justify-start -ml-12 md:-ml-0">
       Eintrittsvoraussetzungen
       </h2>
-    <div className="text-textColor flex items-center justify-center">
+    <div className="text-textColor flex items-center min-h-[55vh] justify-center">
  
         <div className="w-full max-w-3xl  p-6 relative">
    

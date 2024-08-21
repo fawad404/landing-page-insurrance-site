@@ -12,46 +12,44 @@ const TestFirst = ({ data, onChange }) => {
 
   return (
     <>
-      <ComHeader />
-      <h2 className="p-20 md:p-10 pb-0 md:pb-2 text-[#c04f15] italic text-xl md:text-2xl lg:text-3xl mb-6 w-1/2 md:w-full text-center md:text-start	 mx-auto -ml-8 md:-ml-0">
-        Eintrittsvoraussetzungen
+    <ComHeader />
+    <h2 className="p-20 md:p-10 pb-0 md:pb-0 text-[#c04f15] text-xl md:text-2xl lg:text-3xl italic mb-6 flex md:block md:justify-start -ml-12 md:-ml-0">
+    Familienplanung
       </h2>
-      <div className="mb-6 flex flex-col items-center md:items-stretch md:mt-16 lg:mb-16">
-        <label className="text-[#c04f15] text-lg md:text-2xl mb-2 block flex justify-center items-center ">
-          Berufsstatus
-        </label>
-        <div className="flex flex-col md:flex-row items-center justify-start md:justify-center space-x-4 md:-ml-12 mt-8 md:mt-16">
-          <label className="text-[#c04f15] text-lg md:text-2xl mb-2">
-            <input
-              type="checkbox"
-              value="angestellt"
-              checked={selectedValue === 'angestellt'}
-              onChange={handleChange}
-              className="mr-2 h-4 w-4"
-            />
-            angestellt
-          </label>
-          <label className="text-[#c04f15] text-lg md:text-2xl mb-2">
-            <input
-              type="checkbox"
-              value="selbständig"
-              checked={selectedValue === 'selbständig'}
-              onChange={handleChange}
-              className="mr-2 h-4 w-4"
-            />
-            selbständig
-          </label>
-          <label className="text-[#c04f15] text-lg md:text-2xl mb-2">
-            <input
-              type="checkbox"
-              value="verbeamtet"
-              checked={selectedValue === 'verbeamtet'}
-              onChange={handleChange}
-              className="mr-2 h-4 w-4"
-            />
-            verbeamtet
-          </label>
-        </div>
+
+      <div class="flex items-center justify-center min-h-[55vh] p-8 md:-mt-12 lg:-mt-20 ">
+
+        <div class="w-full max-w-3xl bg-white  relative">
+      <h2 class="text-2xl mb-8 italic text-[#c04f15]">Berufsstatus Lebenspartner</h2>
+
+          <div class="grid grid-rows-3 sm:grid-rows-2 md:grid-rows-1 text-base grid-flow-col gap-4 mb-6 text-[#c04f15]">
+              <label class="flex items-center space-x-3">
+                  <input type="checkbox" class="form-checkbox h-5 w-5 "
+                  value="angestellt"
+                  checked={selectedValue === 'angestellt'}
+                  onChange={handleChange}
+                   />
+                  <span>angestellt</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                  <input type="checkbox" class="form-checkbox h-5 w-5 " 
+                   value="selbständig"
+                   checked={selectedValue === 'selbständig'}
+                   onChange={handleChange}
+                  />
+                  <span>selbständig</span>
+              </label>
+              <label class="flex items-center space-x-3">
+                  <input type="checkbox" class="form-checkbox h-5 w-5 " 
+                   value="verbeamtet"
+                   checked={selectedValue === 'verbeamtet'}
+                   onChange={handleChange}
+                  />
+                  <span>verbeamtet</span>
+              </label>
+          </div>
+      
+      </div>
       </div>
     </>
   );

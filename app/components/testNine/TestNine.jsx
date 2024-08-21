@@ -9,7 +9,7 @@ const TestNine = () => {
     Familienplanung
       </h2>
 
-      <div class="text-textColor flex items-center justify-center min-h-[70vh] p-8 md:-mt-12 lg:-mt-20 ">
+      <div class="flex items-center justify-center min-h-[55vh] p-8 md:-mt-12 lg:-mt-20 ">
 
         <div class="w-full max-w-3xl bg-white  relative">
             <div class="relative">

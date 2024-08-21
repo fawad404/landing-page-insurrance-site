@@ -8,7 +8,7 @@ const TestSecond = () => {
       <h2 className="p-20 md:p-10 pb-0 md:pb-2 text-[#c04f15] text-xl md:text-2xl lg:text-3xl italic mb-6 flex md:block md:justify-start -ml-10 md:-ml-0">
         Eintrittsvoraussetzungen
       </h2>
-      <div className="p-4 pb-0 flex flex-col items-center">
+      <div className="p-4 pb-0 flex flex-col items-center min-h-[55vh]">
         <div className="bg-white w-full max-w-4xl px-8 py-2 md:py-8 md:pb-0 rounded-lg">
           <label className="text-[#c04f15] relative italic text-lg md:text-2xl sm:ml-20 md:ml-56 flex items-center justify-start mb-6">
             GKV-Versichertenstatus

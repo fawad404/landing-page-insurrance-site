@@ -8,7 +8,7 @@ const TestSix = () => {
       <h2 className="p-20 md:p-10 pb-0 md:pb-2 text-[#c04f15] text-xl md:text-2xl lg:text-3xl font-sans italic mb-6 flex md:block md:justify-start -ml-8 md:-ml-0">
         Eintrittsvoraussetzungen
       </h2>
-      <div className="p-2  md:p-4 flex flex-col items-center">
+      <div className="p-2  md:p-4 flex flex-col items-center min-h-[55vh]">
         <div className="bg-white w-full max-w-4xl p-8 pt-0 md:p-20 md:pb-0 md:pt-0 rounded-lg">
           <label className="text-[#c04f15] text-lg italic md:text-xl flex items-center justify-start relative">
             Gesundheitsstatus
