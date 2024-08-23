@@ -35,7 +35,7 @@ const UserAppointment = () => {
         };
 
         try {
-            const response = await fetch('http://localhost:3000/api/sendMailer', {
+            const response = await fetch('https://landing-page-insurrance-site.vercel.app/api/sendMailer', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
