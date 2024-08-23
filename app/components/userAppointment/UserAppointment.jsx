@@ -1,4 +1,5 @@
 "use client";
+import Link from 'next/link';
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -69,7 +70,7 @@ const UserAppointment = () => {
 
     return (
         <>
-            <header className="bg-[#f2aa84] flex justify-between items-center p-12 relative h-24 md:h-28 w-full mt-8">
+            <header className="bg-[#f2aa84] flex justify-between items-center p-12 relative h-24 md:h-28 w-full">
                 <h1 className="text-white text-lg md:text-2xl font-semibold md:ml-24">
                     Terminbuchung für ein Onlinemeeting
                 </h1>
@@ -184,7 +185,9 @@ const UserAppointment = () => {
                                     </div>
                                     <div className="ml-3 text-sm">
                                         <p className="text-[#c04f15]">
+                                            <Link href="/datenschutz">
                                             Ja, ich habe die Informationen zum Datenschutz zur Kenntnis genommen und bin einverstanden.
+                                            </Link>
                                         </p>
                                     </div>
                                 </div>

@@ -1,7 +1,17 @@
-import React from 'react'
-import ComHeader from '../comHeader/ComHeader'
+"use client"
+import '../testFourteen/testFourteen.css'
+import React, { useState } from 'react';
+import ComHeader from '../comHeader/ComHeader';
 
 const TestFourth = () => {
+  const [income, setIncome] = useState(0); // Initialize income state
+
+  const handleRangeChange = (e) => {
+    const roundedValue = Math.round(e.target.value / 500) * 500; // Round to nearest 500
+    setIncome(roundedValue); // Update income state with rounded value
+    console.log(roundedValue);
+  };
+
   return (
     <>
       <ComHeader />
@@ -13,10 +23,10 @@ const TestFourth = () => {
           <label className="text-[#c04f15] text-lg md:text-2xl md:ml-56 flex items-center justify-start">
             Einkommen
             <span className="relative inline-block ml-1 group">
-            <span className="text-orange-600 absolute -top-4 -right-5">
+              <span className="text-orange-600 absolute -top-4 -right-5">
                 <img src='/info-circle-svgrepo-com (1).svg' className='h-5 w-5 text-red-900' />
               </span>
-              <div className="-ml-20 mt-3 md:-ml-8 absolute hidden group-hover:block bg-white border border border-orange-500 text-black text-sm rounded p-2 whitespace-normal md:max-w-xs lg:max-w-sm z-10">
+              <div className="-ml-20 mt-3 md:-ml-8 absolute hidden group-hover:block bg-white border border-orange-500 text-black text-sm rounded p-2 whitespace-normal md:max-w-xs lg:max-w-sm z-10">
                 <p className='p-2'>
                   <img src='/info-circle-svgrepo-com (1).svg' className='h-4 w-4 mb-2' />
                   Aufgrund gesetzlicher Vorgaben ist man nur zwischen den Systemen
@@ -30,24 +40,34 @@ const TestFourth = () => {
             </span>
           </label>
           <label className="mt-6 text-[#c04f15] text-base md:text-2xl md:ml-56 flex items-center justify-start">
-          <input type="checkbox" className="form-checkbox h-5 w-5 text-[#c04f15] mr-2" />
-                über 62.100,00 Euro
-              </label>
-          <label className="mt-6 text-[#c04f15] text-lg md:text-2xl md:ml-56 flex items-center justify-start">
-          Einkommen :  70.000,00 Euro p.a.
+            <input type="checkbox" className="form-checkbox h-5 w-5 text-[#c04f15] mr-2" />
+            über 62.100,00 Euro
           </label>
-          <div className="mt-6  text-[#c04f15] text-lg md:text-2xl md:ml-56 flex items-center justify-start">
-                <input
-                    type="text"
-                    className="bg-[#fbe3d6] text-lg text-white placeholder-white rounded-md border-none px-2 py-0 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 w-full max-w-xs md:max-w-xs"
-                    placeholder=""
-                />
-                </div>
+          <label className="mt-6 text-[#c04f15] text-lg md:text-2xl md:ml-56 flex items-center justify-start">
+            Einkommen: {Number(income).toLocaleString('de-DE')} Euro p.a.
+          </label>
+          <div className="mt-6 text-[#c04f15] text-lg md:text-2xl md:ml-56 flex items-center justify-start">
+  <input
+    type="range"
+    min="0"
+    max="70000"
+    value={income}
+    onChange={handleRangeChange}
+    className="appearance-none h-8 w-full max-w-xs md:max-w-xs"
+    style={{
+      background: `linear-gradient(to right, #f2aa84 0%, #f2aa84 ${(income / 70000) * 100}%, #fbe3d6 ${(income / 70000) * 100}%, #fbe3d6 100%)`,
+      accentColor: '#c04f15',  // Set the thumb color
+      WebkitAppearance: 'none', // Ensure the custom style applies on WebKit browsers
+      MozAppearance: 'none', // Ensure the custom style applies on Mozilla browsers
+      msAppearance: 'none' // Ensure the custom style applies on MS browsers
+    }}
+  />
+</div>
 
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default TestFourth
+export default TestFourth;

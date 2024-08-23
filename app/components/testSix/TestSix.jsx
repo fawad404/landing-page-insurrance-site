@@ -1,7 +1,16 @@
-import React from 'react'
+"use client"
+import '../testFourteen/testFourteen.css'
+import React, { useState } from 'react'
 import ComHeader from '../comHeader/ComHeader'
 
 const TestSix = () => {
+  const [healthPercentage, setHealthPercentage] = useState(67); // Initial value set to 67%
+
+  const handleRangeChange = (event) => {
+    //const value = Math.round(event.target.value / 5) * 5; // Round to the nearest 5
+    setHealthPercentage(event.target.value);
+  };
+
   return (
     <>
       <ComHeader />
@@ -27,25 +36,35 @@ const TestSix = () => {
             </span>
           </label>
 
-          <label className="mt-6 text-[#c04f15] relative text-base md:text-xl flex flex-wrap items-center justify-start">
-            <span className="flex-shrink-0 mb-4 sm:mb-0">Selbsteinschätzung Gesundheit:</span>
-            <div className='flex flex-col'>
-            <span className="text-xs ml-4 -mt-2">Sehr gesund</span>
-            <input
-                    type="text"
-                    className="bg-[#fbe3d6] ml-4  mr-4 text-lg text-white placeholder-white rounded-md border-none px-2 py-0 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 w-full max-w-20 md:max-w-20"
-                    placeholder=""
-                />
-            </div>
-            <div className='flex flex-col'>
-            <span className="text-xs ml-4 -mt-2">Sehr krank​</span>
-            <input
-                    type="text"
-                    className="bg-[#fbe3d6] ml-4  mr-4 text-lg text-white placeholder-white rounded-md border-none px-2 py-0 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 w-full max-w-20 md:max-w-20"
-                    placeholder=""
-                />
-            </div>
-              </label>
+          <label className="mt-6 text-[#c04f15] relative text-base md:text-xl flex flex-col md:flex-row items-center justify-between w-full">
+      <span className="flex-shrink-0 mb-4 md:mb-0">Selbsteinschätzung Gesundheit:</span>
+      
+      <div className="flex flex-col w-full md:w-1/2 mx-4">
+        <div className="flex justify-between text-xs">
+          <span>Sehr gesund</span>
+          <span>sehr krank</span>
+        </div>
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value={healthPercentage}
+          onChange={handleRangeChange}
+          className="mt-2 appearance-none h-8 w-full bg-[#f2aa84]"
+          style={{
+            accentColor: '#f2aa84',
+            background: `linear-gradient(to right, #f2aa84 0%, #f2aa84 ${healthPercentage}%, #fbe3d6 ${healthPercentage}%, #fbe3d6 100%)`,
+            WebkitAppearance: 'none', // Ensure the custom style applies on WebKit browsers
+            MozAppearance: 'none', // Ensure the custom style applies on Mozilla browsers
+            msAppearance: 'none' // Ensure the custom style applies on MS browsers
+          }}
+        />
+      </div>
+      
+      <span className="text-base md:text-xl mt-4 md:mt-0">{healthPercentage}%</span>
+    </label>
+
+
 
           <label className="mt-6 text-[#c04f15] text-base md:text-xl flex items-center justify-start">
             Waren Sie in den letzten 5 Jahren in Behandlung: 

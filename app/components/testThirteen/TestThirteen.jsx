@@ -1,6 +1,15 @@
-import React from 'react'
+"use client";
+import '../testFourteen/testFourteen.css'
+import React, { useState } from 'react';
 import ComHeader from '../comHeader/ComHeader'
 const TestThirteen = () => {
+    const [income, setIncome] = useState(0); // Initialize income state
+
+  const handleRangeChange = (e) => {
+    const roundedValue = Math.round(e.target.value / 500) * 500; // Round to nearest 500
+    setIncome(roundedValue); // Update income state with rounded value
+    console.log(roundedValue);
+  }
   return (
     <>
     <ComHeader />
@@ -59,6 +68,29 @@ const TestThirteen = () => {
                     </label>
 
                 </div>
+
+                <h2 className="text-xl text-[#c04f15] mb-4">
+                Summe sonstiger Einnahmen in der Rente: {Number(income).toLocaleString('de-DE')} Euros p.a.
+            </h2>
+            <div className="mb-6">
+              <label className="block">
+                <input
+                  type="range"
+                  min="0"
+                  max="25000"
+                  value={income}
+                  onChange={handleRangeChange}
+                  className="appearance-none h-8 w-full max-w-xs md:max-w-48 rounded-md"
+                  style={{
+                    background: `linear-gradient(to right, #f2aa84 0%, #f2aa84 ${(income / 25000) * 100}%, #fbe3d6 ${(income / 25000) * 100}%, #fbe3d6 100%)`,
+                    accentColor: '#c04f15',
+                    WebkitAppearance: 'none',
+                    MozAppearance: 'none',
+                    msAppearance: 'none'
+                  }}
+                />
+              </label>
+            </div>
 
             </div>
         </div>

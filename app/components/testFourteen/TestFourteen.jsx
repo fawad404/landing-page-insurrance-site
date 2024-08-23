@@ -1,6 +1,19 @@
-import React from 'react'
+"use client"
+import './testFourteen.css'
+import React, { useState } from 'react'
 import ComHeader from '../comHeader/ComHeader'
 const TestFourteen = () => {
+  const [healthPercentage, setHealthPercentage] = useState(67); // Initial value set to 67%
+  const [healthPercentageTwo, setHealthPercentageTwo] = useState(67); // Initial value set to 67%
+
+  const handleRangeChange = (event) => {
+    //const value = Math.round(event.target.value / 5) * 5; // Round to the nearest 5
+    setHealthPercentage(event.target.value);
+  };
+  const handleRangeChangeTwo = (event) => {
+    //const value = Math.round(event.target.value / 5) * 5; // Round to the nearest 5
+    setHealthPercentageTwo(event.target.value);
+  };
   return (
     <>
     <ComHeader />
@@ -32,14 +45,60 @@ const TestFourteen = () => {
             </div>
 
     
-                <div class="grid grid-cols-1 gap-4 mb-6 text-[#c04f15] md:ml-5 mb-5">
-                    <label class="flex items-center space-x-3">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 " />
-                        <span>Ich habe keine Kinder und möchte keine Kinder</span>
-                    </label>
-                </div>
+            <label className="mt-6 text-[#c04f15] relative text-base md:text-xl flex flex-col md:flex-row items-center w-full">
+      <div className="flex flex-col w-full md:w-1/2 mx-4">
+        <div className="flex justify-between text-xs">
+          <span>Trifft zu</span>
+          <span>trifft nicht zu</span>
+        </div>
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value={healthPercentage}
+          onChange={handleRangeChange}
+          className="mt-2 appearance-none h-8 w-full bg-[#f2aa84]"
+          style={{
+            accentColor: '#f2aa84',
+            background: `linear-gradient(to right, #f2aa84 0%, #f2aa84 ${healthPercentage}%, #fbe3d6 ${healthPercentage}%, #fbe3d6 100%)`,
+            WebkitAppearance: 'none', // Ensure the custom style applies on WebKit browsers
+            MozAppearance: 'none', // Ensure the custom style applies on Mozilla browsers
+            msAppearance: 'none' // Ensure the custom style applies on MS browsers
+          }}
+        />
+      </div>
+      
+      <span className="text-base md:text-xl mt-4 md:mt-0">{healthPercentage}%</span>
+    </label>
             </div>
-                <h2 class="text-2xl mb-8 text-[#c04f15]">Schnelle Terminvergabe (z.B. Fachärzte, MRT, etc) ist mir sehr wichtig!</h2>
+                <h2 class="text-2xl mb-8 text-[#c04f15] mt-16">Schnelle Terminvergabe (z.B. Fachärzte, MRT, etc) ist mir sehr wichtig!</h2>
+
+                <label className="mt-6 text-[#c04f15] relative text-base md:text-xl flex flex-col md:flex-row items-center w-full">
+      <div className="flex flex-col w-full md:w-1/2 mx-4">
+        <div className="flex justify-between text-xs">
+          <span>Trifft zu</span>
+          <span>trifft nicht zu</span>
+        </div>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value={healthPercentageTwo}
+                onChange={handleRangeChangeTwo}
+                className="mt-2 appearance-none h-8 w-full bg-[#f2aa84]"
+                style={{
+                  accentColor: '#f2aa84',
+                  background: `linear-gradient(to right, #f2aa84 0%, #f2aa84 ${healthPercentageTwo}%, #fbe3d6 ${healthPercentageTwo}%, #fbe3d6 100%)`,
+                  WebkitAppearance: 'none', // Ensure the custom style applies on WebKit browsers
+                  MozAppearance: 'none', // Ensure the custom style applies on Mozilla browsers
+                  msAppearance: 'none' // Ensure the custom style applies on MS browsers
+                }}
+              />
+
+      </div>
+      
+      <span className="text-base md:text-xl mt-4 md:mt-0">{healthPercentageTwo}%</span>
+    </label>
         </div>
     </div>
     </>

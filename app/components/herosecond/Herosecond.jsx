@@ -29,7 +29,7 @@ const Herosecond = () => {
         </p>
         <div className="flex justify-center mt-8">
   <button 
-  onClick={()=> router.push('/testpage')}
+  onClick={()=> router.push('/termin-buchen')}
   className="bg-[#c25115] text-white px-6 py-2 rounded-md hover:bg-orange-700 italic">
     Termin buchen
   </button>

@@ -1,4 +1,5 @@
 "use client";
+import Link from 'next/link';
 import { useState } from 'react';
 
 const Informationthird = () => {
@@ -10,6 +11,7 @@ const Informationthird = () => {
   };
 
   return (
+    <>
     <div className='p-1 md:p-32 md:pt-2'>
       <div className="p-6 w-full mx-auto my-6 rounded-lg">
         <h2 className="font-bold text-[#ed8b55] md:text-xl">
@@ -55,6 +57,19 @@ const Informationthird = () => {
         )}
       </div>
     </div>
+    <header className="bg-[#f2aa84] pt-7 pl-8 md:pl-12 relative h-44 w-full">
+                <h1 className="text-white text-lg md:text-2xl font-semibold md:ml-24 mb-4">
+                  <Link href="/impressum">Impressum</Link>
+                </h1>
+                <h1 className="text-white text-lg md:text-2xl font-semibold md:ml-24 mb-4">
+                <Link href="/kontakt">Kontakt</Link>
+                </h1>
+                <h1 className="text-white text-lg md:text-2xl font-semibold md:ml-24">
+                <Link href="/datenschutz">Datenschutz</Link>
+                </h1>
+            </header>
+    </>
+    
   );
 };
 

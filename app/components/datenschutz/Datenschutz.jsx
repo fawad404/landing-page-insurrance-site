@@ -1,6 +1,6 @@
 export default function Datenschutz() {
         return (
-            <div className="w-full flex flex-col items-center mt-8">
+            <div className="w-full flex flex-col items-center">
             {/* Header Section */}
             <div className="w-full bg-[#f2aa84] p-10 md:pl-36">
           <h1 className="text-white text-2xl font-semibold">Datenschutz</h1>
