@@ -26,10 +26,10 @@ const Featured = () => {
       </nav>
       <div className="container px-4 mx-auto relative">
         <div className="max-w-4xl mx-auto md:mx-3 text-left">
-          <h1 className="text-xl md:text-4xl lg:text-6xl font-serif font-semibold text-[#c04f15] mb-3 md:mb-8" style={{lineHeight: '1.3'}}>
+          <h1 className="text-xl md:text-4xl lg:text-6xl text-[#c04f15] mb-3 md:mb-8 font-abc font-bold" style={{lineHeight: '1.3'}}>
             Gesetzliche oder private Krankenversicherung?
           </h1>
-          <p className="text-[#df8556] text-lg md:text-2xl font-serif font-semibold lg:text-4xl mb-2 md:mb-6 lg:mb-8">
+          <p className="text-[#df8556] text-lg md:text-2xl font-abc font-semibold lg:text-4xl mb-2 md:mb-6 lg:mb-8">
             Wo bin ich am besten aufgehoben?
           </p>
           <p className="text-gray-700 text-base lg:text-xl mb-6 max-w-80 md:max-w-lg lg:max-w-2xl">

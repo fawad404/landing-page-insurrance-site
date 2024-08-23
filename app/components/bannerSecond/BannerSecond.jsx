@@ -16,9 +16,9 @@ const BannerSecond = () => {
                   className="h-8 md:h-8 lg:h-12"
                 />
               </div>
-              <div className='text-[#e97132] font-semibold'>GKV PKV Check</div>
+              <div className='text-[#e97132] font-cabin font-semibold'>GKV PKV Check</div>
             </div>
-            <p className="text-gray-700 mb-4 text-sm md:text-base font-serif lg:w-4/5 mt-3">
+            <p className="text-gray-700 mb-4 font-cabin text-sm md:text-base lg:w-4/5 mt-3">
               Sie sind ein freiwilliges Mitglied einer Krankenkasse und haben sich schon immer die Frage gestellt, ob es sinnvoller ist, sich privat kranken zu versichern oder doch in der gesetzlichen zu bleiben? Eine pauschale Antwort kann Ihnen hier leider keiner geben. Die richtige Systementscheidung ist abhängig von vielen individuellen Kriterien. Diese im Zusammenhang der Thematik richtig einzuordnen ist eine große Herausforderung. Deshalb bieten wir Ihnen einen unverbindlichen GKV – PKV Scheck.
               Sie erhalten eine Expertise von Fachleuten, die Ihnen konkret bei der Entscheidungsfindung hilft.
             </p>

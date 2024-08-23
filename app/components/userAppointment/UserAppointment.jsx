@@ -10,10 +10,10 @@ const UserAppointment = () => {
     const [phone, setPhone] = useState('');
     const [agreement, setAgreement] = useState(false);
     const [selectedDate, setSelectedDate] = useState(null);
-    const [selectedTime, setSelectedTime] = useState('09:00 AM'); // Default time
+    const [selectedTime, setSelectedTime] = useState('09:00'); // Default time
     const [success, setSuccess] = useState('');
 
-    const handleSubmit = async(e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (!name || !email || !phone || !selectedDate || !selectedTime) {
             alert('Please fill all details!');
@@ -35,7 +35,7 @@ const UserAppointment = () => {
         };
 
         try {
-            const response = await fetch('https://landing-page-insurrance-site.vercel.app/api/sendMailer', {
+            const response = await fetch('http://localhost:3000/api/sendMailer', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -44,8 +44,8 @@ const UserAppointment = () => {
             });
 
             const result = await response.json();
-            if(result.message){
-                setSuccess(result.message)
+            if (result.message) {
+                setSuccess(result.message);
             }
             console.log('Response from server:', result);
         } catch (error) {
@@ -53,17 +53,11 @@ const UserAppointment = () => {
         }
     };
 
-    // Generate time options from 9 AM to 7 PM in 12-hour format
+    // Generate time options from 09:00 to 19:00 in 24-hour format
     const timeOptions = [];
-    for (let hour = 9; hour <= 12; hour++) {
+    for (let hour = 9; hour <= 19; hour++) {
         for (let minute = 0; minute < 60; minute += 30) {
-            const time = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')} AM`;
-            timeOptions.push(time);
-        }
-    }
-    for (let hour = 1; hour <= 7; hour++) {
-        for (let minute = 0; minute < 60; minute += 30) {
-            const time = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')} PM`;
+            const time = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
             timeOptions.push(time);
         }
     }
@@ -212,6 +206,6 @@ const UserAppointment = () => {
             </section>
         </>
     );
-};
+}
 
 export default UserAppointment;

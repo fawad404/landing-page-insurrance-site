@@ -13,6 +13,11 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
+    fontFamily: {
+      abc: ["Nunito Sans", "sans-serif"],
+      cabin : ["Cabin", "sans-serif"],
+      canadara : ["Radio Canada", "sans-serif"],
+    },
   },
   plugins: [],
 };
