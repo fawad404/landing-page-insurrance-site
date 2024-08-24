@@ -11,7 +11,7 @@ const Herosecond = () => {
     <section className="bg-white py-10 md:p-20 md:pt-0">
     <div className="w-full mx-auto flex flex-col md:flex-row items-center bg-white p-6 rounded-lg">
       <div className="md:w-3/5 md:p-10 ">
-        <h2 className="text-[#c25115] font-semibold text-xl md:text-4xl mb-5 font-canadara">
+        <h2 className="text-[#c25115] font-semibold text-xl md:text-4xl mb-5 font-roboto-condensed-italic">
           Systemvergleich „PKV – GKV“
         </h2>
         <p className="text-[#ed8b55] font-semibold mb-5 text-sm md:text-xl font-canadara">

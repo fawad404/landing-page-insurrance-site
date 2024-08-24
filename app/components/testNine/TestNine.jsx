@@ -14,19 +14,19 @@ const TestNine = () => {
   return (
     <>
     <ComHeader />
-    <h2 className="p-20 md:p-10 pb-0 md:pb-0 text-[#c04f15] text-xl md:text-2xl lg:text-3xl italic mb-6 flex md:block md:justify-start -ml-12 md:-ml-0">
+    <h2 className="p-20 md:p-10 pb-0 md:pb-0 text-[#c25115] font-fijala text-xl md:text-2xl lg:text-2xl italic mb-6 flex md:block md:justify-start -ml-12 md:-ml-0">
     Familienplanung
       </h2>
 
-      <div className="flex items-center justify-center min-h-[55vh] p-8 md:-mt-12 lg:-mt-20 ">
+      <div className="flex items-center justify-center min-h-[55vh] font-fijala p-8 md:-mt-12 lg:-mt-20 ">
 
         <div className="w-full max-w-3xl bg-white  relative">
             <div className="relative">
-                <label className="flex items-center space-x-3 text-[#c04f15]">
+                <label className="flex items-center space-x-3 text-[#c25115]">
                     <input type="checkbox" className="form-checkbox h-5 w-5 " />
-                    <span className="inline-block text-base font-normal text-base">Keine Lebenspartnerschaft geplant</span>
+                    <span className="inline-block text-base text-base">Keine Lebenspartnerschaft geplant</span>
                 </label>
-                <h2 className="text-2xl mb-8 italic text-[#c04f15] mt-6">Versichertenstatus Lebenspartner
+                <h2 className="text-2xl mb-8 italic text-[#c25115] mt-6">Versichertenstatus Lebenspartner
                     <span className="inline-block ml-2 text-sm cursor-pointer ">
                         <i className="fa fa-info-circle text-lg"></i>
                     </span>
@@ -42,7 +42,7 @@ const TestNine = () => {
                 </div>
             </div>
     
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 text-base text-[#c04f15]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 text-base text-[#c25115]">
                 <label className="flex items-center space-x-3">
                     <input type="checkbox" className="form-checkbox h-5 w-5 " />
                     <span>PKV versichert</span>
@@ -67,9 +67,9 @@ const TestNine = () => {
             </div>
 
       
-            <h2 className="text-2xl mb-8 italic text-[#c04f15]">Berufsstatus Lebenspartner</h2>
+            <h2 className="text-2xl mb-8 italic text-[#c25115]">Berufsstatus Lebenspartner</h2>
 
-            <div className="grid grid-rows-3 sm:grid-rows-2 md:grid-rows-1 text-base grid-flow-col gap-4 mb-6 text-[#c04f15]">
+            <div className="grid grid-rows-3 sm:grid-rows-2 md:grid-rows-1 text-base grid-flow-col gap-4 mb-6 text-[#c25115]">
                 <label className="flex items-center space-x-3">
                     <input type="checkbox" className="form-checkbox h-5 w-5 " />
                     <span>angestellt</span>
@@ -94,8 +94,8 @@ const TestNine = () => {
             </div>
 
     
-            <h2 className="text-2xl mb-6 italic text-[#c04f15]">Einkommen Lebenspartner</h2>
-            <h2 className="text-xl text-[#c04f15] mb-4">Einkommen: {Number(income).toLocaleString('de-DE')} Euros p.a.</h2>
+            <h2 className="text-2xl mb-6 italic text-[#c25115]">Einkommen Lebenspartner</h2>
+            <h2 className="text-xl text-[#c25115] mb-4">Einkommen: {Number(income).toLocaleString('de-DE')} Euros p.a.</h2>
 
             <div className="mb-6">
                 <label className="block">

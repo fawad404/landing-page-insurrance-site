@@ -15,18 +15,18 @@ const TestTwelve = () => {
   return (
     <>
       <ComHeader />
-      <h2 className="p-20 md:p-10 pb-0 md:pb-0 text-[#c04f15] text-2xl md:text-2xl lg:text-3xl italic mb-6 flex md:block md:justify-start -ml-16 md:-ml-0">
+      <h2 className="p-20 md:p-10 pb-0 md:pb-0 text-[#c25115] text-2xl md:text-2xl lg:text-2xl font-fijala italic mb-6 flex md:block md:justify-start -ml-16 md:-ml-0">
         Rentenalter
       </h2>
 
-      <div className="text-textColor flex items-center justify-center min-h-[55vh] p-4 md:ml-8">
+      <div className="text-textColor flex items-center justify-center min-h-[55vh] font-fijala p-4 md:ml-8">
         <div className="w-full max-w-3xl relative">
           <div>
             <div className="relative mt-12">
-              <h1 className="text-xl md:text-2xl italic text-[#c04f15] mb-4 hover-trigger">
+              <h1 className="text-xl md:text-2xl italic text-[#c25115] mb-4 hover-trigger">
                 Prognose: Einnahmen im Rentenalter (inflationsbereinigt)
                 <span className="inline-block ml-1 group">
-                  <span className="text-[#c04f15] -top-3 ">
+                  <span className="text-[#c25115] -top-3 ">
                     <img src='/info-circle-svgrepo-com (1).svg' className='h-5 w-5 text-red-900' />
                   </span>
                   <div className="-ml-36 absolute sm:-ml-20 md:-ml-28 hidden group-hover:block bg-white border border border-orange-500 text-black text-sm rounded p-2 whitespace-normal lg:max-w-sm z-10">
@@ -40,7 +40,7 @@ const TestTwelve = () => {
               </h1>
             </div>
 
-            <h2 className="text-xl text-[#c04f15] mb-4">
+            <h2 className="text-xl text-[#c25115] mb-4">
               Gesetzliche: {Number(healthPercentage).toLocaleString('de-DE')} Euros p.a.
             </h2>
             <div className="mb-6">

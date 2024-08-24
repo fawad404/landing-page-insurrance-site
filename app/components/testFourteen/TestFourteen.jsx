@@ -17,17 +17,17 @@ const TestFourteen = () => {
   return (
     <>
     <ComHeader />
-    <h2 className="p-20 md:p-10 pb-0 md:pb-0 text-[#c04f15] text-2xl md:text-2xl lg:text-3xl italic mb-6 flex md:block md:justify-start -ml-16 md:-ml-0">
+    <h2 className="p-20 md:p-10 pb-0 md:pb-0 text-[#c25115] text-2xl md:text-2xl lg:text-2xl font-fijala italic mb-6 flex md:block md:justify-start -ml-16 md:-ml-0">
     Persönliche Einschätzung zu Leistungen im Gesundheitswesen
       </h2>
 
-      <div class="text-textColor flex items-center justify-center min-h-[55vh] p-4  md:ml-8">
+      <div class="text-textColor flex items-center justify-center min-h-[55vh] font-fijala p-4  md:ml-8">
         <div class="w-full max-w-3xl relative">
             <div>
             <div className="mt-12">
-                <h1 className="relative text-xl md:text-2xl text-[#c04f15] mb-4 hover-trigger">Leistungen, die die Gesetzliche nicht komplett abdeckt sind mir sehr wichtig (z.B. Zahnersatz, alternative Medizin, Brille, Privatpatient im Krankenhaus, etc)! 
+                <h1 className="relative text-xl md:text-2xl text-[#c25115] mb-4 hover-trigger">Leistungen, die die Gesetzliche nicht komplett abdeckt sind mir sehr wichtig (z.B. Zahnersatz, alternative Medizin, Brille, Privatpatient im Krankenhaus, etc)! 
                 <span className="inline-block ml-1 group">
-            <span className="text-[#c04f15] -top-3 ">
+            <span className="text-[#c25115] -top-3 ">
                 <img src='/info-circle-svgrepo-com (1).svg' className='h-5 w-5 text-red-900' />
               </span>
               <div className=" absolute sm:-ml-28 md:-ml-32 hidden group-hover:block bg-white border border border-orange-500 text-black text-sm rounded p-2 whitespace-normal max-w-sm sm:max-w-sm z-10">
@@ -45,7 +45,7 @@ const TestFourteen = () => {
             </div>
 
     
-            <label className="mt-6 text-[#c04f15] relative text-base md:text-xl flex flex-col md:flex-row items-center w-full">
+            <label className="mt-6 text-[#c25115] relative text-base md:text-xl flex flex-col md:flex-row items-center w-full">
       <div className="flex flex-col w-full md:w-1/2 mx-4">
         <div className="flex justify-between text-xs">
           <span>Trifft zu</span>
@@ -71,9 +71,9 @@ const TestFourteen = () => {
       <span className="text-base md:text-xl mt-4 md:mt-0">{healthPercentage}%</span>
     </label>
             </div>
-                <h2 class="text-2xl mb-8 text-[#c04f15] mt-16">Schnelle Terminvergabe (z.B. Fachärzte, MRT, etc) ist mir sehr wichtig!</h2>
+                <h2 class="text-2xl mb-8 text-[#c25115] mt-16">Schnelle Terminvergabe (z.B. Fachärzte, MRT, etc) ist mir sehr wichtig!</h2>
 
-                <label className="mt-6 text-[#c04f15] relative text-base md:text-xl flex flex-col md:flex-row items-center w-full">
+                <label className="mt-6 text-[#c25115] relative text-base md:text-xl flex flex-col md:flex-row items-center w-full">
       <div className="flex flex-col w-full md:w-1/2 mx-4">
         <div className="flex justify-between text-xs">
           <span>Trifft zu</span>

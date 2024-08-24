@@ -1,3 +1,5 @@
+
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -17,6 +19,11 @@ module.exports = {
       abc: ["Nunito Sans", "sans-serif"],
       cabin : ["Cabin", "sans-serif"],
       canadara : ["Radio Canada", "sans-serif"],
+      hindi : ["Hind Siliguri", "sans-serif"],
+      fijala: ["Fjalla One", "sans-serif"],
+      'roboto-condensed-italic': ['"Roboto Condensed"', 'Arial', 'sans-serif'],
+      'datenschutz': ['"Noto Sans Hanunoo"', 'sans-serif'],
+      'numbersDaten': ['"Cormorant Garamond"', 'serif'],
     },
   },
   plugins: [],

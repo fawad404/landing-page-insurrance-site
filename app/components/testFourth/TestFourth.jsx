@@ -15,12 +15,12 @@ const TestFourth = () => {
   return (
     <>
       <ComHeader />
-      <h2 className="p-20 md:p-10 pb-0 md:pb-2 text-[#c04f15] text-xl md:text-2xl lg:text-3xl italic mb-6 flex md:block md:justify-start -ml-10 md:-ml-0">
+      <h2 className="p-20 md:p-10 pb-0 md:pb-2 text-[#c25115] text-xl md:text-2xl lg:text-2xl font-fijala italic mb-6 flex md:block md:justify-start -ml-10 md:-ml-0">
         Eintrittsvoraussetzungen
       </h2>
-      <div className="p-2 md:p-4 flex flex-col items-center min-h-[55vh]">
+      <div className="p-2 md:p-4 flex flex-col items-center min-h-[55vh] font-fijala">
         <div className="bg-white w-full max-w-4xl p-8 pt-0 md:p-20 md:pb-0 md:pt-0 rounded-lg">
-          <label className="text-[#c04f15] text-lg md:text-2xl md:ml-56 flex items-center justify-start">
+          <label className="text-[#c25115] text-lg md:text-2xl md:ml-56 italic flex items-center justify-start">
             Einkommen
             <span className="relative inline-block ml-1 group">
               <span className="text-orange-600 absolute -top-4 -right-5">
@@ -39,14 +39,17 @@ const TestFourth = () => {
               </div>
             </span>
           </label>
-          <label className="mt-6 text-[#c04f15] text-base md:text-2xl md:ml-56 flex items-center justify-start">
-            <input type="checkbox" className="form-checkbox h-5 w-5 text-[#c04f15] mr-2" />
+          <label className="mt-6 text-[#c25115] text-base md:text-2xl md:ml-56 flex items-center justify-start">
+            <input type="checkbox" className="form-checkbox h-5 w-5 text-[#c25115] mr-2" />
             über 62.100,00 Euro
           </label>
-          <label className="mt-6 text-[#c04f15] text-lg md:text-2xl md:ml-56 flex items-center justify-start">
+          <label className="mt-6 text-[#c25115] text-lg md:text-2xl md:ml-64 flex items-center justify-start">
+            oder: 
+          </label>
+          <label className="mt-6 text-[#c25115] text-lg md:text-2xl md:ml-56 flex items-center justify-start">
             Einkommen: {Number(income).toLocaleString('de-DE')} Euro p.a.
           </label>
-          <div className="mt-6 text-[#c04f15] text-lg md:text-2xl md:ml-56 flex items-center justify-start">
+          <div className="mt-6 text-[#c25115] text-lg md:text-2xl md:ml-56 flex items-center justify-start">
   <input
     type="range"
     min="0"

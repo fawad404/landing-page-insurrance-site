@@ -14,12 +14,12 @@ const TestSix = () => {
   return (
     <>
       <ComHeader />
-      <h2 className="p-20 md:p-10 pb-0 md:pb-2 text-[#c04f15] text-xl md:text-2xl lg:text-3xl font-sans italic mb-6 flex md:block md:justify-start -ml-8 md:-ml-0">
+      <h2 className="p-20 md:p-10 pb-0 md:pb-2 text-[#c25115] font-fijala text-xl md:text-2xl lg:text-2xl italic mb-6 flex md:block md:justify-start -ml-8 md:-ml-0">
         Eintrittsvoraussetzungen
       </h2>
-      <div className="p-2  md:p-4 flex flex-col items-center min-h-[55vh]">
+      <div className="p-2  md:p-4 flex flex-col items-center min-h-[55vh] font-fijala">
         <div className="bg-white w-full max-w-4xl p-8 pt-0 md:p-20 md:pb-0 md:pt-0 rounded-lg">
-          <label className="text-[#c04f15] text-lg italic md:text-xl flex items-center justify-start relative">
+          <label className="text-[#c25115] text-lg italic md:text-xl flex items-center justify-start relative">
             Gesundheitsstatus
             <span className="inline-block ml-1 group">
               <span className="text-orange-600 absolute -top-2 left-44">
@@ -36,11 +36,11 @@ const TestSix = () => {
             </span>
           </label>
 
-          <label className="mt-6 text-[#c04f15] relative text-base md:text-xl flex flex-col md:flex-row items-center justify-between w-full">
-      <span className="flex-shrink-0 mb-4 md:mb-0">Selbsteinschätzung Gesundheit:</span>
+          <label className="mt-6 text-[#c25115] relative text-base md:text-xl flex flex-col md:flex-row items-center justify-between w-full">
+      <span className="flex-shrink-0 mb-4 md:mt-5 md:mb-0">Selbsteinschätzung Gesundheit:</span>
       
       <div className="flex flex-col w-full md:w-1/2 mx-4">
-        <div className="flex justify-between text-xs">
+        <div className="flex justify-between text-xs italic">
           <span>Sehr gesund</span>
           <span>sehr krank</span>
         </div>
@@ -61,26 +61,26 @@ const TestSix = () => {
         />
       </div>
       
-      <span className="text-base md:text-xl mt-4 md:mt-0">{healthPercentage}%</span>
+      <span className="text-base md:text-xl mt-4 md:mt-5">{healthPercentage}%</span>
     </label>
 
 
 
-          <label className="mt-6 text-[#c04f15] text-base md:text-xl flex items-center justify-start">
+          <label className="mt-6 text-[#c25115] text-base md:text-xl flex items-center justify-start">
             Waren Sie in den letzten 5 Jahren in Behandlung: 
             <div className="ml-4 items-center">
               <label className="mr-4 text-xl">
-                <input type="checkbox" className="form-checkbox h-4 w-4 text-[#c04f15] mr-1" />
+                <input type="checkbox" className="form-checkbox h-4 w-4 text-[#c25115] mr-1" />
                 ja
               </label>
               <label className='text-xl'>
-                <input type="checkbox" className="form-checkbox h-4 w-4 text-[#c04f15] mr-1" />
+                <input type="checkbox" className="form-checkbox h-4 w-4 text-[#c25115] mr-1" />
                 nein
               </label>
             </div>
           </label>
 
-          <label className="mt-4 text-[#c04f15] text-base md:text-xl flex items-center justify-start">
+          <label className="mt-4 text-[#c25115] text-base md:text-xl flex items-center justify-start">
             Wenn Ja, welche Diagnosen
           </label>
           <div className="mt-2">
