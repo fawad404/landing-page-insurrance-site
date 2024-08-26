@@ -5,6 +5,13 @@ import ComHeader from '../comHeader/ComHeader';
 
 const TestFourth = () => {
   const [income, setIncome] = useState(0); // Initialize income state
+  const [selectedValue, setSelectedValue] = useState('');
+
+  const handleChange = (event) => {
+    const value = event.target.value;
+    setSelectedValue(value);
+    console.log(`Einkommen: ${value}`);
+  };
 
   const handleRangeChange = (e) => {
     const roundedValue = Math.round(e.target.value / 500) * 500; // Round to nearest 500
@@ -40,7 +47,12 @@ const TestFourth = () => {
             </span>
           </label>
           <label className="mt-6 text-[#c25115] text-base md:text-2xl md:ml-56 flex items-center justify-start">
-            <input type="checkbox" className="form-checkbox h-5 w-5 text-[#c25115] mr-2" />
+            <input 
+            type="checkbox" 
+             value="über 62.100,00 Euro"
+             onChange={handleChange}
+            className="form-checkbox h-5 w-5 text-[#c25115] mr-2" 
+            />
             über 62.100,00 Euro
           </label>
           <label className="mt-6 text-[#c25115] text-lg md:text-2xl md:ml-64 flex items-center justify-start">

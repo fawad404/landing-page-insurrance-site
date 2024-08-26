@@ -8,6 +8,7 @@ const TestFifteen = () => {
   const handleRangeChangeTwo = (event) => {
     //const value = Math.round(event.target.value / 5) * 5; // Round to the nearest 5
     setHealthPercentageTwo(event.target.value);
+    console.log(healthPercentageTwo);
   };
   return (
     <>

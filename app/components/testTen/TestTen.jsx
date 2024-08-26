@@ -1,6 +1,16 @@
-import React from 'react'
+"use client"
+import '../testFourteen/testFourteen.css'
+import React, { useState } from 'react';
 import ComHeader from '../comHeader/ComHeader'
 const TestTen = () => {
+    const [selectedValue, setSelectedValue] = useState('');
+
+    const handleChange = (event) => {
+      const value = event.target.value;
+      setSelectedValue(value);
+      console.log(`${value}`);
+    };
+
   return (
     <>
     <ComHeader />
@@ -37,19 +47,31 @@ const TestTen = () => {
             
                 <div class="grid grid-cols-1 gap-4 mb-6 text-[#c25115] md:ml-5 mb-5">
                     <label class="flex items-center space-x-3">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 " />
+                        <input type="checkbox" 
+                        value="Elternzeit: Ich möchte in die Elternzeit"
+                        onChange={handleChange}
+                        class="form-checkbox h-5 w-5 " />
                         <span>Ich möchte in die Elternzeit</span>
                     </label>
                     <label class="flex items-center space-x-3">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 " />
+                        <input type="checkbox" 
+                        value="Elternzeit: Mein Lebenspartner möchte in die Elternzeit"
+                        onChange={handleChange}
+                        class="form-checkbox h-5 w-5 " />
                         <span>Mein Lebenspartner möchte in die Elternzeit</span>
                     </label>
                     <label class="flex items-center space-x-3">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 " />
+                        <input type="checkbox" 
+                        value="Elternzeit: Wir beide wollen in die Elternzeit"
+                        onChange={handleChange}
+                        class="form-checkbox h-5 w-5 " />
                         <span>Wir beide wollen in die Elternzeit</span>
                     </label>
                     <label class="flex items-center space-x-3">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 " />
+                        <input type="checkbox" 
+                        value="Elternzeit: Wir beide wollen nicht in die Elternzeit"
+                        onChange={handleChange}
+                        class="form-checkbox h-5 w-5 " />
                         <span>Wir beide wollen nicht in die Elternzeit</span>
                     </label>
 
@@ -84,15 +106,24 @@ const TestTen = () => {
     
                 <div class="grid grid-cols-1 gap-4 mb-6 text-[#c25115] md:ml-5 mb-5">
                     <label class="flex items-center space-x-3">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 " />
+                        <input type="checkbox" 
+                        value="Berufsplanung bei Kindern: Wir wollen nach der Elternzeit wieder berufstätig werden"
+                        onChange={handleChange}
+                        class="form-checkbox h-5 w-5 " />
                         <span>Wir wollen nach der Elternzeit wieder berufstätig werden</span>
                     </label>
                     <label class="flex items-center space-x-3">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 " />
+                        <input type="checkbox" 
+                        value="Berufsplanung bei Kindern: Ich möchte länger als 5 Jahre Hausmann/frau sein"
+                        onChange={handleChange}
+                        class="form-checkbox h-5 w-5 " />
                         <span>Ich möchte länger als 5 Jahre Hausmann/frau sein</span>
                     </label>
                     <label class="flex items-center space-x-3">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 " />
+                        <input type="checkbox" 
+                        value="Berufsplanung bei Kindern: Mein Lebenspartner möchte länger als 5 Jahre Hausmann/Hausfrau sein"
+                        onChange={handleChange}
+                        class="form-checkbox h-5 w-5 " />
                         <span>Mein Lebenspartner möchte länger als 5 Jahre Hausmann/Hausfrau sein</span>
                     </label>
 

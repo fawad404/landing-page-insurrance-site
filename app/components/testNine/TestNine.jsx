@@ -5,7 +5,13 @@ import ComHeader from '../comHeader/ComHeader'
 
 const TestNine = () => {
     const [income, setIncome] = useState(0); // Initialize income state
+    const [selectedValue, setSelectedValue] = useState('');
 
+    const handleChange = (event) => {
+      const value = event.target.value;
+      setSelectedValue(value);
+      console.log(`${value}`);
+    };
     const handleRangeChange = (e) => {
       const roundedValue = Math.round(e.target.value / 500) * 500; // Round to nearest 500
       setIncome(roundedValue); // Update income state with rounded value
@@ -23,7 +29,10 @@ const TestNine = () => {
         <div className="w-full max-w-3xl bg-white  relative">
             <div className="relative">
                 <label className="flex items-center space-x-3 text-[#c25115]">
-                    <input type="checkbox" className="form-checkbox h-5 w-5 " />
+                    <input type="checkbox" 
+                    value="Familienplanung: Keine Lebenspartnerschaft geplantv"
+                    onChange={handleChange}
+                    className="form-checkbox h-5 w-5 " />
                     <span className="inline-block text-base text-base">Keine Lebenspartnerschaft geplant</span>
                 </label>
                 <h2 className="text-2xl mb-8 italic text-[#c25115] mt-6">Versichertenstatus Lebenspartner
@@ -44,23 +53,38 @@ const TestNine = () => {
     
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 text-base text-[#c25115]">
                 <label className="flex items-center space-x-3">
-                    <input type="checkbox" className="form-checkbox h-5 w-5 " />
+                    <input type="checkbox" 
+                    value="Versichertenstatus Lebenspartner: PKV versichert"
+                    onChange={handleChange}
+                    className="form-checkbox h-5 w-5 " />
                     <span>PKV versichert</span>
                 </label>
                 <label className="flex items-center space-x-3">
-                    <input type="checkbox" className="form-checkbox h-5 w-5 " />
+                    <input type="checkbox" 
+                    value="Versichertenstatus Lebenspartner: GKV familienversichert"
+                    onChange={handleChange}
+                    className="form-checkbox h-5 w-5 " />
                     <span>GKV familienversichert</span>
                 </label>
                 <label className="flex items-center space-x-3">
-                    <input type="checkbox" className="form-checkbox h-5 w-5 " />
+                    <input type="checkbox" 
+                    value="Versichertenstatus Lebenspartner: KV pflichtversicher"
+                    onChange={handleChange}
+                    className="form-checkbox h-5 w-5 " />
                     <span>GKV pflichtversichert</span>
                 </label>
                 <label className="flex items-center space-x-3">
-                    <input type="checkbox" className="form-checkbox h-5 w-5 " />
+                    <input type="checkbox" 
+                    value="Versichertenstatus Lebenspartner: GKV freiwillig versichert"
+                    onChange={handleChange}
+                    className="form-checkbox h-5 w-5 " />
                     <span>GKV freiwillig versichert</span>
                 </label>
                 <label className="flex items-center space-x-3">
-                    <input type="checkbox" className="form-checkbox h-5 w-5 " />
+                    <input type="checkbox" 
+                    value="Versichertenstatus Lebenspartner: Lebenspartner noch nicht bekannt"
+                    onChange={handleChange}
+                    className="form-checkbox h-5 w-5 " />
                     <span>Lebenspartner noch nicht bekannt</span>
                 </label>
                 
@@ -71,24 +95,39 @@ const TestNine = () => {
 
             <div className="grid grid-rows-3 sm:grid-rows-2 md:grid-rows-1 text-base grid-flow-col gap-4 mb-6 text-[#c25115]">
                 <label className="flex items-center space-x-3">
-                    <input type="checkbox" className="form-checkbox h-5 w-5 " />
+                    <input type="checkbox" 
+                    value="Berufsstatus Lebenspartnerr: angestellt"
+                    onChange={handleChange}
+                    className="form-checkbox h-5 w-5 " />
                     <span>angestellt</span>
                 </label>
                 <label className="flex items-center space-x-3">
-                    <input type="checkbox" className="form-checkbox h-5 w-5 " />
+                    <input type="checkbox" 
+                    value="Berufsstatus Lebenspartner: selbständig"
+                    onChange={handleChange}
+                    className="form-checkbox h-5 w-5 " />
                     <span>selbständig</span>
                 </label>
                 <label className="flex items-center space-x-3">
-                    <input type="checkbox" className="form-checkbox h-5 w-5 " />
+                    <input type="checkbox" 
+                    value="Berufsstatus Lebenspartner: verbeamtet"
+                    onChange={handleChange}
+                    className="form-checkbox h-5 w-5 " />
                     <span>verbeamtet</span>
                 </label>
                 <label className="flex items-center space-x-3">
-                    <input type="checkbox" className="form-checkbox h-5 w-5 " />
+                    <input type="checkbox" 
+                    value="Berufsstatus Lebenspartner: Hausfrau/mann"
+                    onChange={handleChange}
+                    className="form-checkbox h-5 w-5 " />
                     <span>Hausfrau/mann
                     </span>
                 </label>
                 <label className="flex items-center space-x-3">
-                    <input type="checkbox" className="form-checkbox h-5 w-5 " />
+                    <input type="checkbox" 
+                    value="Berufsstatus Lebenspartner: Elternzeit"
+                    onChange={handleChange}
+                    className="form-checkbox h-5 w-5 " />
                     <span>Elternzeit</span>
                 </label>
             </div>
@@ -105,7 +144,7 @@ const TestNine = () => {
     max="70000"
     value={income}
     onChange={handleRangeChange}
-    className="appearance-none h-8 w-full max-w-xs md:max-w-48 rounded-md"
+    className="appearance-none h-8 w-full max-w-xs md:max-w-48"
     style={{
       background: `linear-gradient(to right, #f2aa84 0%, #f2aa84 ${(income / 70000) * 100}%, #fbe3d6 ${(income / 70000) * 100}%, #fbe3d6 100%)`,
       accentColor: '#c04f15',  // Set the thumb color

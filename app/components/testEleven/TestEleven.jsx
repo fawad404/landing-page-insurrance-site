@@ -10,14 +10,17 @@ const TestEleven = () => {
   const handleRangeChange = (event) => {
     //const value = Math.round(event.target.value / 5) * 5; // Round to the nearest 5
     setHealthPercentage(event.target.value);
+    console.log(healthPercentage);
   };
   const handleRangeChangeTwo = (event) => {
     //const value = Math.round(event.target.value / 5) * 5; // Round to the nearest 5
     setHealthPercentageTwo(event.target.value);
+    console.log(healthPercentageTwo);
   };
   const handleRangeChangeThree = (event) => {
     //const value = Math.round(event.target.value / 5) * 5; // Round to the nearest 5
     setHealthPercentageThree(event.target.value);
+    console.log(healthPercentageThree);
   };
   return (
     <>

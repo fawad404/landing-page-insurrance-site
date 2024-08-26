@@ -4,7 +4,13 @@ import React, { useState } from 'react';
 import ComHeader from '../comHeader/ComHeader'
 const TestThirteen = () => {
     const [income, setIncome] = useState(0); // Initialize income state
+    const [selectedValue, setSelectedValue] = useState('');
 
+    const handleChange = (event) => {
+      const value = event.target.value;
+      setSelectedValue(value);
+      console.log(`${value}`);
+    };
   const handleRangeChange = (e) => {
     const roundedValue = Math.round(e.target.value / 500) * 500; // Round to nearest 500
     setIncome(roundedValue); // Update income state with rounded value
@@ -43,27 +49,45 @@ const TestThirteen = () => {
     
                 <div class="grid grid-cols-1 gap-4 mb-6 text-[#c25115] md:ml-5 mb-5">
                     <label class="flex items-center space-x-3">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 " />
+                        <input type="checkbox" 
+                        value="Sonstige Einkünfte im Rentenalter: Ich habe keine Kinder und möchte keine Kinder"
+                        onChange={handleChange}
+                        class="form-checkbox h-5 w-5 " />
                         <span>Ich habe keine Kinder und möchte keine Kinder</span>
                     </label>
                     <label class="flex items-center space-x-3">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 " />
+                        <input type="checkbox" 
+                        value="Sonstige Einkünfte im Rentenalter: Ich habe/möchte ein Kind"
+                        onChange={handleChange}
+                        class="form-checkbox h-5 w-5 " />
                         <span>Ich habe/möchte ein Kind </span>
                     </label>
                     <label class="flex items-center space-x-3">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 " />
+                        <input type="checkbox" 
+                        value="Sonstige Einkünfte im Rentenalter: Ich habe/möchte ein bis zwei Kinder"
+                        onChange={handleChange}
+                        class="form-checkbox h-5 w-5 " />
                         <span>Ich habe/möchte ein bis zwei Kinder</span>
                     </label>
                     <label class="flex items-center space-x-3">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 " />
+                        <input type="checkbox" 
+                        value="Sonstige Einkünfte im Rentenalter: Ich habe/möchte zwei Kinder"
+                        onChange={handleChange}
+                        class="form-checkbox h-5 w-5 " />
                         <span>Ich habe/möchte zwei Kinder</span>
                     </label>
                     <label class="flex items-center space-x-3">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 " />
+                        <input type="checkbox" 
+                        value="Sonstige Einkünfte im Rentenalter: Ich habe/möchte zwei bis 3 Kinder"
+                        onChange={handleChange}
+                        class="form-checkbox h-5 w-5 " />
                         <span>Ich habe/möchte zwei bis 3 Kinder</span>
                     </label>
                     <label class="flex items-center space-x-3">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 " />
+                        <input type="checkbox" 
+                        value="Sonstige Einkünfte im Rentenalter: Ich habe/möchte drei oder mehr Kinder"
+                        onChange={handleChange}
+                        class="form-checkbox h-5 w-5 " />
                         <span>Ich habe/möchte drei oder mehr Kinder</span>
                     </label>
 

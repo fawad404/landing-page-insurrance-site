@@ -1,7 +1,15 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import ComHeader from '../comHeader/ComHeader'
 
 const TestSeven = () => {
+    const [selectedValue, setSelectedValue] = useState('');
+
+  const handleChange = (event) => {
+    const value = event.target.value;
+    setSelectedValue(value);
+    console.log(`Gesundheitsstatus: ${value}`);
+  };
   return (
     <>
     
@@ -42,43 +50,74 @@ const TestSeven = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 text-lg  gap-4 mb-6 text-[#c25115]">
                 <label className="flex checkbox-label gap-x-3 items-center">
-                    <input type="checkbox" className="form-checkbox h-4 w-4 border-2 border-[#c04f15] focus:ring-orange-500" />
+                    <input 
+                    type="checkbox" 
+                    value="Rückenschmerzen"
+                onChange={handleChange}
+                    className="form-checkbox h-4 w-4 border-2 border-[#c04f15] focus:ring-orange-500" />
                     <span>Rückenschmerzen</span>
                 </label>
                 <label className="flex checkbox-label gap-x-3 items-center">
-                    <input type="checkbox" className="form-checkbox h-4 w-4 text-[#c25115]" />
+                    <input type="checkbox" 
+                    value="Bandscheiben"
+                    onChange={handleChange}
+                    className="form-checkbox h-4 w-4 text-[#c25115]" />
                     <span>Bandscheiben</span>
                 </label>
                 <label className="flex checkbox-label gap-x-3 items-center">
-                    <input type="checkbox" className="form-checkbox h-4 w-4 text-[#c25115]" />
+                    <input type="checkbox" 
+                    value="Schilddrüsenerkrankung"
+                    onChange={handleChange}
+                    className="form-checkbox h-4 w-4 text-[#c25115]" />
                     <span>Schilddrüsenerkrankung</span>
                 </label>
                 <label className="flex checkbox-label gap-x-3 items-center">
-                    <input type="checkbox" className="form-checkbox h-4 w-4 text-[#c25115]" />
+                    <input type="checkbox" 
+                    value="Allergien"
+                    onChange={handleChange}
+                    className="form-checkbox h-4 w-4 text-[#c25115]" />
                     <span>Allergien</span>
                 </label>
                 <label className="flex checkbox-label gap-x-3 items-center">
-                    <input type="checkbox" className="form-checkbox h-4 w-4 text-[#c25115]" />
+                    <input type="checkbox" 
+                    value="Asthma"
+                    onChange={handleChange}
+                    className="form-checkbox h-4 w-4 text-[#c25115]" />
                     <span>Asthma</span>
                 </label>
                 <label className="flex checkbox-label gap-x-3 items-center">
-                    <input type="checkbox" className="form-checkbox h-4 w-4 text-[#c25115]" />
+                    <input type="checkbox" 
+                    value="Krebserkrankungen"
+                    onChange={handleChange}
+                    className="form-checkbox h-4 w-4 text-[#c25115]" />
                     <span>Krebserkrankungen</span>
                 </label>
                 <label className="flex checkbox-label gap-x-3 items-center">
-                    <input type="checkbox" className="form-checkbox h-4 w-4 text-[#c25115]" />
+                    <input type="checkbox" 
+                    value="Long COVID"
+                    onChange={handleChange}
+                    className="form-checkbox h-4 w-4 text-[#c25115]" />
                     <span>Long COVID</span>
                 </label>
                 <label className="flex checkbox-label gap-x-3 items-center">
-                    <input type="checkbox" className="form-checkbox h-4 w-4 text-[#c25115]" />
+                    <input type="checkbox" 
+                    value="Nieren/Lebererkrankungen"
+                    onChange={handleChange}
+                    className="form-checkbox h-4 w-4 text-[#c25115]" />
                     <span>Nieren/Lebererkrankungen</span>
                 </label>
                 <label className="flex checkbox-label gap-x-3 items-center">
-                    <input type="checkbox" className="form-checkbox h-4 w-4 text-[#c25115]" />
+                    <input type="checkbox" 
+                    value="Diabetes"
+                    onChange={handleChange}
+                    className="form-checkbox h-4 w-4 text-[#c25115]" />
                     <span>Diabetes</span>
                 </label>
                 <label className="flex checkbox-label gap-x-3 items-center">
-                    <input type="checkbox" className="form-checkbox h-4 w-4 text-[#c25115]" />
+                    <input type="checkbox" 
+                    value="Psychotherapien"
+                    onChange={handleChange}
+                    className="form-checkbox h-4 w-4 text-[#c25115]" />
                     <span>Psychotherapien</span>
                 </label>
             </div>

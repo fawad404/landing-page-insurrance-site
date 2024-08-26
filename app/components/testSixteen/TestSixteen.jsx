@@ -1,9 +1,14 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import ComHeader from '../comHeader/ComHeader'
 import Link from 'next/link'
 
 const TestSixteen = () => {
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+
+  console.log(username, email, phone);
   return (
     <>
     <ComHeader />
@@ -34,7 +39,8 @@ const TestSixteen = () => {
                     </label>
                     <input
                     type="text"
-                    className="bg-[#fbe3d6] text-lg  h-12 text-white placeholder-white rounded-md border-none px-2 py-0 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 w-full md:w-8/12"
+                    onChange={(e) => setUsername(e.target.value)}
+                    className="bg-[#fbe3d6] text-lg  h-12 text-gray-900 placeholder-white rounded-md border-none px-2 py-0 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 w-full md:w-8/12"
                     placeholder=""
                 />
             </div>
@@ -43,7 +49,8 @@ const TestSixteen = () => {
                     </label>
                     <input
                     type="text"
-                    className="bg-[#fbe3d6] text-lg  h-12 text-white placeholder-white rounded-md border-none px-2 py-0 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 w-full md:w-8/12"
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="bg-[#fbe3d6] text-lg  h-12 text-gray-900 placeholder-white rounded-md border-none px-2 py-0 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 w-full md:w-8/12"
                     placeholder=""
                 />
             </div>
@@ -53,7 +60,8 @@ const TestSixteen = () => {
                     </label>
                     <input
                     type="text"
-                    className="bg-[#fbe3d6] text-lg  h-12 text-white placeholder-white rounded-md border-none px-2 py-0 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 w-full md:w-8/12"
+                    onChange={(e) => setPhone(e.target.value)}
+                    className="bg-[#fbe3d6] text-lg  h-12 text-gray-900 placeholder-white rounded-md border-none px-2 py-0 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 w-full md:w-8/12"
                     placeholder=""
                 />
             </div>

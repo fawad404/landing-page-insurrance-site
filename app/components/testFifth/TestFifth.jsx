@@ -5,7 +5,13 @@ import ComHeader from '../comHeader/ComHeader';
 
 const TestFifth = () => {
   const [children, setChildren] = useState(9); // Initialize children state
+  const [selectedValue, setSelectedValue] = useState('');
 
+  const handleChange = (event) => {
+    const value = event.target.value;
+    setSelectedValue(value);
+    console.log(`Derzeitiger Familienstatus​: ${value}`);
+  };
   const handleRangeChange = (e) => {
     const value = parseInt(e.target.value, 10); // Parse the value to an integer
     setChildren(value); // Update children state with the selected value
@@ -25,11 +31,16 @@ const TestFifth = () => {
           </label>
           <label className="mt-6  text-base md:text-2xl md:ml-56 flex items-center justify-start">
             <input type="checkbox" 
+            value="verheiratet​"
+            onChange={handleChange}
               className="form-checkbox h-5 w-5  mr-2" />
             verheiratet​
           </label>
           <label className="mt-6  text-base md:text-2xl md:ml-56 flex items-center justify-start">
-            <input type="checkbox" 
+            <input 
+            type="checkbox" 
+             value="ledig / geschieden / verwitwet​"
+             onChange={handleChange}
               className="form-checkbox h-5 w-5  mr-2" />
             ledig / geschieden / verwitwet​
           </label>
