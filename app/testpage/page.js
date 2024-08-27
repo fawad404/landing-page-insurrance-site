@@ -100,7 +100,7 @@ const Page = () => {
           ) : (
             <button
               onClick={handleSubmit}
-              className="bg-[#c04f15] text-white font-semibold py-2 px-6 rounded-lg hover:bg-orange-700 focus:outline-none"
+              className="bg-[#c04f15] md:mr-24  text-white font-semibold py-2 px-6 rounded-lg hover:bg-orange-700 focus:outline-none"
             >
               Abschicken
             </button>
