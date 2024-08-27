@@ -3,7 +3,7 @@ import '../testFourteen/testFourteen.css'
 import React, { useState } from 'react';
 import ComHeader from '../comHeader/ComHeader'
 
-const TestNine = () => {
+const TestNine = ({ data, onChange }) => {
     const [income, setIncome] = useState(0); // Initialize income state
     const [selectedValue, setSelectedValue] = useState('');
     const [selectedValueTwo, setSelectedValueTwo] = useState('');
@@ -11,21 +11,25 @@ const TestNine = () => {
     const handleChange = (event) => {
       const value = event.target.value;
       setSelectedValue(value);
+      onChange('page9', value);
       console.log(`${value}`);
     };
     const handleChangeTwo = (event) => {
         const value = event.target.value;
         setSelectedValueTwo(value);
+        onChange('page9Two', value);
         console.log(`${value}`);
       };
       const handleChangeThree = (event) => {
         const value = event.target.value;
+        onChange('page9Three', value);
         setSelectedValueThree(value);
         console.log(`${value}`);
       };
     const handleRangeChange = (e) => {
       const roundedValue = Math.round(e.target.value / 500) * 500; // Round to nearest 500
       setIncome(roundedValue); // Update income state with rounded value
+      onChange('page9Range', roundedValue);
       console.log(roundedValue);
     };
   return (

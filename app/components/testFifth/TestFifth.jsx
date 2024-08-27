@@ -3,18 +3,20 @@ import '../testFourteen/testFourteen.css'
 import React, { useState } from 'react';
 import ComHeader from '../comHeader/ComHeader';
 
-const TestFifth = () => {
+const TestFifth = ({ data, onChange }) => {
   const [children, setChildren] = useState(0); // Initialize children state
   const [selectedValue, setSelectedValue] = useState('');
 
   const handleChange = (event) => {
     const value = event.target.value;
     setSelectedValue(value);
+    onChange('page5', value);
     console.log(`Derzeitiger Familienstatus​: ${value}`);
   };
   const handleRangeChange = (e) => {
     const value = parseInt(e.target.value, 10); // Parse the value to an integer
     setChildren(value); // Update children state with the selected value
+    onChange('page5Range', value);
     console.log(value);
   };
 

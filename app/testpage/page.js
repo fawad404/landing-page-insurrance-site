@@ -47,7 +47,7 @@ const Page = () => {
 
   const handleSubmit = () => {
     console.log("Form Data:", formData);
-    router.push("/success");
+    //router.push("/success");
   };
 
   const components = [
@@ -96,11 +96,17 @@ const Page = () => {
             </button>
           ) : (
             <button
-              onClick={handleSubmit}
-              className="bg-[#c04f15]  text-white font-semibold py-2 px-6 rounded-lg hover:bg-orange-700 focus:outline-none"
-            >
-              Abschicken
-            </button>
+                onClick={handleSubmit}
+                disabled={!formData.isChecked}  // Button will be disabled if isChecked is false
+                className={`${
+                  formData.isChecked && formData.username && formData.email && formData.phone ? "bg-[#c04f15]" : "bg-red-800"
+                } text-white font-semibold py-2 px-6 rounded-lg ${
+                  formData.isChecked && formData.username && formData.email && formData.phone  ? "hover:bg-orange-700" : ""
+                } focus:outline-none`}
+              >
+                Abschicken
+              </button>
+
           )}
         </div>
         

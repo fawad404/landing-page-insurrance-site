@@ -3,7 +3,7 @@ import '../testFourteen/testFourteen.css'
 import React, { useState } from 'react'
 import ComHeader from '../comHeader/ComHeader'
 
-const TestSix = () => {
+const TestSix = ({ data, onChange }) => {
   const [healthPercentage, setHealthPercentage] = useState(0); // Initial value set to 67%
   const [selectedValue, setSelectedValue] = useState('');
   const [textarea, setTextArea] = useState('');
@@ -11,16 +11,21 @@ const TestSix = () => {
   const handleChange = (event) => {
     const value = event.target.value;
     setSelectedValue(value);
+    onChange('page6', value);
     console.log(`Waren Sie in den letzten 5 Jahren in Behandlung: ${value}`);
   };
   const handleRangeChange = (event) => {
     //const value = Math.round(event.target.value / 5) * 5; // Round to the nearest 5
-    setHealthPercentage(event.target.value);
+    const value = event.target.value
+    setHealthPercentage(value);
+    onChange('page6Range', value);
     console.log(healthPercentage);
   };
   const handleTextArea = (event) => {
     //const value = Math.round(event.target.value / 5) * 5; // Round to the nearest 5
-    setTextArea(event.target.value);
+    const value = event.target.value
+    setTextArea(value);
+    onChange('page6Text', value);
     console.log(textarea);
   };
 
@@ -31,8 +36,8 @@ const TestSix = () => {
     Familienplanung
       </h2>
 
-      <div class="text-textColor flex items-center justify-center min-h-[55vh] font-fijala p-4  md:ml-8">
-        <div class="w-full max-w-3xl relative">
+      <div className="text-textColor flex items-center justify-center min-h-[55vh] font-fijala p-4  md:ml-8">
+        <div className="w-full max-w-3xl relative">
             <div>
               
             <div className="relative mb-5">

@@ -3,12 +3,13 @@ import '../testFourteen/testFourteen.css'
 import React, { useState } from 'react';
 import ComHeader from '../comHeader/ComHeader'
 
-const TestTwelve = () => {
+const TestTwelve = ({ data, onChange }) => {
   const [healthPercentage, setHealthPercentage] = useState(0); // Initial value set to 67%
 
   const handleRangeChange = (e) => {
     const roundedValue = Math.round(e.target.value / 500) * 500; // Round to nearest 500
     setHealthPercentage(roundedValue); // Update income state with rounded value
+    onChange('page12', roundedValue);
     console.log(roundedValue);
   }
 

@@ -3,19 +3,21 @@ import '../testFourteen/testFourteen.css'
 import React, { useState } from 'react';
 import ComHeader from '../comHeader/ComHeader';
 
-const TestFourth = () => {
+const TestFourth = ({ data, onChange }) => {
   const [income, setIncome] = useState(0); // Initialize income state
   const [selectedValue, setSelectedValue] = useState('');
 
   const handleChange = (event) => {
     const value = event.target.value;
     setSelectedValue(value);
+    onChange('page4', value);
     console.log(`Einkommen: ${value}`);
   };
 
   const handleRangeChange = (e) => {
     const roundedValue = Math.round(e.target.value / 500) * 500; // Round to nearest 500
     setIncome(roundedValue); // Update income state with rounded value
+    onChange('page4Range', roundedValue);
     console.log(roundedValue);
   };
 

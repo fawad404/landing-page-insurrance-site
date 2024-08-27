@@ -2,17 +2,19 @@
 import React, { useState } from 'react'
 import ComHeader from '../comHeader/ComHeader'
 
-const TestEight = () => {
+const TestEight = ({ data, onChange }) => {
     const [selectedValue, setSelectedValue] = useState('');
     const [selectedValueTwo, setSelectedValueTwo] = useState('');
     const handleChange = (event) => {
       const value = event.target.value;
       setSelectedValue(value);
+      onChange('page8', value);
       console.log(`${value}`);
     };
     const handleChangeTwo = (event) => {
       const value = event.target.value;
       setSelectedValueTwo(value);
+      onChange('page8Two', value);
       console.log(`${value}`);
     };
   return (
@@ -22,8 +24,8 @@ const TestEight = () => {
       Eintrittsvoraussetzungen
       </h2>
 
-      <div class="flex items-center justify-center min-h-[55vh] p-4 font-fijala md:ml-8">
-        <div class="w-full max-w-3xl relative">
+      <div className="flex items-center justify-center min-h-[55vh] p-4 font-fijala md:ml-8">
+        <div className="w-full max-w-3xl relative">
             <div>
               
             <div className="relative mb-5">
@@ -44,21 +46,21 @@ const TestEight = () => {
             </div>
 
             
-                <div class="grid grid-cols-1 gap-4 mb-6 text-[#c25115] md:ml-5 mb-5">
-                    <label class="flex items-center space-x-3">
+                <div className="grid grid-cols-1 gap-4 mb-6 text-[#c25115] md:ml-5 mb-5">
+                    <label className="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Lebenspartnerschaftsplanung: Ich bin verheiratet oder möchte irgendwann heiraten"
                         checked={selectedValue === 'Lebenspartnerschaftsplanung: Ich bin verheiratet oder möchte irgendwann heiraten'}
                         onChange={handleChange}
-                        class="form-checkbox h-5 w-5 " />
+                        className="form-checkbox h-5 w-5 " />
                         <span>Ich bin verheiratet oder möchte irgendwann heiraten</span>
                     </label>
-                    <label class="flex items-center space-x-3">
+                    <label className="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Lebenspartnerschaftsplanung: Ich möchte in einer Partnerschaft ohne Heirat leben bzw. ich bleibe Single"
                         checked={selectedValue === 'Lebenspartnerschaftsplanung: Ich möchte in einer Partnerschaft ohne Heirat leben bzw. ich bleibe Single'}
                         onChange={handleChange}
-                        class="form-checkbox h-5 w-5 " />
+                        className="form-checkbox h-5 w-5 " />
                         <span>Ich möchte in einer Partnerschaft ohne Heirat leben bzw. ich bleibe Single</span>
                     </label>
 
@@ -87,53 +89,53 @@ const TestEight = () => {
             </div>
 
     
-                <div class="grid grid-cols-1 gap-4 mb-6 text-[#c25115] md:ml-5 mb-5">
-                    <label class="flex items-center space-x-3">
+                <div className="grid grid-cols-1 gap-4 mb-6 text-[#c25115] md:ml-5 mb-5">
+                    <label className="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Kinderplanung: Ich habe keine Kinder und möchte keine Kinder"
                         checked={selectedValueTwo === 'Kinderplanung: Ich habe keine Kinder und möchte keine Kinder'}
                         onChange={handleChangeTwo}
-                        class="form-checkbox h-5 w-5 " />
+                        className="form-checkbox h-5 w-5 " />
                         <span>Ich habe keine Kinder und möchte keine Kinder</span>
                     </label>
-                    <label class="flex items-center space-x-3">
+                    <label className="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Kinderplanung: Ich habe/möchte ein Kind"
                         checked={selectedValueTwo === 'Kinderplanung: Ich habe/möchte ein Kind'}
                         onChange={handleChangeTwo}
-                        class="form-checkbox h-5 w-5 " />
+                        className="form-checkbox h-5 w-5 " />
                         <span>Ich habe/möchte ein Kind </span>
                     </label>
-                    <label class="flex items-center space-x-3">
+                    <label className="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Kinderplanung: Ich habe/möchte ein bis zwei Kinder"
                         checked={selectedValueTwo === 'Kinderplanung: Ich habe/möchte ein bis zwei Kinder'}
                         onChange={handleChangeTwo}
-                        class="form-checkbox h-5 w-5 " />
+                        className="form-checkbox h-5 w-5 " />
                         <span>Ich habe/möchte ein bis zwei Kinder</span>
                     </label>
-                    <label class="flex items-center space-x-3">
+                    <label className="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Kinderplanung: Ich habe/möchte zwei Kinder"
                         checked={selectedValueTwo === 'Kinderplanung: Ich habe/möchte zwei Kinder'}
                         onChange={handleChangeTwo}
-                        class="form-checkbox h-5 w-5 " />
+                        className="form-checkbox h-5 w-5 " />
                         <span>Ich habe/möchte zwei Kinder</span>
                     </label>
-                    <label class="flex items-center space-x-3">
+                    <label className="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Kinderplanung: Ich habe/möchte zwei bis 3 Kinder"
                         checked={selectedValueTwo === 'Kinderplanung: Ich habe/möchte zwei bis 3 Kinder'}
                         onChange={handleChangeTwo}
-                        class="form-checkbox h-5 w-5 " />
+                        className="form-checkbox h-5 w-5 " />
                         <span>Ich habe/möchte zwei bis 3 Kinder</span>
                     </label>
-                    <label class="flex items-center space-x-3">
+                    <label className="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Kinderplanung: Ich habe/möchte drei oder mehr Kinder"
                         checked={selectedValueTwo === 'Kinderplanung: Ich habe/möchte drei oder mehr Kinder'}
                         onChange={handleChangeTwo}
-                        class="form-checkbox h-5 w-5 " />
+                        className="form-checkbox h-5 w-5 " />
                         <span>Ich habe/möchte drei oder mehr Kinder</span>
                     </label>
 

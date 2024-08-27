@@ -2,18 +2,22 @@
 import './testFourteen.css'
 import React, { useState } from 'react'
 import ComHeader from '../comHeader/ComHeader'
-const TestFourteen = () => {
-  const [healthPercentage, setHealthPercentage] = useState(67); // Initial value set to 67%
-  const [healthPercentageTwo, setHealthPercentageTwo] = useState(67); // Initial value set to 67%
+const TestFourteen = ({ data, onChange }) => {
+  const [healthPercentage, setHealthPercentage] = useState(0); // Initial value set to 67%
+  const [healthPercentageTwo, setHealthPercentageTwo] = useState(0); // Initial value set to 67%
 
   const handleRangeChange = (event) => {
+    const value = event.target.value;
     //const value = Math.round(event.target.value / 5) * 5; // Round to the nearest 5
-    setHealthPercentage(event.target.value);
+    setHealthPercentage(value);
+    onChange('page14Range', value);
     console.log(healthPercentage);
   };
   const handleRangeChangeTwo = (event) => {
+    const value = event.target.value;
     //const value = Math.round(event.target.value / 5) * 5; // Round to the nearest 5
-    setHealthPercentageTwo(event.target.value);
+    setHealthPercentageTwo(value);
+    onChange('page14RangeTwo', value);
     console.log(healthPercentageTwo);
   };
   return (
@@ -23,8 +27,8 @@ const TestFourteen = () => {
     Persönliche Einschätzung zu Leistungen im Gesundheitswesen
       </h2>
 
-      <div class="text-textColor flex items-center justify-center min-h-[55vh] font-fijala p-4  md:ml-8">
-        <div class="w-full max-w-3xl relative">
+      <div className="text-textColor flex items-center justify-center min-h-[55vh] font-fijala p-4  md:ml-8">
+        <div className="w-full max-w-3xl relative">
             <div>
             <div className="mt-12">
                 <h1 className="relative text-xl md:text-2xl text-[#c25115] mb-4 hover-trigger">Leistungen, die die Gesetzliche nicht komplett abdeckt sind mir sehr wichtig (z.B. Zahnersatz, alternative Medizin, Brille, Privatpatient im Krankenhaus, etc)! 
@@ -50,8 +54,8 @@ const TestFourteen = () => {
             <label className="mt-6 text-[#c25115] relative text-base md:text-xl flex flex-col md:flex-row items-center w-full">
       <div className="flex flex-col w-full md:w-1/2 mx-4">
         <div className="flex justify-between text-xs">
-          <span>Trifft zu</span>
-          <span>trifft nicht zu</span>
+          <span>Trifft nicht zu</span>
+          <span>trifft zu</span>
         </div>
         <input
           type="range"
@@ -73,13 +77,13 @@ const TestFourteen = () => {
       <span className="text-base md:text-xl mt-4 md:mt-0">{healthPercentage}%</span>
     </label>
             </div>
-                <h2 class="text-2xl mb-8 text-[#c25115] mt-16">Schnelle Terminvergabe (z.B. Fachärzte, MRT, etc) ist mir sehr wichtig!</h2>
+                <h2 className="text-2xl mb-8 text-[#c25115] mt-16">Schnelle Terminvergabe (z.B. Fachärzte, MRT, etc) ist mir sehr wichtig!</h2>
 
                 <label className="mt-6 text-[#c25115] relative text-base md:text-xl flex flex-col md:flex-row items-center w-full">
       <div className="flex flex-col w-full md:w-1/2 mx-4">
         <div className="flex justify-between text-xs">
-          <span>Trifft zu</span>
-          <span>trifft nicht zu</span>
+          <span>Trifft nicht zu</span>
+          <span>trifft zu</span>
         </div>
               <input
                 type="range"
