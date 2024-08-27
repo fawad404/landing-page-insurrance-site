@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const Featured = () => {
@@ -16,7 +17,9 @@ const Featured = () => {
   
 </header>
     <section className="relative pb-20 xl:pb-32 overflow-hidden h-[28rem] sm:h-[26rem] md:h-[30rem]">
-      <img
+      <Image
+        height={100}
+        width={100}
         className="absolute bottom-0 left-0 w-full h-full object-cover"
         src="/featured-image.jpeg"
         alt=""
