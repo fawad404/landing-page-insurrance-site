@@ -78,11 +78,11 @@ const Page = () => {
     <div className="flex flex-col min-h-screen">
       <div className="flex-grow">
         {components[currentComponentIndex]}
-        <div className="flex justify-between px-4 md:px-20 items-center mt-8 mx-4 md:mx-8">
+        <div className="flex justify-around px-4 md:px-20 items-center mt-8 mx-4 md:mx-8">
           {currentComponentIndex > 0 ? (
             <button
               onClick={handleBack}
-              className="bg-[#c04f15] md:ml-24 text-white font-semibold py-2 px-6 rounded-lg hover:bg-orange-700 focus:outline-none"
+              className="bg-[#c04f15] text-white font-semibold py-2 px-6 rounded-lg hover:bg-orange-700 focus:outline-none"
             >
               Zurück
             </button>
@@ -93,14 +93,14 @@ const Page = () => {
           {currentComponentIndex < components.length - 1 ? (
             <button
               onClick={handleNext}
-              className="bg-[#c04f15] md:mr-24 text-white font-semibold py-2 px-6 rounded-lg hover:bg-orange-700 focus:outline-none"
+              className="bg-[#c04f15] text-white font-semibold py-2 px-6 rounded-lg hover:bg-orange-700 focus:outline-none"
             >
               Weiter
             </button>
           ) : (
             <button
               onClick={handleSubmit}
-              className="bg-[#c04f15] md:mr-24  text-white font-semibold py-2 px-6 rounded-lg hover:bg-orange-700 focus:outline-none"
+              className="bg-[#c04f15]  text-white font-semibold py-2 px-6 rounded-lg hover:bg-orange-700 focus:outline-none"
             >
               Abschicken
             </button>

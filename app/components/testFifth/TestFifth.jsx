@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import ComHeader from '../comHeader/ComHeader';
 
 const TestFifth = () => {
-  const [children, setChildren] = useState(9); // Initialize children state
+  const [children, setChildren] = useState(0); // Initialize children state
   const [selectedValue, setSelectedValue] = useState('');
 
   const handleChange = (event) => {
@@ -32,6 +32,7 @@ const TestFifth = () => {
           <label className="mt-6  text-base md:text-2xl md:ml-56 flex items-center justify-start">
             <input type="checkbox" 
             value="verheiratet​"
+            checked={selectedValue === 'verheiratet​'}
             onChange={handleChange}
               className="form-checkbox h-5 w-5  mr-2" />
             verheiratet​
@@ -40,6 +41,7 @@ const TestFifth = () => {
             <input 
             type="checkbox" 
              value="ledig / geschieden / verwitwet​"
+             checked={selectedValue === 'ledig / geschieden / verwitwet​'}
              onChange={handleChange}
               className="form-checkbox h-5 w-5  mr-2" />
             ledig / geschieden / verwitwet​

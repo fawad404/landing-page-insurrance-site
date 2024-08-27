@@ -43,6 +43,7 @@ const TestEight = () => {
                     <label class="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Lebenspartnerschaftsplanung: Ich bin verheiratet oder möchte irgendwann heiraten"
+                        checked={selectedValue === 'Lebenspartnerschaftsplanung: Ich bin verheiratet oder möchte irgendwann heiraten'}
                         onChange={handleChange}
                         class="form-checkbox h-5 w-5 " />
                         <span>Ich bin verheiratet oder möchte irgendwann heiraten</span>
@@ -50,6 +51,7 @@ const TestEight = () => {
                     <label class="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Lebenspartnerschaftsplanung: Ich möchte in einer Partnerschaft ohne Heirat leben bzw. ich bleibe Single"
+                        checked={selectedValue === 'Lebenspartnerschaftsplanung: Ich möchte in einer Partnerschaft ohne Heirat leben bzw. ich bleibe Single'}
                         onChange={handleChange}
                         class="form-checkbox h-5 w-5 " />
                         <span>Ich möchte in einer Partnerschaft ohne Heirat leben bzw. ich bleibe Single</span>
@@ -63,7 +65,7 @@ const TestEight = () => {
             <div className="relative mt-12">
                 <h1 className="text-2xl italic text-[#c25115]  mb-4 hover-trigger">Kinderplanung
                 <span className="inline-block ml-1 group">
-            <span className="text-[#c25115] absolute -top-1 left-44">
+            <span className="text-[#c25115] absolute -top-1 left-40">
                 <img src='/info-circle-svgrepo-com (1).svg' className='h-5 w-5 text-red-900' />
               </span>
               <div className="-ml-20 mt-3 md:-ml-8 absolute hidden group-hover:block bg-white border border border-orange-500 text-black text-sm rounded p-2 whitespace-normal md:max-w-xs lg:max-w-sm z-10">
@@ -84,6 +86,7 @@ const TestEight = () => {
                     <label class="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Kinderplanung: Ich habe keine Kinder und möchte keine Kinder"
+                        checked={selectedValue === 'Kinderplanung: Ich habe keine Kinder und möchte keine Kinder'}
                         onChange={handleChange}
                         class="form-checkbox h-5 w-5 " />
                         <span>Ich habe keine Kinder und möchte keine Kinder</span>
@@ -91,6 +94,7 @@ const TestEight = () => {
                     <label class="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Kinderplanung: Ich habe/möchte ein Kind"
+                        checked={selectedValue === 'Kinderplanung: Ich habe/möchte ein Kind'}
                         onChange={handleChange}
                         class="form-checkbox h-5 w-5 " />
                         <span>Ich habe/möchte ein Kind </span>
@@ -98,6 +102,7 @@ const TestEight = () => {
                     <label class="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Kinderplanung: Ich habe/möchte ein bis zwei Kinder"
+                        checked={selectedValue === 'Kinderplanung: Ich habe/möchte ein bis zwei Kinder'}
                         onChange={handleChange}
                         class="form-checkbox h-5 w-5 " />
                         <span>Ich habe/möchte ein bis zwei Kinder</span>
@@ -105,6 +110,7 @@ const TestEight = () => {
                     <label class="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Kinderplanung: Ich habe/möchte zwei Kinder"
+                        checked={selectedValue === 'Kinderplanung: Ich habe/möchte zwei Kinder'}
                         onChange={handleChange}
                         class="form-checkbox h-5 w-5 " />
                         <span>Ich habe/möchte zwei Kinder</span>
@@ -112,6 +118,7 @@ const TestEight = () => {
                     <label class="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Kinderplanung: Ich habe/möchte zwei bis 3 Kinder"
+                        checked={selectedValue === 'Kinderplanung: Ich habe/möchte zwei bis 3 Kinder'}
                         onChange={handleChange}
                         class="form-checkbox h-5 w-5 " />
                         <span>Ich habe/möchte zwei bis 3 Kinder</span>
@@ -119,6 +126,7 @@ const TestEight = () => {
                     <label class="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Kinderplanung: Ich habe/möchte drei oder mehr Kinder"
+                        checked={selectedValue === 'Kinderplanung: Ich habe/möchte drei oder mehr Kinder'}
                         onChange={handleChange}
                         class="form-checkbox h-5 w-5 " />
                         <span>Ich habe/möchte drei oder mehr Kinder</span>

@@ -3,14 +3,20 @@ import '../testFourteen/testFourteen.css'
 import React, { useState } from 'react'
 import ComHeader from '../comHeader/ComHeader'
 const TestEleven = () => {
-  const [healthPercentage, setHealthPercentage] = useState(67); // Initial value set to 67%
-  const [healthPercentageTwo, setHealthPercentageTwo] = useState(67); // Initial value set to 67%
-  const [healthPercentageThree, setHealthPercentageThree] = useState(67); // Initial value set to 67%
+  const [selectedValue, setSelectedValue] = useState('');
+  const [healthPercentage, setHealthPercentage] = useState(0); // Initial value set to 67%
+  const [healthPercentageTwo, setHealthPercentageTwo] = useState(0); // Initial value set to 67%
+  const [healthPercentageThree, setHealthPercentageThree] = useState(0); // Initial value set to 67%
 
   const handleRangeChange = (event) => {
     //const value = Math.round(event.target.value / 5) * 5; // Round to the nearest 5
     setHealthPercentage(event.target.value);
     console.log(healthPercentage);
+  };
+  const handleChange = (event) => {
+    const value = event.target.value;
+    setSelectedValue(value);
+    console.log(`${value}`);
   };
   const handleRangeChangeTwo = (event) => {
     //const value = Math.round(event.target.value / 5) * 5; // Round to the nearest 5
@@ -51,7 +57,11 @@ const TestEleven = () => {
 
             <div className='text-[#c25115] md:ml-5 mb-5 text-lg'>
             <label class="flex items-center space-x-3">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 " />
+                        <input type="checkbox" 
+                        value="Arbeitsplanung: Ich tendiere dazu, später mal ein Sabbatical zu absolvieren."
+                        checked={selectedValue === 'Arbeitsplanung: Ich tendiere dazu, später mal ein Sabbatical zu absolvieren.'}
+                        onChange={handleChange}
+                        class="form-checkbox h-5 w-5 " />
                         <span>Ich tendiere dazu, später mal ein Sabbatical zu absolvieren.​</span>
                     </label>
 
@@ -85,7 +95,11 @@ const TestEleven = () => {
 
             <div className='text-[#c25115] md:ml-5 mb-5 text-lg mt-12'>
             <label class="flex items-center space-x-3">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 " />
+                        <input type="checkbox" 
+                        onChange={handleChange}
+                        value="Arbeitsplanung: Ich tendiere dazu, später mal ein Sabbatical zu absolvieren.​"
+                        checked={selectedValue === 'Arbeitsplanung: Ich tendiere dazu, später mal ein Sabbatical zu absolvieren.​'}
+                        class="form-checkbox h-5 w-5 " />
                         <span>Ich tendiere dazu, später mal ein Sabbatical zu absolvieren.​</span>
                     </label>
 
@@ -118,7 +132,11 @@ const TestEleven = () => {
 
     <div className='text-[#c25115] md:ml-5 mb-5 text-lg mt-12'>
             <label class="flex items-center space-x-3">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 " />
+                        <input type="checkbox" 
+                        onChange={handleChange}
+                        value="Arbeitsplanung: Ich tendiere dazu, später mal ein Sabbatical zu absolvieren."
+                        checked={selectedValue === 'Arbeitsplanung: Ich tendiere dazu, später mal ein Sabbatical zu absolvieren.'}
+                        class="form-checkbox h-5 w-5 " />
                         <span>Ich tendiere dazu, später mal ein Sabbatical zu absolvieren.​</span>
                     </label>
 

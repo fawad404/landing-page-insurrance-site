@@ -46,6 +46,7 @@ const TestSecond = () => {
                 <input
                   type="checkbox"
                   value="„freiwillig“ versichert (bzw demnächst freiwillig versichert)"
+                  checked={selectedValue === '„freiwillig“ versichert (bzw demnächst freiwillig versichert)'}
                   className="form-checkbox h-5 w-5 text-[#c25115] mr-2 mt-2 mb-4"
                   onChange={handleChange}
                 />
@@ -55,6 +56,7 @@ const TestSecond = () => {
                 <input
                   type="checkbox"
                   value="pflichtversichert"
+                  checked={selectedValue === 'pflichtversichert'}
                   className="form-checkbox h-5 w-5 text-[#c25115] mr-2"
                   onChange={handleChange}
                 />

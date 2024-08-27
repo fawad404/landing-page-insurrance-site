@@ -55,8 +55,8 @@ const TestFourth = () => {
             />
             über 62.100,00 Euro
           </label>
-          <label className="mt-6 text-[#c25115] text-lg md:text-2xl md:ml-64 flex items-center justify-start">
-            oder: 
+          <label className="mt-6 text-[#c25115] text-lg md:text-2xl ml-12 md:-ml-12 flex items-center justify-start md:justify-center">
+            oder
           </label>
           <label className="mt-6 text-[#c25115] text-lg md:text-2xl md:ml-56 flex items-center justify-start">
             Einkommen: {Number(income).toLocaleString('de-DE')} Euro p.a.

@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import ComHeader from '../comHeader/ComHeader'
 
 const TestSix = () => {
-  const [healthPercentage, setHealthPercentage] = useState(67); // Initial value set to 67%
+  const [healthPercentage, setHealthPercentage] = useState(0); // Initial value set to 67%
   const [selectedValue, setSelectedValue] = useState('');
   const [textarea, setTextArea] = useState('');
 
@@ -60,8 +60,8 @@ const TestSix = () => {
       
       <div className="flex flex-col w-full md:w-1/2 mx-4">
         <div className="flex justify-between text-xs italic">
-          <span>Sehr gesund</span>
           <span>sehr krank</span>
+          <span>Sehr gesund</span>
         </div>
         <input
           type="range"
@@ -89,6 +89,7 @@ const TestSix = () => {
               <label className="mr-4 text-xl">
                 <input type="checkbox" 
                 value="ja"
+                checked={selectedValue === 'ja'}
                 onChange={handleChange}
                 className="form-checkbox h-4 w-4 text-[#c25115] mr-1" />
                 ja
@@ -96,6 +97,7 @@ const TestSix = () => {
               <label className='text-xl'>
                 <input type="checkbox" 
                 value="nein"
+                checked={selectedValue === 'nein'}
                 onChange={handleChange}
                 className="form-checkbox h-4 w-4 text-[#c25115] mr-1" />
                 nein
