@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ComHeader from '../comHeader/ComHeader';
 
 const TestSecond = ({ data, onChange }) => {
   const [selectedValue, setSelectedValue] = useState('');
 
+  useEffect(() => {
+    // Retrieve the value from localStorage when the component mounts
+    const storedValue = localStorage.getItem('page2');
+    if (storedValue) {
+      setSelectedValue(storedValue);
+    }
+  }, []);
+
   const handleChange = (event) => {
     const value = event.target.value;
     setSelectedValue(value);
+    localStorage.setItem('page2', value);
     onChange('page2', value);
     console.log(`Selected: ${value}`);
   };

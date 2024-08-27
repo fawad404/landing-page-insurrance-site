@@ -1,15 +1,24 @@
 "use client";
 import '../testFourteen/testFourteen.css'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ComHeader from '../comHeader/ComHeader'
 
 const TestTwelve = ({ data, onChange }) => {
   const [healthPercentage, setHealthPercentage] = useState(0); // Initial value set to 67%
 
+  useEffect(() => {
+    // Retrieve the value from localStorage when the component mounts
+    const storedValue = localStorage.getItem('page12Range');
+    if (storedValue) {
+      setHealthPercentage(storedValue);
+    }
+  }, []);
+
   const handleRangeChange = (e) => {
     const roundedValue = Math.round(e.target.value / 500) * 500; // Round to nearest 500
     setHealthPercentage(roundedValue); // Update income state with rounded value
-    onChange('page12', roundedValue);
+    localStorage.setItem('page12Range', roundedValue);
+    onChange('page12Range', roundedValue);
     console.log(roundedValue);
   }
 

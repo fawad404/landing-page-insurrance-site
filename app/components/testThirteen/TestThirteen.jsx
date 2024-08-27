@@ -1,20 +1,34 @@
 "use client";
 import '../testFourteen/testFourteen.css'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ComHeader from '../comHeader/ComHeader'
 const TestThirteen = ({ data, onChange }) => {
     const [income, setIncome] = useState(0); // Initialize income state
     const [selectedValue, setSelectedValue] = useState('');
 
+    useEffect(() => {
+      // Retrieve the value from localStorage when the component mounts
+      const storedValue = localStorage.getItem('page13');
+      if (storedValue) {
+        setSelectedValue(storedValue);
+      }
+      const storedValueTwo = localStorage.getItem('page13Range');
+      if (storedValueTwo) {
+        setIncome(storedValueTwo);
+      }
+    }, []);
+
     const handleChange = (event) => {
       const value = event.target.value;
       setSelectedValue(value);
+      localStorage.setItem('page13', value);
       onChange('page13', value);
       console.log(`${value}`);
     };
   const handleRangeChange = (e) => {
     const roundedValue = Math.round(e.target.value / 500) * 500; // Round to nearest 500
     setIncome(roundedValue); // Update income state with rounded value
+    localStorage.setItem('page13Range', roundedValue);
     onChange('page13Range', roundedValue);
     console.log(roundedValue);
   }
@@ -112,7 +126,7 @@ const TestThirteen = ({ data, onChange }) => {
                   max="25000"
                   value={income}
                   onChange={handleRangeChange}
-                  className="appearance-none h-8 w-full max-w-xs md:max-w-48 rounded-md"
+                  className="appearance-none h-8 w-full max-w-xs md:max-w-48"
                   style={{
                     background: `linear-gradient(to right, #f2aa84 0%, #f2aa84 ${(income / 25000) * 100}%, #fbe3d6 ${(income / 25000) * 100}%, #fbe3d6 100%)`,
                     accentColor: '#c04f15',

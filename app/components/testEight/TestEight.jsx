@@ -1,19 +1,34 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ComHeader from '../comHeader/ComHeader'
 
 const TestEight = ({ data, onChange }) => {
     const [selectedValue, setSelectedValue] = useState('');
     const [selectedValueTwo, setSelectedValueTwo] = useState('');
+
+    useEffect(() => {
+      // Retrieve the value from localStorage when the component mounts
+      const storedValue = localStorage.getItem('page8');
+      if (storedValue) {
+        setSelectedValue(storedValue);
+      }
+      const storedValueTwo = localStorage.getItem('page8Two');
+      if (storedValueTwo) {
+        setSelectedValueTwo(storedValueTwo);
+      }
+    }, []);
+
     const handleChange = (event) => {
       const value = event.target.value;
       setSelectedValue(value);
+      localStorage.setItem('page8', value);
       onChange('page8', value);
       console.log(`${value}`);
     };
     const handleChangeTwo = (event) => {
       const value = event.target.value;
       setSelectedValueTwo(value);
+      localStorage.setItem('page8Two', value);
       onChange('page8Two', value);
       console.log(`${value}`);
     };

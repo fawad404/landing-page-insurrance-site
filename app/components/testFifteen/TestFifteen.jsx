@@ -1,14 +1,23 @@
 "use client"
 import '../testFourteen/testFourteen.css'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ComHeader from '../comHeader/ComHeader'
 
 const TestFifteen = ({ data, onChange }) => {
-  const [healthPercentageTwo, setHealthPercentageTwo] = useState(67); // Initial value set to 67%
+  const [healthPercentageTwo, setHealthPercentageTwo] = useState(0); // Initial value set to 67%
+
+  useEffect(() => {
+    // Retrieve the value from localStorage when the component mounts
+    const storedValue = localStorage.getItem('page15Range');
+    if (storedValue) {
+      setHealthPercentageTwo(storedValue);
+    }
+  }, []);
   const handleRangeChangeTwo = (event) => {
     const value = event.target.value;
     //const value = Math.round(event.target.value / 5) * 5; // Round to the nearest 5
     setHealthPercentageTwo(value);
+    localStorage.setItem('page15Range', value);
     onChange('page15Range', value);
     console.log(healthPercentageTwo);
   };

@@ -1,6 +1,6 @@
 "use client"
 import '../testFourteen/testFourteen.css'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ComHeader from '../comHeader/ComHeader'
 
 const TestNine = ({ data, onChange }) => {
@@ -8,27 +8,53 @@ const TestNine = ({ data, onChange }) => {
     const [selectedValue, setSelectedValue] = useState('');
     const [selectedValueTwo, setSelectedValueTwo] = useState('');
     const [selectedValueThree, setSelectedValueThree] = useState('');
+
+    useEffect(() => {
+        // Retrieve the value from localStorage when the component mounts
+        const storedValue = localStorage.getItem('page9');
+        if (storedValue) {
+          setSelectedValue(storedValue);
+        }
+        const storedValueTwo = localStorage.getItem('page9Two');
+        if (storedValueTwo) {
+            setSelectedValueTwo(storedValueTwo);
+        }
+        const storedValueThree = localStorage.getItem('page9Three');
+        if (storedValueThree) {
+            setSelectedValueThree(storedValueThree);
+        }
+        const storedValueRange = localStorage.getItem('page9Range');
+        if (storedValueRange) {
+            setIncome(storedValueRange);
+        }
+      }, []);
+
+
     const handleChange = (event) => {
       const value = event.target.value;
       setSelectedValue(value);
+      localStorage.setItem('page9', value);
       onChange('page9', value);
       console.log(`${value}`);
     };
     const handleChangeTwo = (event) => {
         const value = event.target.value;
         setSelectedValueTwo(value);
+        localStorage.setItem('page9Two', value);
         onChange('page9Two', value);
         console.log(`${value}`);
       };
       const handleChangeThree = (event) => {
         const value = event.target.value;
-        onChange('page9Three', value);
         setSelectedValueThree(value);
+        localStorage.setItem('page9Three', value);
+        onChange('page9Three', value);
         console.log(`${value}`);
       };
     const handleRangeChange = (e) => {
       const roundedValue = Math.round(e.target.value / 500) * 500; // Round to nearest 500
       setIncome(roundedValue); // Update income state with rounded value
+      localStorage.setItem('page9Range', roundedValue);
       onChange('page9Range', roundedValue);
       console.log(roundedValue);
     };

@@ -45,9 +45,94 @@ const Page = () => {
     console.log('Form Data Parent', formData);
   };
 
-  const handleSubmit = () => {
-    console.log("Form Data:", formData);
-    //router.push("/success");
+  const handleSubmit =  () => {
+    // Retrieve all data from localStorage
+    const storedEmail = localStorage.getItem('email');
+    const storedPage10 = localStorage.getItem('page10') || '';
+    const storedpage10Two = localStorage.getItem('page10Two') || '';
+    const storedpage12Range = localStorage.getItem('page12Range') || '';
+    const storedpage13 = localStorage.getItem('page13') || '';
+    const storedpage13Range = localStorage.getItem('page13Range') || '';
+    const storedpage14Range = localStorage.getItem('page14Range') || '';
+    const storedpage14RangeTwo = localStorage.getItem('page14RangeTwo') || '';
+    const storedpage15Range = localStorage.getItem('page15Range') || '';
+    const storedpage2 = localStorage.getItem('page2') || '';
+    const storedpage3Range = localStorage.getItem('page3Range') || '';
+    const storedpage4 = localStorage.getItem('page4') || '';
+    const storedpage4Range = localStorage.getItem('page4Range') || '';
+    const storedpage5 = localStorage.getItem('page5') || '';
+    const storedpage5Range = localStorage.getItem('page5Range') || '';
+    const storedpage6 = localStorage.getItem('page6') || '';
+    const storedpage6Range = localStorage.getItem('page6Range') || '';
+    const storedpage6Text = localStorage.getItem('page6Text') || '';
+    const storedpage8 = localStorage.getItem('page8') || '';
+    const storedpage8Two = localStorage.getItem('page8Two') || '';
+    const storedpage9 = localStorage.getItem('page9') || '';
+    const storedpage9Range = localStorage.getItem('page9Range') || '';
+    const storedpage9Three = localStorage.getItem('page9Three') || '';
+    const storedpage9Two = localStorage.getItem('page9Two') || '';
+    const storedphone = localStorage.getItem('phone');
+    const storedselectedBerufStatus = localStorage.getItem('selectedBerufStatus') || '';
+    const storedusername = localStorage.getItem('username');
+    const isChecked = localStorage.getItem('isChecked');
+
+    // Prepare data for submission
+    const dataToSubmit = {
+      username: storedusername,
+      email: storedEmail,
+      phone: storedphone,
+      isChecked: isChecked,
+      storedpage3Range,
+      storedpage2,
+      storedpage15Range,
+      storedpage14RangeTwo,
+      storedpage14Range,
+      storedpage13Range,
+      storedpage13,
+      storedpage12Range,
+      storedpage10Two,
+      storedPage10,
+      storedpage9,
+      storedpage8Two,
+      storedpage8,
+      storedpage6Text,
+      storedpage6Range,
+      storedpage6,
+      storedpage5Range,
+      storedpage4,
+      storedpage4Range,
+      storedpage5,
+      storedselectedBerufStatus,
+      storedpage9Two,
+      storedpage9Three,
+      storedpage9Range,
+    };
+
+    console.log("Form Data for API:", dataToSubmit);
+
+    // try {
+    //   // Make an API call
+    //   const response = await fetch('/api/submit', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(dataToSubmit),
+    //   });
+
+    //   if (!response.ok) {
+    //     throw new Error('Network response was not ok');
+    //   }
+
+    //   const result = await response.json();
+    //   console.log('Submit result:', result);
+
+    //   // Optionally navigate or show a success message
+    //   router.push("/success");
+
+    // } catch (error) {
+    //   console.error('Submit error:', error);
+    // }
   };
 
   const components = [
@@ -96,17 +181,16 @@ const Page = () => {
             </button>
           ) : (
             <button
-                onClick={handleSubmit}
-                disabled={!formData.isChecked}  // Button will be disabled if isChecked is false
-                className={`${
-                  formData.isChecked && formData.username && formData.email && formData.phone ? "bg-[#c04f15]" : "bg-red-800"
-                } text-white font-semibold py-2 px-6 rounded-lg ${
-                  formData.isChecked && formData.username && formData.email && formData.phone  ? "hover:bg-orange-700" : ""
-                } focus:outline-none`}
-              >
-                Abschicken
-              </button>
-
+              onClick={handleSubmit}
+              disabled={!formData.isChecked}  // Button will be disabled if isChecked is false
+              className={`${
+                formData.isChecked && formData.username && formData.email && formData.phone ? "bg-[#c04f15]" : "bg-red-800"
+              } text-white font-semibold py-2 px-6 rounded-lg ${
+                formData.isChecked && formData.username && formData.email && formData.phone ? "hover:bg-orange-700" : ""
+              } focus:outline-none`}
+            >
+              Abschicken
+            </button>
           )}
         </div>
         
@@ -118,7 +202,7 @@ const Page = () => {
         </div>
         
         <div className="mt-4 mb-8">
-          <p className="text-center text-[#c04f15]">
+          <p className="text-center text-[#c25115]">
             Frage {currentComponentIndex + 1} von {components.length}
           </p>
         </div>

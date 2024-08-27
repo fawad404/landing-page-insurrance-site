@@ -1,21 +1,35 @@
 "use client"
 import '../testFourteen/testFourteen.css'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ComHeader from '../comHeader/ComHeader';
 
 const TestFifth = ({ data, onChange }) => {
   const [children, setChildren] = useState(0); // Initialize children state
   const [selectedValue, setSelectedValue] = useState('');
 
+  useEffect(() => {
+    // Retrieve the value from localStorage when the component mounts
+    const storedValue = localStorage.getItem('page5');
+    if (storedValue) {
+      setSelectedValue(storedValue);
+    }
+    const storedValueRange = localStorage.getItem('page5Range');
+    if (storedValueRange) {
+      setChildren(storedValueRange);
+    }
+  }, []);
+
   const handleChange = (event) => {
     const value = event.target.value;
     setSelectedValue(value);
+    localStorage.setItem('page5', value);
     onChange('page5', value);
     console.log(`Derzeitiger Familienstatus​: ${value}`);
   };
   const handleRangeChange = (e) => {
     const value = parseInt(e.target.value, 10); // Parse the value to an integer
     setChildren(value); // Update children state with the selected value
+    localStorage.setItem('page5Range', value);
     onChange('page5Range', value);
     console.log(value);
   };

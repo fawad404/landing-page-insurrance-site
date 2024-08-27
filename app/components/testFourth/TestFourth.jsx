@@ -1,15 +1,27 @@
 "use client"
 import '../testFourteen/testFourteen.css'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ComHeader from '../comHeader/ComHeader';
 
 const TestFourth = ({ data, onChange }) => {
   const [income, setIncome] = useState(0); // Initialize income state
   const [selectedValue, setSelectedValue] = useState('');
 
+  useEffect(() => {
+    // Retrieve the value from localStorage when the component mounts
+    const storedValue = localStorage.getItem('page4');
+    if (storedValue) {
+      setSelectedValue(storedValue);
+    }
+    const storedRange = localStorage.getItem('page4Range');
+    if (storedRange) {
+      setIncome(storedRange);
+    }
+  }, []);
   const handleChange = (event) => {
     const value = event.target.value;
     setSelectedValue(value);
+    localStorage.setItem('page4', value);
     onChange('page4', value);
     console.log(`Einkommen: ${value}`);
   };
@@ -17,6 +29,7 @@ const TestFourth = ({ data, onChange }) => {
   const handleRangeChange = (e) => {
     const roundedValue = Math.round(e.target.value / 500) * 500; // Round to nearest 500
     setIncome(roundedValue); // Update income state with rounded value
+    localStorage.setItem('page4Range', roundedValue);
     onChange('page4Range', roundedValue);
     console.log(roundedValue);
   };
@@ -52,6 +65,7 @@ const TestFourth = ({ data, onChange }) => {
             <input 
             type="checkbox" 
              value="über 62.100,00 Euro"
+             checked={selectedValue === 'über 62.100,00 Euro'}
              onChange={handleChange}
             className="form-checkbox h-5 w-5 text-[#c25115] mr-2" 
             />

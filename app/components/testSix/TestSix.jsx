@@ -1,6 +1,6 @@
 "use client"
 import '../testFourteen/testFourteen.css'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ComHeader from '../comHeader/ComHeader'
 
 const TestSix = ({ data, onChange }) => {
@@ -8,9 +8,25 @@ const TestSix = ({ data, onChange }) => {
   const [selectedValue, setSelectedValue] = useState('');
   const [textarea, setTextArea] = useState('');
 
+  useEffect(() => {
+    // Retrieve the value from localStorage when the component mounts
+    const storedValue = localStorage.getItem('page6');
+    if (storedValue) {
+      setSelectedValue(storedValue);
+    }
+    const storedValueRange = localStorage.getItem('page6Range');
+    if (storedValueRange) {
+      setHealthPercentage(storedValueRange);
+    }
+    const storedValueText = localStorage.getItem('page6Text');
+    if (storedValueText) {
+      setTextArea(storedValueText);
+    }
+  }, []);
   const handleChange = (event) => {
     const value = event.target.value;
     setSelectedValue(value);
+    localStorage.setItem('page6', value);
     onChange('page6', value);
     console.log(`Waren Sie in den letzten 5 Jahren in Behandlung: ${value}`);
   };
@@ -18,6 +34,7 @@ const TestSix = ({ data, onChange }) => {
     //const value = Math.round(event.target.value / 5) * 5; // Round to the nearest 5
     const value = event.target.value
     setHealthPercentage(value);
+    localStorage.setItem('page6Range', value);
     onChange('page6Range', value);
     console.log(healthPercentage);
   };
@@ -25,6 +42,7 @@ const TestSix = ({ data, onChange }) => {
     //const value = Math.round(event.target.value / 5) * 5; // Round to the nearest 5
     const value = event.target.value
     setTextArea(value);
+    localStorage.setItem('page6Text', value);
     onChange('page6Text', value);
     console.log(textarea);
   };

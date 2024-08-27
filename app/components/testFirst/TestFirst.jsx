@@ -10,6 +10,7 @@ const TestFirst = ({ data, onChange }) => {
     const storedValue = localStorage.getItem('selectedBerufStatus');
     if (storedValue) {
       setSelectedValue(storedValue);
+      onChange('berufStatus', storedValue);
     }
   }, []);
 

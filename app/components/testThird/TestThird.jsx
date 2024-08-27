@@ -1,15 +1,23 @@
 "use client"
 import '../testFourteen/testFourteen.css'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ComHeader from '../comHeader/ComHeader';
 
 const TestThird = ({ data, onChange }) => {
   const [year, setYear] = useState(1950); // Initialize year state
-
+  
+  useEffect(() => {
+    // Retrieve the value from localStorage when the component mounts
+    const storedValue = localStorage.getItem('page3Range');
+    if (storedValue) {
+      setYear(storedValue);
+    }
+  }, []);
   const handleRangeChange = (e) => {
     const value = parseInt(e.target.value, 10); // Parse the value to an integer
     setYear(value); // Update year state with the selected value
-    onChange('page3', value);
+    localStorage.setItem('page3Range', value);
+    onChange('page3Range', value);
     console.log(value);
   };
 
