@@ -34,40 +34,40 @@ const TestSixteen = () => {
             </span>
                 </h1>
             </div>
-            <div className='pl-0 md:pl-20 mb-6 text-[#c25115] mt-8'>
+            <div className='pl-0 mb-6 text-[#c25115] w-full md:w-2/4 mx-auto mt-8'>
             <label class="flex items-center space-x-3">Vorname, Nachname <span>(Pflichtfeld)​</span>
                     </label>
                     <input
                     type="text"
                     onChange={(e) => setUsername(e.target.value)}
-                    className="bg-[#fbe3d6] text-lg  h-12 text-gray-900 placeholder-white rounded-md border-none px-2 py-0 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 w-full md:w-8/12"
+                    className="bg-[#fbe3d6] text-lg  h-12 text-gray-900 placeholder-white rounded-md border-none px-2 py-0 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 w-full"
                     placeholder=""
                 />
             </div>
-            <div className='pl-0 md:pl-20 mb-6 text-[#c25115] mt-8'>
+            <div className='pl-0 mb-6 text-[#c25115] w-full md:w-2/4 mx-auto mt-8'>
             <label class="flex items-center space-x-3">Email-Adresse<span>(Pflichtfeld)​​</span>
                     </label>
                     <input
                     type="text"
                     onChange={(e) => setEmail(e.target.value)}
-                    className="bg-[#fbe3d6] text-lg  h-12 text-gray-900 placeholder-white rounded-md border-none px-2 py-0 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 w-full md:w-8/12"
+                    className="bg-[#fbe3d6] text-lg  h-12 text-gray-900 placeholder-white rounded-md border-none px-2 py-0 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 w-full"
                     placeholder=""
                 />
             </div>
-            <div className='pl-0 md:pl-20 mb-6 text-[#c25115] mt-8'>
+            <div className='pl-0 mb-6 text-[#c25115] w-full md:w-2/4 mx-auto mt-8'>
                
             <label class="flex items-center space-x-3">Telefon-/Mobilnummer<span>(Pflichtfeld)​​</span>
                     </label>
                     <input
                     type="text"
                     onChange={(e) => setPhone(e.target.value)}
-                    className="bg-[#fbe3d6] text-lg  h-12 text-gray-900 placeholder-white rounded-md border-none px-2 py-0 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 w-full md:w-8/12"
+                    className="bg-[#fbe3d6] text-lg  h-12 text-gray-900 placeholder-white rounded-md border-none px-2 py-0 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 w-full"
                     placeholder=""
                 />
             </div>
-            <p className='pl-0 md:pl-20 mb-6 text-[#c25115] mt-8'>Datenschutzerklärung.</p>
-            <div className='pl-0 md:pl-20 mb-6 text-[#c25115] mt-8 items-center flex'>
-            <input type="checkbox" className="form-checkbox h-5 w-5 mr-3" />
+            <p className='pl-0 md:w-2/4 mx-auto mb-6 text-[#c25115] mt-8'>Datenschutzerklärung.</p>
+            <div className='pl-0 mb-6 text-[#c25115] mt-8 items-center flex w-2/4 mx-auto'>
+            <input type="checkbox" className="form-checkbox h-7 w-7 mr-3" />
             <span>
                 <Link href="/">
                 Ja, ich habe die Informationen zum Datenschutz zur Kenntnis genommen und bin einverstanden.

@@ -9,9 +9,9 @@ export default function Contactfourth() {
       {/* Contact Section */}
       <div className="w-full mx-auto flex flex-col md:flex-row justify-between items-start p-8 md:p-36 bg-white">
         <div className="md:w-3/5 w-full">
-          <p className="text-lg mt-4">Telefon:</p>
+          {/* <p className="text-lg mt-4">Telefon:</p> */}
           <p className="text-lg mt-4">Mobil: 01732176700</p>
-          <p className="text-lg mt-4">Fax:</p>
+          {/* <p className="text-lg mt-4">Fax:</p> */}
           <p className="text-lg mt-4">Große Bäckerstraße 10</p>
           <p className="text-lg mt-4">20095 Hamburg</p>
           <p className="text-lg mt-4">

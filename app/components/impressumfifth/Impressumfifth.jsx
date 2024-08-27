@@ -9,11 +9,11 @@ export default function Impressumfifth() {
   
           <div className="md:px-20">
         {/* Contact Section */}
-        <div className="flex md:justify-between items-start w-full p-6 md:p-12 md:pb-4">
+        <div className="flex md:justify-between items-start w-full p-6 md:p-12 md:pb-0">
           <div className="mt-2">
-            <p className="md:text-2xl text-lg mt-6">Ralf Poggensee</p>
-            <p className="md:text-2xl text-lg mt-6">Große Bäckerstraße 10</p>
-            <p className="md:text-2xl text-lg mt-6">20095 Hamburg</p>
+            <p className="md:text-2xl text-lg mt-2">Ralf Poggensee</p>
+            <p className="md:text-2xl text-lg mt-2">Große Bäckerstraße 10</p>
+            <p className="md:text-2xl text-lg mt-2">20095 Hamburg</p>
           </div>
           <div>
             <img src="/a-landing-page-removebg-preview.png" alt="PKV GKV Check" 

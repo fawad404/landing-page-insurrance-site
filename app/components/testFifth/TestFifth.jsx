@@ -24,7 +24,7 @@ const TestFifth = () => {
       <h2 className="p-20 md:p-10 pb-0 md:pb-0 text-[#c25115] font-fijala text-xl md:text-2xl lg:text-2xl italic mb-6 flex md:block md:justify-start -ml-10 md:-ml-0">
         Eintrittsvoraussetzungen
       </h2>
-      <div className="flex flex-col items-center min-h-[55vh] font-fijala text-[#c25115]">
+      <div className="flex flex-col items-center min-h-[50vh] font-fijala text-[#c25115] mt-12">
         <div className="bg-white w-full max-w-4xl p-8 pt-0 md:p-20 md:pb-0 md:pt-0 rounded-lg">
           <label className=" text-lg italic md:text-2xl md:ml-56 flex items-center justify-start">
             Derzeitiger Familienstatus​

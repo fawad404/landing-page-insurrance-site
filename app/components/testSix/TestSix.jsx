@@ -111,7 +111,7 @@ const TestSix = () => {
           <div className="mt-2">
             <textarea
              onChange={handleTextArea}
-              className="mt-6 bg-[#fbe3d6] text-lg text-gray-900 placeholder-white rounded-md border-none px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 w-full h-16"
+              className="mt-6 bg-[#fbe3d6] text-lg text-gray-900 placeholder-white rounded-md border-none px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 w-full h-16 md:h-32"
               placeholder=""
             />
           </div>

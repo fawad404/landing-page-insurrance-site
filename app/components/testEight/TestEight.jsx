@@ -4,10 +4,15 @@ import ComHeader from '../comHeader/ComHeader'
 
 const TestEight = () => {
     const [selectedValue, setSelectedValue] = useState('');
-
+    const [selectedValueTwo, setSelectedValueTwo] = useState('');
     const handleChange = (event) => {
       const value = event.target.value;
       setSelectedValue(value);
+      console.log(`${value}`);
+    };
+    const handleChangeTwo = (event) => {
+      const value = event.target.value;
+      setSelectedValueTwo(value);
       console.log(`${value}`);
     };
   return (
@@ -86,48 +91,48 @@ const TestEight = () => {
                     <label class="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Kinderplanung: Ich habe keine Kinder und möchte keine Kinder"
-                        checked={selectedValue === 'Kinderplanung: Ich habe keine Kinder und möchte keine Kinder'}
-                        onChange={handleChange}
+                        checked={selectedValueTwo === 'Kinderplanung: Ich habe keine Kinder und möchte keine Kinder'}
+                        onChange={handleChangeTwo}
                         class="form-checkbox h-5 w-5 " />
                         <span>Ich habe keine Kinder und möchte keine Kinder</span>
                     </label>
                     <label class="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Kinderplanung: Ich habe/möchte ein Kind"
-                        checked={selectedValue === 'Kinderplanung: Ich habe/möchte ein Kind'}
-                        onChange={handleChange}
+                        checked={selectedValueTwo === 'Kinderplanung: Ich habe/möchte ein Kind'}
+                        onChange={handleChangeTwo}
                         class="form-checkbox h-5 w-5 " />
                         <span>Ich habe/möchte ein Kind </span>
                     </label>
                     <label class="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Kinderplanung: Ich habe/möchte ein bis zwei Kinder"
-                        checked={selectedValue === 'Kinderplanung: Ich habe/möchte ein bis zwei Kinder'}
-                        onChange={handleChange}
+                        checked={selectedValueTwo === 'Kinderplanung: Ich habe/möchte ein bis zwei Kinder'}
+                        onChange={handleChangeTwo}
                         class="form-checkbox h-5 w-5 " />
                         <span>Ich habe/möchte ein bis zwei Kinder</span>
                     </label>
                     <label class="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Kinderplanung: Ich habe/möchte zwei Kinder"
-                        checked={selectedValue === 'Kinderplanung: Ich habe/möchte zwei Kinder'}
-                        onChange={handleChange}
+                        checked={selectedValueTwo === 'Kinderplanung: Ich habe/möchte zwei Kinder'}
+                        onChange={handleChangeTwo}
                         class="form-checkbox h-5 w-5 " />
                         <span>Ich habe/möchte zwei Kinder</span>
                     </label>
                     <label class="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Kinderplanung: Ich habe/möchte zwei bis 3 Kinder"
-                        checked={selectedValue === 'Kinderplanung: Ich habe/möchte zwei bis 3 Kinder'}
-                        onChange={handleChange}
+                        checked={selectedValueTwo === 'Kinderplanung: Ich habe/möchte zwei bis 3 Kinder'}
+                        onChange={handleChangeTwo}
                         class="form-checkbox h-5 w-5 " />
                         <span>Ich habe/möchte zwei bis 3 Kinder</span>
                     </label>
                     <label class="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Kinderplanung: Ich habe/möchte drei oder mehr Kinder"
-                        checked={selectedValue === 'Kinderplanung: Ich habe/möchte drei oder mehr Kinder'}
-                        onChange={handleChange}
+                        checked={selectedValueTwo === 'Kinderplanung: Ich habe/möchte drei oder mehr Kinder'}
+                        onChange={handleChangeTwo}
                         class="form-checkbox h-5 w-5 " />
                         <span>Ich habe/möchte drei oder mehr Kinder</span>
                     </label>

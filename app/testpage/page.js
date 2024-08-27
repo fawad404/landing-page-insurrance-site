@@ -23,10 +23,7 @@ import { useRouter } from 'next/navigation';
 const Page = () => {
   const router = useRouter();
   const [currentComponentIndex, setCurrentComponentIndex] = useState(0);
-  const [formData, setFormData] = useState({
-    berufStatus: '',
-    // Add more fields as needed
-  });
+  const [formData, setFormData] = useState({});
 
   const handleNext = () => {
     if (currentComponentIndex < components.length - 1) {
@@ -45,7 +42,7 @@ const Page = () => {
       ...prevData,
       [name]: value,
     }));
-    console.log(formData);
+    console.log('Form Data Parent', formData);
   };
 
   const handleSubmit = () => {

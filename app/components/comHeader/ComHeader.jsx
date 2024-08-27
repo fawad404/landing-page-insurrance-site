@@ -7,7 +7,7 @@ const ComHeader = () => {
       <img
         src="/a-landing-page-removebg-preview.png"
         alt="PKV-GKV Logo"
-        className="absolute h-32 top-5 end-0 "
+        className="absolute h-32 md:h-44 top-5 md:top-0 end-0 "
       />
     
   </header>

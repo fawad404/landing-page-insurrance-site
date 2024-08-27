@@ -51,6 +51,7 @@ const TestThirteen = () => {
                     <label class="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Sonstige Einkünfte im Rentenalter: Ich habe keine Kinder und möchte keine Kinder"
+                        checked={selectedValue === 'Sonstige Einkünfte im Rentenalter: Ich habe keine Kinder und möchte keine Kinder'}
                         onChange={handleChange}
                         class="form-checkbox h-5 w-5 " />
                         <span>Ich habe keine Kinder und möchte keine Kinder</span>
@@ -58,6 +59,7 @@ const TestThirteen = () => {
                     <label class="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Sonstige Einkünfte im Rentenalter: Ich habe/möchte ein Kind"
+                        checked={selectedValue === 'Sonstige Einkünfte im Rentenalter: Ich habe/möchte ein Kind'}
                         onChange={handleChange}
                         class="form-checkbox h-5 w-5 " />
                         <span>Ich habe/möchte ein Kind </span>
@@ -65,6 +67,7 @@ const TestThirteen = () => {
                     <label class="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Sonstige Einkünfte im Rentenalter: Ich habe/möchte ein bis zwei Kinder"
+                        checked={selectedValue === 'Sonstige Einkünfte im Rentenalter: Ich habe/möchte ein bis zwei Kinder'}
                         onChange={handleChange}
                         class="form-checkbox h-5 w-5 " />
                         <span>Ich habe/möchte ein bis zwei Kinder</span>
@@ -72,6 +75,7 @@ const TestThirteen = () => {
                     <label class="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Sonstige Einkünfte im Rentenalter: Ich habe/möchte zwei Kinder"
+                        checked={selectedValue === 'Sonstige Einkünfte im Rentenalter: Ich habe/möchte zwei Kinder'}
                         onChange={handleChange}
                         class="form-checkbox h-5 w-5 " />
                         <span>Ich habe/möchte zwei Kinder</span>
@@ -79,6 +83,7 @@ const TestThirteen = () => {
                     <label class="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Sonstige Einkünfte im Rentenalter: Ich habe/möchte zwei bis 3 Kinder"
+                        checked={selectedValue === 'Sonstige Einkünfte im Rentenalter: Ich habe/möchte zwei bis 3 Kinder'}
                         onChange={handleChange}
                         class="form-checkbox h-5 w-5 " />
                         <span>Ich habe/möchte zwei bis 3 Kinder</span>
@@ -86,6 +91,7 @@ const TestThirteen = () => {
                     <label class="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Sonstige Einkünfte im Rentenalter: Ich habe/möchte drei oder mehr Kinder"
+                        checked={selectedValue === 'Sonstige Einkünfte im Rentenalter: Ich habe/möchte drei oder mehr Kinder'}
                         onChange={handleChange}
                         class="form-checkbox h-5 w-5 " />
                         <span>Ich habe/möchte drei oder mehr Kinder</span>

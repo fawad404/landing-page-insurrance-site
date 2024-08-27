@@ -5,8 +5,8 @@ import React from 'react'
 const Herothird = () => {
   const router = useRouter();
   return (
-<section className="bg-[#fae0d2] py-10 md:p-20">
-  <div className="w-full mx-auto flex flex-col-reverse md:flex-row items-center bg-[#fae0d2]  p-6 rounded-lg">
+<section className="bg-[#fae0d2] py-10 md:p-20 md:pb-0 md:pt-0">
+  <div className="w-full mx-auto flex flex-col-reverse md:flex-row items-center bg-[#fae0d2]  p-6 pb-2 pt-2 rounded-lg">
     <div className="lg:w-1/3 flex justify-start md:justify-start mt-6 md:mt-0">
       
     </div>

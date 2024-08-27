@@ -6,12 +6,23 @@ import ComHeader from '../comHeader/ComHeader'
 const TestNine = () => {
     const [income, setIncome] = useState(0); // Initialize income state
     const [selectedValue, setSelectedValue] = useState('');
-
+    const [selectedValueTwo, setSelectedValueTwo] = useState('');
+    const [selectedValueThree, setSelectedValueThree] = useState('');
     const handleChange = (event) => {
       const value = event.target.value;
       setSelectedValue(value);
       console.log(`${value}`);
     };
+    const handleChangeTwo = (event) => {
+        const value = event.target.value;
+        setSelectedValueTwo(value);
+        console.log(`${value}`);
+      };
+      const handleChangeThree = (event) => {
+        const value = event.target.value;
+        setSelectedValueThree(value);
+        console.log(`${value}`);
+      };
     const handleRangeChange = (e) => {
       const roundedValue = Math.round(e.target.value / 500) * 500; // Round to nearest 500
       setIncome(roundedValue); // Update income state with rounded value
@@ -31,6 +42,7 @@ const TestNine = () => {
                 <label className="flex items-center space-x-3 text-[#c25115]">
                     <input type="checkbox" 
                     value="Familienplanung: Keine Lebenspartnerschaft geplantv"
+                    checked={selectedValue === 'Familienplanung: Keine Lebenspartnerschaft geplantv'}
                     onChange={handleChange}
                     className="form-checkbox h-5 w-5 " />
                     <span className="inline-block text-base text-base">Keine Lebenspartnerschaft geplant</span>
@@ -55,35 +67,40 @@ const TestNine = () => {
                 <label className="flex items-center space-x-3">
                     <input type="checkbox" 
                     value="Versichertenstatus Lebenspartner: PKV versichert"
-                    onChange={handleChange}
+                    checked={selectedValueTwo === 'Versichertenstatus Lebenspartner: PKV versichert'}
+                    onChange={handleChangeTwo}
                     className="form-checkbox h-5 w-5 " />
                     <span>PKV versichert</span>
                 </label>
                 <label className="flex items-center space-x-3">
                     <input type="checkbox" 
                     value="Versichertenstatus Lebenspartner: GKV familienversichert"
-                    onChange={handleChange}
+                    checked={selectedValueTwo === 'Versichertenstatus Lebenspartner: GKV familienversichert'}
+                    onChange={handleChangeTwo}
                     className="form-checkbox h-5 w-5 " />
                     <span>GKV familienversichert</span>
                 </label>
                 <label className="flex items-center space-x-3">
                     <input type="checkbox" 
                     value="Versichertenstatus Lebenspartner: KV pflichtversicher"
-                    onChange={handleChange}
+                    checked={selectedValueTwo === 'Versichertenstatus Lebenspartner: KV pflichtversicher'}
+                    onChange={handleChangeTwo}
                     className="form-checkbox h-5 w-5 " />
                     <span>GKV pflichtversichert</span>
                 </label>
                 <label className="flex items-center space-x-3">
                     <input type="checkbox" 
                     value="Versichertenstatus Lebenspartner: GKV freiwillig versichert"
-                    onChange={handleChange}
+                    checked={selectedValueTwo === 'Versichertenstatus Lebenspartner: GKV freiwillig versichert'}
+                    onChange={handleChangeTwo}
                     className="form-checkbox h-5 w-5 " />
                     <span>GKV freiwillig versichert</span>
                 </label>
                 <label className="flex items-center space-x-3">
                     <input type="checkbox" 
                     value="Versichertenstatus Lebenspartner: Lebenspartner noch nicht bekannt"
-                    onChange={handleChange}
+                    checked={selectedValueTwo === 'Versichertenstatus Lebenspartner: Lebenspartner noch nicht bekannt'}
+                    onChange={handleChangeTwo}
                     className="form-checkbox h-5 w-5 " />
                     <span>Lebenspartner noch nicht bekannt</span>
                 </label>
@@ -97,28 +114,32 @@ const TestNine = () => {
                 <label className="flex items-center space-x-3">
                     <input type="checkbox" 
                     value="Berufsstatus Lebenspartnerr: angestellt"
-                    onChange={handleChange}
+                    checked={selectedValueThree === 'Berufsstatus Lebenspartnerr: angestellt'}
+                    onChange={handleChangeThree}
                     className="form-checkbox h-5 w-5 " />
                     <span>angestellt</span>
                 </label>
                 <label className="flex items-center space-x-3">
                     <input type="checkbox" 
                     value="Berufsstatus Lebenspartner: selbständig"
-                    onChange={handleChange}
+                    checked={selectedValueThree === 'Berufsstatus Lebenspartner: selbständig'}
+                    onChange={handleChangeThree}
                     className="form-checkbox h-5 w-5 " />
                     <span>selbständig</span>
                 </label>
                 <label className="flex items-center space-x-3">
                     <input type="checkbox" 
                     value="Berufsstatus Lebenspartner: verbeamtet"
-                    onChange={handleChange}
+                    checked={selectedValueThree === 'Berufsstatus Lebenspartner: verbeamtet'}
+                    onChange={handleChangeThree}
                     className="form-checkbox h-5 w-5 " />
                     <span>verbeamtet</span>
                 </label>
                 <label className="flex items-center space-x-3">
                     <input type="checkbox" 
                     value="Berufsstatus Lebenspartner: Hausfrau/mann"
-                    onChange={handleChange}
+                    checked={selectedValueThree === 'Berufsstatus Lebenspartner: Hausfrau/mann'}
+                    onChange={handleChangeThree}
                     className="form-checkbox h-5 w-5 " />
                     <span>Hausfrau/mann
                     </span>
@@ -126,7 +147,8 @@ const TestNine = () => {
                 <label className="flex items-center space-x-3">
                     <input type="checkbox" 
                     value="Berufsstatus Lebenspartner: Elternzeit"
-                    onChange={handleChange}
+                    checked={selectedValueThree === 'Berufsstatus Lebenspartner: Elternzeit'}
+                    onChange={handleChangeThree}
                     className="form-checkbox h-5 w-5 " />
                     <span>Elternzeit</span>
                 </label>

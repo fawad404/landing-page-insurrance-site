@@ -8,7 +8,7 @@ const Herosecond = () => {
     <>
     <header className="bg-[#f2aa84] flex justify-between items-center p-6 h-24 w-full">
 </header>
-    <section className="bg-white py-10 md:p-20 md:pt-0">
+    <section className="bg-white py-10 md:p-20 md:pt-0 md:pb-0 md:pt-0">
     <div className="w-full mx-auto flex flex-col md:flex-row items-center bg-white p-6 rounded-lg">
       <div className="md:w-3/5 md:p-10 ">
         <h2 className="text-[#c25115] font-semibold text-xl md:text-4xl mb-5 font-roboto-condensed-italic">

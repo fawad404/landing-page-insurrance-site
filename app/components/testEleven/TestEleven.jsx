@@ -4,6 +4,8 @@ import React, { useState } from 'react'
 import ComHeader from '../comHeader/ComHeader'
 const TestEleven = () => {
   const [selectedValue, setSelectedValue] = useState('');
+  const [selectedValueTwo, setSelectedValueTwo] = useState('');
+  const [selectedValueThree, setSelectedValueThree] = useState('');
   const [healthPercentage, setHealthPercentage] = useState(0); // Initial value set to 67%
   const [healthPercentageTwo, setHealthPercentageTwo] = useState(0); // Initial value set to 67%
   const [healthPercentageThree, setHealthPercentageThree] = useState(0); // Initial value set to 67%
@@ -16,6 +18,16 @@ const TestEleven = () => {
   const handleChange = (event) => {
     const value = event.target.value;
     setSelectedValue(value);
+    console.log(`${value}`);
+  };
+  const handleChangeTwo = (event) => {
+    const value = event.target.value;
+    setSelectedValueTwo(value);
+    console.log(`${value}`);
+  };
+  const handleChangeThree = (event) => {
+    const value = event.target.value;
+    setSelectedValueThree(value);
     console.log(`${value}`);
   };
   const handleRangeChangeTwo = (event) => {
@@ -62,15 +74,15 @@ const TestEleven = () => {
                         checked={selectedValue === 'Arbeitsplanung: Ich tendiere dazu, später mal ein Sabbatical zu absolvieren.'}
                         onChange={handleChange}
                         class="form-checkbox h-5 w-5 " />
-                        <span>Ich tendiere dazu, später mal ein Sabbatical zu absolvieren.​</span>
+                        <span>Ich tendiere dazu, später mal ein Sabbatical zu absolvieren.​​</span>
                     </label>
 
             </div>
             <label className="mt-6 text-[#c25115] relative text-base md:text-xl flex flex-col md:flex-row items-center w-full">
       <div className="flex flex-col w-full md:w-1/2 mx-4">
         <div className="flex justify-between text-xs">
-          <span>Sehr wahrscheinlich </span>
           <span>sehr unwahrscheinlich​</span>
+          <span>Sehr wahrscheinlich </span>
         </div>
         <input
           type="range"
@@ -96,19 +108,19 @@ const TestEleven = () => {
             <div className='text-[#c25115] md:ml-5 mb-5 text-lg mt-12'>
             <label class="flex items-center space-x-3">
                         <input type="checkbox" 
-                        onChange={handleChange}
+                        onChange={handleChangeTwo}
                         value="Arbeitsplanung: Ich tendiere dazu, später mal ein Sabbatical zu absolvieren.​"
-                        checked={selectedValue === 'Arbeitsplanung: Ich tendiere dazu, später mal ein Sabbatical zu absolvieren.​'}
+                        checked={selectedValueTwo === 'Arbeitsplanung: Ich tendiere dazu, später mal ein Sabbatical zu absolvieren.​'}
                         class="form-checkbox h-5 w-5 " />
-                        <span>Ich tendiere dazu, später mal ein Sabbatical zu absolvieren.​</span>
+                        <span>Ich werde meinen Arbeitgeber wahrscheinlich irgendwann wechseln.​</span>
                     </label>
 
             </div>
             <label className="mt-6 text-[#c25115] relative text-base md:text-xl flex flex-col md:flex-row items-center w-full">
       <div className="flex flex-col w-full md:w-1/2 mx-4">
         <div className="flex justify-between text-xs">
-          <span>Sehr wahrscheinlich </span>
           <span>sehr unwahrscheinlich​</span>
+          <span>Sehr wahrscheinlich</span>
         </div>
         <input
           type="range"
@@ -133,19 +145,19 @@ const TestEleven = () => {
     <div className='text-[#c25115] md:ml-5 mb-5 text-lg mt-12'>
             <label class="flex items-center space-x-3">
                         <input type="checkbox" 
-                        onChange={handleChange}
+                        onChange={handleChangeThree}
                         value="Arbeitsplanung: Ich tendiere dazu, später mal ein Sabbatical zu absolvieren."
-                        checked={selectedValue === 'Arbeitsplanung: Ich tendiere dazu, später mal ein Sabbatical zu absolvieren.'}
+                        checked={selectedValueThree === 'Arbeitsplanung: Ich tendiere dazu, später mal ein Sabbatical zu absolvieren.'}
                         class="form-checkbox h-5 w-5 " />
-                        <span>Ich tendiere dazu, später mal ein Sabbatical zu absolvieren.​</span>
+                        <span>Ich kann mir vorstellen auch mal in Teilzeit zu arbeiten.​​</span>
                     </label>
 
             </div>
             <label className="mt-6 text-[#c25115] relative text-base md:text-xl flex flex-col md:flex-row items-center w-full">
       <div className="flex flex-col w-full md:w-1/2 mx-4">
         <div className="flex justify-between text-xs">
-          <span>Sehr wahrscheinlich </span>
           <span>sehr unwahrscheinlich​</span>
+          <span>Sehr wahrscheinlich </span>
         </div>
         <input
           type="range"

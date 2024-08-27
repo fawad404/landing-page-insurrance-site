@@ -4,12 +4,17 @@ import React, { useState } from 'react';
 import ComHeader from '../comHeader/ComHeader'
 const TestTen = () => {
     const [selectedValue, setSelectedValue] = useState('');
-
+    const [selectedValueTwo, setSelectedValueTwo] = useState('');
     const handleChange = (event) => {
       const value = event.target.value;
       setSelectedValue(value);
       console.log(`${value}`);
     };
+    const handleChangeTwo = (event) => {
+        const value = event.target.value;
+        setSelectedValueTwo(value);
+        console.log(`${value}`);
+      };
 
   return (
     <>
@@ -112,24 +117,24 @@ const TestTen = () => {
                     <label class="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Berufsplanung bei Kindern: Wir wollen nach der Elternzeit wieder berufstätig werden"
-                        checked={selectedValue === 'Berufsplanung bei Kindern: Wir wollen nach der Elternzeit wieder berufstätig werden'}
-                        onChange={handleChange}
+                        checked={selectedValueTwo === 'Berufsplanung bei Kindern: Wir wollen nach der Elternzeit wieder berufstätig werden'}
+                        onChange={handleChangeTwo}
                         class="form-checkbox h-5 w-5 " />
                         <span>Wir wollen nach der Elternzeit wieder berufstätig werden</span>
                     </label>
                     <label class="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Berufsplanung bei Kindern: Ich möchte länger als 5 Jahre Hausmann/frau sein"
-                        checked={selectedValue === 'Berufsplanung bei Kindern: Ich möchte länger als 5 Jahre Hausmann/frau sein'}
-                        onChange={handleChange}
+                        checked={selectedValueTwo === 'Berufsplanung bei Kindern: Ich möchte länger als 5 Jahre Hausmann/frau sein'}
+                        onChange={handleChangeTwo}
                         class="form-checkbox h-5 w-5 " />
                         <span>Ich möchte länger als 5 Jahre Hausmann/frau sein</span>
                     </label>
                     <label class="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Berufsplanung bei Kindern: Mein Lebenspartner möchte länger als 5 Jahre Hausmann/Hausfrau sein"
-                        checked={selectedValue === 'Berufsplanung bei Kindern: Mein Lebenspartner möchte länger als 5 Jahre Hausmann/Hausfrau sein'}
-                        onChange={handleChange}
+                        checked={selectedValueTwo === 'Berufsplanung bei Kindern: Mein Lebenspartner möchte länger als 5 Jahre Hausmann/Hausfrau sein'}
+                        onChange={handleChangeTwo}
                         class="form-checkbox h-5 w-5 " />
                         <span>Mein Lebenspartner möchte länger als 5 Jahre Hausmann/Hausfrau sein</span>
                     </label>
