@@ -17,30 +17,30 @@ const TestFirst = ({ data, onChange }) => {
     Eintrittsvoraussetzungen
       </h2>
 
-      <div class="flex items-center justify-center min-h-[55vh] p-8 md:-mt-12 lg:-mt-20 ">
+      <div className="flex items-center justify-center min-h-[55vh] p-8 md:-mt-12 lg:-mt-20 ">
 
-        <div class="w-full max-w-3xl bg-white font-fijala  relative">
-      <h2 class="text-2xl mb-8 font-fijala italic text-[#c25115]">Berufsstatus</h2>
+        <div className="w-full max-w-3xl bg-white font-fijala  relative">
+      <h2 className="text-2xl mb-8 font-fijala italic text-[#c25115]">Berufsstatus</h2>
 
-          <div class="grid grid-rows-3 sm:grid-rows-2 md:grid-rows-1 text-base grid-flow-col gap-4 mb-6 text-[#c25115]">
-              <label class="flex items-center space-x-3">
-                  <input type="checkbox" class="form-checkbox h-5 w-5 "
+          <div className="grid grid-rows-3 sm:grid-rows-2 md:grid-rows-1 text-base grid-flow-col gap-4 mb-6 text-[#c25115]">
+              <label className="flex items-center space-x-3">
+                  <input type="checkbox" className="form-checkbox h-5 w-5 "
                   value="angestellt"
                   checked={selectedValue === 'angestellt'}
                   onChange={handleChange}
                    />
                   <span className='text-xl'>angestellt</span>
               </label>
-              <label class="flex items-center space-x-3">
-                  <input type="checkbox" class="form-checkbox h-5 w-5 " 
+              <label className="flex items-center space-x-3">
+                  <input type="checkbox" className="form-checkbox h-5 w-5 " 
                    value="selbständig"
                    checked={selectedValue === 'selbständig'}
                    onChange={handleChange}
                   />
                   <span className='text-xl'>selbständig</span>
               </label>
-              <label class="flex items-center space-x-3">
-                  <input type="checkbox" class="form-checkbox h-5 w-5 " 
+              <label className="flex items-center space-x-3">
+                  <input type="checkbox" className="form-checkbox h-5 w-5 " 
                    value="verbeamtet"
                    checked={selectedValue === 'verbeamtet'}
                    onChange={handleChange}

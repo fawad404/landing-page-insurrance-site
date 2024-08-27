@@ -8,11 +8,7 @@ const Herothird = () => {
 <section className="bg-[#fae0d2] py-10 md:p-20">
   <div className="w-full mx-auto flex flex-col-reverse md:flex-row items-center bg-[#fae0d2]  p-6 rounded-lg">
     <div className="lg:w-1/3 flex justify-start md:justify-start mt-6 md:mt-0">
-      <img
-        src="/a-landing-page-removebg-preview.png"
-        alt="PKV - GKV Check"
-        className="h-56 md:h-72 lg:h-96"
-      />
+      
     </div>
     <div className="md:w-3/5 md:p-10">
       <h2 className="text-[#c25115] font-bold text-xl md:text-4xl mb-5 font-sans">

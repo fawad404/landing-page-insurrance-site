@@ -1,7 +1,10 @@
+"use client"
 import React from 'react'
 import ComHeader from '../comHeader/ComHeader'
+import { useRouter } from 'next/navigation'
 
 const TestSeventeen = () => {
+  const router = useRouter();
   return (
     <>
     <ComHeader />
@@ -20,6 +23,13 @@ const TestSeventeen = () => {
                     <h1 className="text-xl md:text-2xl  text-[#c25115] mb-4 hover-trigger">
                     Buchen Sie einfach einen persönlichen Termin
                     </h1>
+                    <div className="flex justify-start md:ml-20 mt-16">
+                      <button 
+                      onClick={()=> router.push('/termin-buchen')}
+                      className="bg-[#c25115] mb-2 md:mb-0 text-white px-6 text-base sm:px-10 md:px-12 py-3 sm:text-lg md:text-xl rounded-md hover:bg-orange-700 italic">
+                        Termin buchen
+                      </button>
+                    </div>
             </div>
             </div>
             </div>

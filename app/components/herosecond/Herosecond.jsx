@@ -37,7 +37,7 @@ const Herosecond = () => {
       </div>
       <div className="md:w-1/3 flex justify-start md:justify-start mt-6 md:mt-0">
         <img
-          src="/a-landing-page-removebg-preview.png"
+          src="/straight-a-landing-page-removebg-preview.png"
           alt="PKV - GKV Check"
           className="h-56 md:h-72 lg:h-96"
           />
