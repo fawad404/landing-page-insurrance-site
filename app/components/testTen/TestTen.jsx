@@ -116,13 +116,8 @@ const TestTen = ({ data, onChange }) => {
               <div className=" absolute sm:-ml-72 md:-ml-32 hidden group-hover:block bg-white border border border-orange-500 text-black text-sm rounded p-2 whitespace-normal max-w-sm sm:max-w-sm z-10">
                 <p className='p-2'>
                   <img src='/info-circle-svgrepo-com (1).svg' className='h-4 w-4 mb-2' />
-                  Unter Hausmann/frau verstehen wir keinen sozialversicherungspflichtigen Mitgliedschaft in
-                            einer
-                            Krankenkasse. Hierzu gehört keine berufliche Tätigkeit oder ein Beschäftigungsverhältnis bis
-                            als
-                            Minijobber bis zu einem Einkommen von 450 Euro sowie ein auf Leistungen vom Arbeitsamt (§5
-                            SGB
-                            V).
+                  Unter Hausfrau/mann verstehen wir den Status des Lebenspartners ohne eine sozialversicherungspflichtige Mitgliedschaft in einer Krankenkasse. Hierzu gehört z.B. keine berufliche Tätigkeit, ein Beschäftigungsverhältnis als Minijobber bis zu einem Einkommen von derzeit 538
+                   Euro oder einer Arbeitslosigkeit ohne Anspruch auf Leistungen vom Arbeitsamt.(§5 SGB V)
                 </p>
               </div>
             </span>
@@ -133,27 +128,27 @@ const TestTen = ({ data, onChange }) => {
                 <div className="grid grid-cols-1 gap-4 mb-6 text-[#c25115] md:ml-5 mb-5">
                     <label className="flex items-center space-x-3">
                         <input type="checkbox" 
-                        value="Berufsplanung bei Kindern: Wir wollen nach der Elternzeit wieder berufstätig werden"
-                        checked={selectedValueTwo === 'Berufsplanung bei Kindern: Wir wollen nach der Elternzeit wieder berufstätig werden'}
+                        value="Berufsplanung bei Kindern: Wir wollen beide nach der Elternzeit wieder berufstätig werden"
+                        checked={selectedValueTwo === 'Berufsplanung bei Kindern: Wir wollen beide nach der Elternzeit wieder berufstätig werden'}
                         onChange={handleChangeTwo}
                         className="form-checkbox h-5 w-5 " />
-                        <span>Wir wollen nach der Elternzeit wieder berufstätig werden</span>
+                        <span>Wir wollen beide nach der Elternzeit wieder berufstätig werden</span>
                     </label>
                     <label className="flex items-center space-x-3">
                         <input type="checkbox" 
-                        value="Berufsplanung bei Kindern: Ich möchte länger als 5 Jahre Hausmann/frau sein"
-                        checked={selectedValueTwo === 'Berufsplanung bei Kindern: Ich möchte länger als 5 Jahre Hausmann/frau sein'}
+                        value="Berufsplanung bei Kindern: Ich möchte nach der Elternzeit noch weitere 3 oder mehr Jahre Hausmann/frau sein"
+                        checked={selectedValueTwo === 'Berufsplanung bei Kindern: Ich möchte nach der Elternzeit noch weitere 3 oder mehr Jahre Hausmann/frau sein'}
                         onChange={handleChangeTwo}
                         className="form-checkbox h-5 w-5 " />
-                        <span>Ich möchte länger als 5 Jahre Hausmann/frau sein</span>
+                        <span>Ich möchte nach der Elternzeit noch weitere 3 oder mehr Jahre Hausmann/frau sein</span>
                     </label>
                     <label className="flex items-center space-x-3">
                         <input type="checkbox" 
-                        value="Berufsplanung bei Kindern: Mein Lebenspartner möchte länger als 5 Jahre Hausmann/Hausfrau sein"
-                        checked={selectedValueTwo === 'Berufsplanung bei Kindern: Mein Lebenspartner möchte länger als 5 Jahre Hausmann/Hausfrau sein'}
+                        value="Berufsplanung bei Kindern: Mein Lebenspartner möchte nach der Elternzeit noch weitere 3 oder mehr Jahre Hausmann/frau sein"
+                        checked={selectedValueTwo === 'Berufsplanung bei Kindern: Mein Lebenspartner möchte nach der Elternzeit noch weitere 3 oder mehr Jahre Hausmann/frau sein'}
                         onChange={handleChangeTwo}
                         className="form-checkbox h-5 w-5 " />
-                        <span>Mein Lebenspartner möchte länger als 5 Jahre Hausmann/Hausfrau sein</span>
+                        <span>Mein Lebenspartner möchte nach der Elternzeit noch weitere 3 oder mehr Jahre Hausmann/frau sein</span>
                     </label>
 
                 </div>

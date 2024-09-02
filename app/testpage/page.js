@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TestFirst from '../components/testFirst/TestFirst';
 import TestSecond from '../components/testSecond/TestSecond';
 import TestThird from '../components/testThird/TestThird';
@@ -16,7 +16,6 @@ import TestThirteen from '../components/testThirteen/TestThirteen';
 import TestFourteen from '../components/testFourteen/TestFourteen';
 import TestFifteen from '../components/testFifteen/TestFifteen';
 import TestSixteen from '../components/testSixteen/TestSixteen';
-import TestSeventeen from '../components/testSeventeen/TestSeventeen';
 import TestFooter from '../components/testFooter/TestFooter';
 import { useRouter } from 'next/navigation';
 
@@ -25,87 +24,80 @@ const Page = () => {
   const [currentComponentIndex, setCurrentComponentIndex] = useState(0);
   const [formData, setFormData] = useState({});
 
+  // Retrieve saved state from localStorage on component mount
+  useEffect(() => {
+    const savedIndex = parseInt(localStorage.getItem('currentComponentIndex'), 10) || 0;
+    const savedFormData = JSON.parse(localStorage.getItem('formData')) || {};
+
+    setCurrentComponentIndex(savedIndex);
+    setFormData(savedFormData);
+  }, []);
+
   const handleNext = () => {
     if (currentComponentIndex < components.length - 1) {
-      setCurrentComponentIndex(currentComponentIndex + 1);
+      const newIndex = currentComponentIndex + 1;
+
+      // Save state to localStorage
+      localStorage.setItem('currentComponentIndex', newIndex);
+      localStorage.setItem('formData', JSON.stringify(formData));
+
+      setCurrentComponentIndex(newIndex);
     }
   };
 
   const handleBack = () => {
     if (currentComponentIndex > 0) {
-      setCurrentComponentIndex(currentComponentIndex - 1);
+      const newIndex = currentComponentIndex - 1;
+
+      // Save state to localStorage
+      localStorage.setItem('currentComponentIndex', newIndex);
+      localStorage.setItem('formData', JSON.stringify(formData));
+
+      setCurrentComponentIndex(newIndex);
     }
   };
 
   const handleInputChange = (name, value) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-    console.log('Form Data Parent', formData);
+    setFormData((prevData) => {
+      const updatedData = { ...prevData, [name]: value };
+      
+      // Save formData to localStorage
+      localStorage.setItem('formData', JSON.stringify(updatedData));
+      return updatedData;
+    });
   };
 
   const handleSubmit =  () => {
     // Retrieve all data from localStorage
-    const storedEmail = localStorage.getItem('email');
-    const storedPage10 = localStorage.getItem('page10') || '';
-    const storedpage10Two = localStorage.getItem('page10Two') || '';
-    const storedpage12Range = localStorage.getItem('page12Range') || '';
-    const storedpage13 = localStorage.getItem('page13') || '';
-    const storedpage13Range = localStorage.getItem('page13Range') || '';
-    const storedpage14Range = localStorage.getItem('page14Range') || '';
-    const storedpage14RangeTwo = localStorage.getItem('page14RangeTwo') || '';
-    const storedpage15Range = localStorage.getItem('page15Range') || '';
-    const storedpage2 = localStorage.getItem('page2') || '';
-    const storedpage3Range = localStorage.getItem('page3Range') || '';
-    const storedpage4 = localStorage.getItem('page4') || '';
-    const storedpage4Range = localStorage.getItem('page4Range') || '';
-    const storedpage5 = localStorage.getItem('page5') || '';
-    const storedpage5Range = localStorage.getItem('page5Range') || '';
-    const storedpage6 = localStorage.getItem('page6') || '';
-    const storedpage6Range = localStorage.getItem('page6Range') || '';
-    const storedpage6Text = localStorage.getItem('page6Text') || '';
-    const storedpage8 = localStorage.getItem('page8') || '';
-    const storedpage8Two = localStorage.getItem('page8Two') || '';
-    const storedpage9 = localStorage.getItem('page9') || '';
-    const storedpage9Range = localStorage.getItem('page9Range') || '';
-    const storedpage9Three = localStorage.getItem('page9Three') || '';
-    const storedpage9Two = localStorage.getItem('page9Two') || '';
-    const storedphone = localStorage.getItem('phone');
-    const storedselectedBerufStatus = localStorage.getItem('selectedBerufStatus') || '';
-    const storedusername = localStorage.getItem('username');
-    const isChecked = localStorage.getItem('isChecked');
-
-    // Prepare data for submission
     const dataToSubmit = {
-      username: storedusername,
-      email: storedEmail,
-      phone: storedphone,
-      isChecked: isChecked,
-      storedpage3Range,
-      storedpage2,
-      storedpage15Range,
-      storedpage14RangeTwo,
-      storedpage14Range,
-      storedpage13Range,
-      storedpage13,
-      storedpage12Range,
-      storedpage10Two,
-      storedPage10,
-      storedpage9,
-      storedpage8Two,
-      storedpage8,
-      storedpage6Text,
-      storedpage6Range,
-      storedpage6,
-      storedpage5Range,
-      storedpage4,
-      storedpage4Range,
-      storedpage5,
-      storedselectedBerufStatus,
-      storedpage9Two,
-      storedpage9Three,
-      storedpage9Range,
+      username: localStorage.getItem('username') || '',
+      email: localStorage.getItem('email') || '',
+      phone: localStorage.getItem('phone') || '',
+      isChecked: localStorage.getItem('isChecked') === 'true',
+      storedpage2: localStorage.getItem('page2') || '',
+      storedpage3Range: localStorage.getItem('page3Range') || '',
+      storedpage4: localStorage.getItem('page4') || '',
+      storedpage4Range: localStorage.getItem('page4Range') || '',
+      storedpage5: localStorage.getItem('page5') || '',
+      storedpage5Range: localStorage.getItem('page5Range') || '',
+      storedpage6: localStorage.getItem('page6') || '',
+      storedpage6Range: localStorage.getItem('page6Range') || '',
+      storedpage6Text: localStorage.getItem('page6Text') || '',
+      storedpage8: localStorage.getItem('page8') || '',
+      storedpage8Two: localStorage.getItem('page8Two') || '',
+      storedpage9: localStorage.getItem('page9') || '',
+      storedpage9Range: localStorage.getItem('page9Range') || '',
+      storedpage9Three: localStorage.getItem('page9Three') || '',
+      storedpage9Two: localStorage.getItem('page9Two') || '',
+      storedselectedBerufStatus: localStorage.getItem('selectedBerufStatus') || '',
+      storedpage10: localStorage.getItem('page10') || '',
+      storedpage10Two: localStorage.getItem('page10Two') || '',
+      storedpage12Range: localStorage.getItem('page12Range') || '',
+      storedpage13: localStorage.getItem('page13') || '',
+      storedpage13Range: localStorage.getItem('page13Range') || '',
+      storedpage14Range: localStorage.getItem('page14Range') || '',
+      storedpage14RangeTwo: localStorage.getItem('page14RangeTwo') || '',
+      storedpage15Range: localStorage.getItem('page15Range') || '',
     };
 
     console.log("Form Data for API:", dataToSubmit);

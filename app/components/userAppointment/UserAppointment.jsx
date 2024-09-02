@@ -71,7 +71,7 @@ const UserAppointment = () => {
                 <img
                     src="/a-landing-page-removebg-preview.png"
                     alt="PKV-GKV Logo"
-                    className="hidden md:block absolute h-32 top-12 end-0"
+                    className="hidden md:block absolute h-32 md:h-48 top-12 md:top-5 end-0"
                 />
             </header>
 
@@ -79,7 +79,7 @@ const UserAppointment = () => {
                 <div className="w-full mx-auto flex flex-col md:flex-row items-center bg-white p-6 rounded-lg">
                     <div className="md:w-2/4 md:p-16 p-2 pb-0">
                         <p className="text-[#c04f15] font-semibold mb-4 text-sm md:text-2xl font-sans">
-                            - Markt- Tarifvergleich
+                            Markt- und Tarifvergleich
                         </p>
                         <p className="text-gray-700 mb-4 text-sm md:text-xl font-serif lg:w-4/5">
                             Buchen Sie hier einen kostenlosen Termin mit unserem Fachberater zum Thema „Markt- und Tarifvergleich. Nach Terminbuchung erhalten Sie eine Bestätigung per Email und den Link für das Onlinemeeting
@@ -136,18 +136,18 @@ const UserAppointment = () => {
                                 </div>
                                 <div>
                                     <label htmlFor="date" className="block text-sm font-medium text-[#c04f15]">
-                                        Select Date
+                                    Wählen Sie ein Datum aus
                                     </label>
                                     <DatePicker
                                         selected={selectedDate}
                                         onChange={(date) => setSelectedDate(date)}
                                         className="mt-1 block w-full bg-[#FBEDE5] border border-[#c04f15] rounded-md py-2 px-3 text-base text-[#c04f15] focus:outline-none focus:ring-2 focus:ring-[#c04f15]"
-                                        placeholderText="Choose a date"
+                                        placeholderText="Datum aus"
                                     />
                                 </div>
                                 <div>
                                     <label htmlFor="time" className="block text-sm font-medium text-[#c04f15]">
-                                        Select Time
+                                    Wählen Sie eine Uhrzeit aus
                                     </label>
                                     <select
                                         id="time"
@@ -191,7 +191,7 @@ const UserAppointment = () => {
                                         className="bg-[#c04f15] text-white px-6 py-2 rounded-md hover:bg-orange-700 italic"
                                         disabled={success}
                                     >
-                                        Submit
+                                        Abschicken
                                     </button>
                                   
                                     

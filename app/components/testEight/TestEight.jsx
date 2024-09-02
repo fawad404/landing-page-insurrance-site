@@ -36,7 +36,7 @@ const TestEight = ({ data, onChange }) => {
     <>
     <ComHeader />
     <h2 className="p-20 md:p-10 pb-0 md:pb-0 text-[#c25115] text-2xl md:text-2xl font-fijala lg:text-2xl italic mb-6 flex md:block md:justify-start -ml-16 md:-ml-0">
-      Eintrittsvoraussetzungen
+    Lebensplanung
       </h2>
 
       <div className="flex items-center justify-center min-h-[55vh] p-4 font-fijala md:ml-8">
@@ -115,44 +115,44 @@ const TestEight = ({ data, onChange }) => {
                     </label>
                     <label className="flex items-center space-x-3">
                         <input type="checkbox" 
-                        value="Kinderplanung: Ich habe/möchte ein Kind"
-                        checked={selectedValueTwo === 'Kinderplanung: Ich habe/möchte ein Kind'}
+                        value="Kinderplanung: Ich möchte insgesamt ein Kind"
+                        checked={selectedValueTwo === 'Kinderplanung: Ich möchte insgesamt ein Kind'}
                         onChange={handleChangeTwo}
                         className="form-checkbox h-5 w-5 " />
-                        <span>Ich habe/möchte ein Kind </span>
+                        <span>Ich möchte insgesamt ein Kind</span>
                     </label>
                     <label className="flex items-center space-x-3">
                         <input type="checkbox" 
-                        value="Kinderplanung: Ich habe/möchte ein bis zwei Kinder"
-                        checked={selectedValueTwo === 'Kinderplanung: Ich habe/möchte ein bis zwei Kinder'}
+                        value="Kinderplanung: Ich möchte insgesamt 2 Kinder"
+                        checked={selectedValueTwo === 'Kinderplanung: Ich möchte insgesamt 2 Kinder'}
                         onChange={handleChangeTwo}
                         className="form-checkbox h-5 w-5 " />
-                        <span>Ich habe/möchte ein bis zwei Kinder</span>
+                        <span>Ich möchte insgesamt 2 Kinder</span>
                     </label>
                     <label className="flex items-center space-x-3">
                         <input type="checkbox" 
-                        value="Kinderplanung: Ich habe/möchte zwei Kinder"
-                        checked={selectedValueTwo === 'Kinderplanung: Ich habe/möchte zwei Kinder'}
+                        value="Kinderplanung: Ich möchte insgesamt 3 Kinder"
+                        checked={selectedValueTwo === 'Kinderplanung: Ich möchte insgesamt 3 Kinder'}
                         onChange={handleChangeTwo}
                         className="form-checkbox h-5 w-5 " />
-                        <span>Ich habe/möchte zwei Kinder</span>
+                        <span>Ich möchte insgesamt 3 Kinder</span>
                     </label>
                     <label className="flex items-center space-x-3">
                         <input type="checkbox" 
-                        value="Kinderplanung: Ich habe/möchte zwei bis 3 Kinder"
-                        checked={selectedValueTwo === 'Kinderplanung: Ich habe/möchte zwei bis 3 Kinder'}
+                        value="Kinderplanung: Ich möchte insgesamt 4 oder mehr Kinder"
+                        checked={selectedValueTwo === 'Kinderplanung: Ich möchte insgesamt 4 oder mehr Kinder'}
                         onChange={handleChangeTwo}
                         className="form-checkbox h-5 w-5 " />
-                        <span>Ich habe/möchte zwei bis 3 Kinder</span>
+                        <span>Ich möchte insgesamt 4 oder mehr Kinder</span>
                     </label>
-                    <label className="flex items-center space-x-3">
+                    {/* <label className="flex items-center space-x-3">
                         <input type="checkbox" 
                         value="Kinderplanung: Ich habe/möchte drei oder mehr Kinder"
                         checked={selectedValueTwo === 'Kinderplanung: Ich habe/möchte drei oder mehr Kinder'}
                         onChange={handleChangeTwo}
                         className="form-checkbox h-5 w-5 " />
                         <span>Ich habe/möchte drei oder mehr Kinder</span>
-                    </label>
+                    </label> */}
 
                 </div>
 

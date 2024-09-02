@@ -32,15 +32,15 @@ const TestFirst = ({ data, onChange }) => {
         <div className="w-full max-w-3xl bg-white font-fijala relative">
           <h2 className="text-2xl mb-8 font-fijala italic text-[#c25115]">Berufsstatus</h2>
           <div className="grid grid-rows-3 sm:grid-rows-2 md:grid-rows-1 text-base grid-flow-col mb-6 text-[#c25115]">
-            <label className="flex items-center space-x-3">
-              <input type="checkbox" className="form-checkbox h-5 w-5"
+            <label className="flex items-center space-x-2">
+              <input type="checkbox" className="form-checkbox h-5 w-5 md:ml-24"
                 value="angestellt"
                 checked={selectedValue === 'angestellt'}
                 onChange={handleChange}
               />
               <span className='text-xl'>angestellt</span>
             </label>
-            <label className="flex items-center space-x-3 md:-ml-12">
+            <label className="flex items-center space-x-2 md:-ml-40">
               <input type="checkbox" className="form-checkbox h-5 w-5"
                 value="selbständig"
                 checked={selectedValue === 'selbständig'}
@@ -48,7 +48,7 @@ const TestFirst = ({ data, onChange }) => {
               />
               <span className='text-xl'>selbständig</span>
             </label>
-            <label className="flex items-center space-x-3 md:-ml-12">
+            <label className="flex items-center space-x-2 md:-ml-48">
               <input type="checkbox" className="form-checkbox h-5 w-5"
                 value="verbeamtet"
                 checked={selectedValue === 'verbeamtet'}

@@ -52,7 +52,7 @@ const TestNine = ({ data, onChange }) => {
         console.log(`${value}`);
       };
     const handleRangeChange = (e) => {
-      const roundedValue = Math.round(e.target.value / 500) * 500; // Round to nearest 500
+      const roundedValue = Math.round(e.target.value / 1000) * 1000; // Round to nearest 500
       setIncome(roundedValue); // Update income state with rounded value
       localStorage.setItem('page9Range', roundedValue);
       onChange('page9Range', roundedValue);
@@ -62,21 +62,14 @@ const TestNine = ({ data, onChange }) => {
     <>
     <ComHeader />
     <h2 className="p-20 md:p-10 pb-0 md:pb-0 text-[#c25115] font-fijala text-xl md:text-2xl lg:text-2xl italic mb-3 flex md:block md:justify-start -ml-12 md:-ml-0">
-    Familienplanung
+    Lebensplanung
       </h2>
 
       <div className="flex items-center justify-center min-h-[55vh] font-fijala p-8 md:-mt-8 lg:-mt-8">
 
         <div className="w-full max-w-3xl bg-white  relative">
             <div className="relative">
-                <label className="flex items-center space-x-3 text-[#c25115]">
-                    <input type="checkbox" 
-                    value="Familienplanung: Keine Lebenspartnerschaft geplantv"
-                    checked={selectedValue === 'Familienplanung: Keine Lebenspartnerschaft geplantv'}
-                    onChange={handleChange}
-                    className="form-checkbox h-5 w-5 " />
-                    <span className="inline-block text-base text-base">Keine Lebenspartnerschaft geplant</span>
-                </label>
+                
                 <h2 className="text-2xl mb-4 italic text-[#c25115] mt-3">Versichertenstatus Lebenspartner
                     <span className="inline-block ml-2 text-sm cursor-pointer ">
                         <i className="fa fa-info-circle text-lg"></i>
@@ -134,6 +127,14 @@ const TestNine = ({ data, onChange }) => {
                     className="form-checkbox h-5 w-5 " />
                     <span>Lebenspartner noch nicht bekannt</span>
                 </label>
+                <label className="flex items-center space-x-3">
+                    <input type="checkbox" 
+                    value="Familienplanung: Keine Lebenspartnerschaft geplantv"
+                    checked={selectedValueTwo === 'Familienplanung: Keine Lebenspartnerschaft geplantv'}
+                    onChange={handleChangeTwo}
+                    className="form-checkbox h-5 w-5 " />
+                    <span>Keine Lebenspartnerschaft geplantv</span>
+                </label>
                 
             </div>
 
@@ -186,27 +187,28 @@ const TestNine = ({ data, onChange }) => {
 
     
             <h2 className="text-2xl mb-3 mt-4 italic text-[#c25115]">Einkommen Lebenspartner</h2>
-            <h2 className="text-xl text-[#c25115] mb-4">Einkommen: {Number(income).toLocaleString('de-DE')} Euros p.a.</h2>
+<h2 className="text-xl text-[#c25115] mb-4">Einkommen: {Number(income).toLocaleString('de-DE')} Euros p.a.</h2>
 
-            <div className="mb-3">
-                <label className="block">
-                <input
-    type="range"
-    min="0"
-    max="70000"
-    value={income}
-    onChange={handleRangeChange}
-    className="appearance-none h-8 w-full max-w-xs md:max-w-48"
-    style={{
-      background: `linear-gradient(to right, #f2aa84 0%, #f2aa84 ${(income / 70000) * 100}%, #fbe3d6 ${(income / 70000) * 100}%, #fbe3d6 100%)`,
-      accentColor: '#c04f15',  // Set the thumb color
-      WebkitAppearance: 'none', // Ensure the custom style applies on WebKit browsers
-      MozAppearance: 'none', // Ensure the custom style applies on Mozilla browsers
-      msAppearance: 'none' // Ensure the custom style applies on MS browsers
-    }}
-  />
-                </label>
-            </div>
+<div className="mb-3">
+    <label className="block">
+        <input
+            type="range"
+            min="0"
+            max="200000"
+            value={income}
+            onChange={handleRangeChange}
+            className="appearance-none h-8 w-full max-w-xs md:max-w-48"
+            style={{
+                background: `linear-gradient(to right, #f2aa84 0%, #f2aa84 ${(income / 200000) * 100}%, #fbe3d6 ${(income / 200000) * 100}%, #fbe3d6 100%)`,
+                accentColor: '#c04f15',  // Set the thumb color
+                WebkitAppearance: 'none', // Ensure the custom style applies on WebKit browsers
+                MozAppearance: 'none', // Ensure the custom style applies on Mozilla browsers
+                msAppearance: 'none' // Ensure the custom style applies on MS browsers
+            }}
+        />
+    </label>
+</div>
+
         </div>
     </div>
     </>

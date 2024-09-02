@@ -1,3 +1,6 @@
+"use client"
+import Link from "next/link";
+
 // pages/contact.js
 export default function Impressumfifth() {
     return (
@@ -6,23 +9,30 @@ export default function Impressumfifth() {
         <div className="w-full bg-[#f2aa84] p-10 md:pl-36">
           <h1 className="text-white text-2xl font-canadara">Impressum</h1>
         </div>
-  
+
           <div className="md:px-20">
+            <div className="p-6 md:p-12 pb-4 md:pb-4 md:pt-8 pt-4">
+          <Link href='/'
+              className="text-[#f2aa84] font-semibold text-xl underline hover:text-orange-700"
+              >
+              Zurück
+            </Link>
+              </div>
         {/* Contact Section */}
-        <div className="flex md:justify-between items-start w-full p-6 md:p-12 md:pb-0">
+        <div className="flex md:justify-between items-start w-full p-6 md:p-12 md:pb-0 md:pt-0">
           <div className="mt-2">
-            <p className="md:text-2xl text-lg mt-2">Ralf Poggensee</p>
-            <p className="md:text-2xl text-lg mt-2">Große Bäckerstraße 10</p>
-            <p className="md:text-2xl text-lg mt-2">20095 Hamburg</p>
+            <p className="md:text-lg text-slate mt-2">Ralf Poggensee</p>
+            <p className="md:text-lg text-slate mt-1">Große Bäckerstraße 10</p>
+            <p className="md:text-lg text-slate mt-1">20095 Hamburg</p>
           </div>
           <div>
             <img src="/a-landing-page-removebg-preview.png" alt="PKV GKV Check" 
-            className="md:h-48 h-40" 
+            className="md:h-64 md:-mt-16 h-40" 
 
             />
           </div>
         </div>
-        <div className="w-full text-sm md:text-base p-6 md:p-12 md:pt-0 md:pb-0 pt-0">
+        <div className="w-full text-sm md:text-base p-6 md:p-12 md:pt-0 md:pb-0 pt-0 md:-mt-20">
         <p className="mt-2">
         Ich bin als gebundener Versicherungsvertreter mit Erlaubnis nach § 34d Abs.7 GewO im Vermittlerregister:</p>
         <p className="mt-2">

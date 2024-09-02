@@ -72,6 +72,18 @@ const TestSecond = ({ data, onChange }) => {
                 />
                 pflichtversichert
               </label>
+              <h3></h3>
+              <label className="text-[#c25115] text-lg md:text-xl md:ml-20 flex items-center justify-start">
+              Name der Krankenkasse
+          </label>
+          <div className="mt-6 text-[#c25115] text-lg md:text-xl md:ml-20 flex items-center justify-start">
+          <input
+              type="text"
+              
+              className="bg-[#fbe3d6] text-lg h-10 text-gray-900 placeholder-white rounded-md border-none px-2 py-0 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 w-full md:max-w-[14rem]"
+             
+            />
+</div>
             </div>
           </div>
         </div>

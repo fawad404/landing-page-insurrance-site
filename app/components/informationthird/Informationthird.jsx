@@ -12,12 +12,12 @@ const Informationthird = () => {
 
   return (
     <>
-    <div className='p-1 md:p-32 md:pt-2'>
+    <div className='p-1 md:p-32 md:pb-5 md:pt-2'>
       <div className="p-6 w-full mx-auto my-6 rounded-lg">
         <h2 className="font-bold text-[#ed8b55] md:text-xl">
           HINWEIS: Wichtiges aus dem Vermittlerrecht
         </h2>
-        <p className="mt-4 max-w-xl mb-2 text-sm md:text-lg font-serif">
+        <p className="mt-4 mb-2 text-sm md:text-lg font-serif">
           Ich bin verpflichtet, Ihnen Auskünfte zu meiner Person zu geben. Sowohl Ihr Schutz als Verbraucher sowie auch gesetzliche Regelungen halten mich dazu an. Ich biete Beratung an, für die Versicherungsvermittlung erhalte ich Provision, ferner sonstige Zuwendungen.
         </p>
         <a href="#" className="text-[#c25115] cursor-pointer text-sm md:text-lg" onClick={toggleVisibility}>

@@ -64,11 +64,11 @@ const TestSeven = ({ data, onChange }) => {
                         <label className="flex checkbox-label gap-x-3 items-center">
                             <input 
                                 type="checkbox" 
-                                value="Bandscheiben"
+                                value="Bandscheibenvorfall"
                                 onChange={handleChange}
                                 className="form-checkbox h-4 w-4 text-[#c25115]" 
                             />
-                            <span>Bandscheiben</span>
+                            <span>Bandscheibenvorfall</span>
                         </label>
                         <label className="flex checkbox-label gap-x-3 items-center">
                             <input 

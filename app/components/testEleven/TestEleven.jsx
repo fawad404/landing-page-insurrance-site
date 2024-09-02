@@ -1,8 +1,8 @@
 "use client"
 import '../testFourteen/testFourteen.css'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ComHeader from '../comHeader/ComHeader'
-const TestEleven = () => {
+const TestEleven = ({ data, onChange }) => {
   const [selectedValue, setSelectedValue] = useState('');
   const [selectedValueTwo, setSelectedValueTwo] = useState('');
   const [selectedValueThree, setSelectedValueThree] = useState('');
@@ -10,34 +10,77 @@ const TestEleven = () => {
   const [healthPercentageTwo, setHealthPercentageTwo] = useState(0); // Initial value set to 67%
   const [healthPercentageThree, setHealthPercentageThree] = useState(0); // Initial value set to 67%
 
+  useEffect(() => {
+    // Retrieve the value from localStorage when the component mounts
+    const storedRange = localStorage.getItem('page11Range');
+    if (storedRange) {
+      setHealthPercentage(storedRange);
+    }
+    const storedRangeTwo = localStorage.getItem('page11RangeTwo');
+    if (storedRangeTwo) {
+      setHealthPercentageTwo(storedRangeTwo);
+    }
+    const storedRangeThree = localStorage.getItem('page11RangeThree');
+    if (storedRangeThree) {
+      setHealthPercentageThree(storedRangeThree);
+    }
+    const storedValue = localStorage.getItem('page11');
+      if (storedValue) {
+        setSelectedValue(storedValue);
+      }
+      const storedValueTwo = localStorage.getItem('page11Two');
+      if (storedValueTwo) {
+        setSelectedValueTwo(storedValueTwo);
+      }
+      const storedValueThree = localStorage.getItem('page11Three');
+      if (storedValueThree) {
+        setSelectedValueThree(storedValueThree);
+      }
+  }, []);
+
   const handleRangeChange = (event) => {
     //const value = Math.round(event.target.value / 5) * 5; // Round to the nearest 5
-    setHealthPercentage(event.target.value);
+    const value = event.target.value;
+    setHealthPercentage(value);
+    localStorage.setItem('page11Range', value);
+    onChange('page11Range', value);
     console.log(healthPercentage);
   };
   const handleChange = (event) => {
     const value = event.target.value;
     setSelectedValue(value);
+    localStorage.setItem('page11', value);
+    onChange('page11', value);
     console.log(`${value}`);
   };
   const handleChangeTwo = (event) => {
     const value = event.target.value;
     setSelectedValueTwo(value);
+    localStorage.setItem('page11Two', value);
+    onChange('page11Two', value);
     console.log(`${value}`);
   };
   const handleChangeThree = (event) => {
     const value = event.target.value;
     setSelectedValueThree(value);
+    localStorage.setItem('page11Three', value);
+    onChange('page11Three', value);
     console.log(`${value}`);
   };
   const handleRangeChangeTwo = (event) => {
     //const value = Math.round(event.target.value / 5) * 5; // Round to the nearest 5
-    setHealthPercentageTwo(event.target.value);
+    const value = event.target.value;
+    setHealthPercentageTwo(value);
+    localStorage.setItem('page11RangeTwo', value);
+    onChange('page11RangeTwo', value);
     console.log(healthPercentageTwo);
   };
   const handleRangeChangeThree = (event) => {
     //const value = Math.round(event.target.value / 5) * 5; // Round to the nearest 5
-    setHealthPercentageThree(event.target.value);
+    const value = event.target.value;
+    setHealthPercentageThree(value);
+    localStorage.setItem('page11RangeThree', value);
+    onChange('page11RangeThree', value);
     console.log(healthPercentageThree);
   };
   return (

@@ -51,7 +51,7 @@ const TestSix = ({ data, onChange }) => {
     <>
     <ComHeader />
     <h2 className="p-20 md:p-10 pb-0 md:pb-0 text-[#c25115] text-2xl md:text-2xl lg:text-2xl font-fijala italic mb-6 flex md:block md:justify-start -ml-16 md:-ml-0">
-    Familienplanung
+    Eintrittsvoraussetzungen
       </h2>
 
       <div className="text-textColor flex items-center justify-center min-h-[55vh] font-fijala p-4  md:ml-8">

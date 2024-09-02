@@ -26,7 +26,7 @@ const TestThirteen = ({ data, onChange }) => {
       console.log(`${value}`);
     };
   const handleRangeChange = (e) => {
-    const roundedValue = Math.round(e.target.value / 500) * 500; // Round to nearest 500
+    const roundedValue = Math.round(e.target.value / 50) * 50; // Round to nearest 500
     setIncome(roundedValue); // Update income state with rounded value
     localStorage.setItem('page13Range', roundedValue);
     onChange('page13Range', roundedValue);
@@ -66,52 +66,45 @@ const TestThirteen = ({ data, onChange }) => {
                 <div className="grid grid-cols-1 gap-4 mb-6 text-[#c25115] md:ml-5 mb-5">
                     <label className="flex items-center space-x-3">
                         <input type="checkbox" 
-                        value="Sonstige Einkünfte im Rentenalter: Ich habe keine Kinder und möchte keine Kinder"
-                        checked={selectedValue === 'Sonstige Einkünfte im Rentenalter: Ich habe keine Kinder und möchte keine Kinder'}
+                        value="Sonstige Einkünfte im Rentenalter: Private Rentenversicherungen"
+                        checked={selectedValue === 'Sonstige Einkünfte im Rentenalter: Private Rentenversicherungen'}
                         onChange={handleChange}
                         className="form-checkbox h-5 w-5 " />
-                        <span>Ich habe keine Kinder und möchte keine Kinder</span>
+                        <span>Private Rentenversicherungen</span>
                     </label>
                     <label className="flex items-center space-x-3">
                         <input type="checkbox" 
-                        value="Sonstige Einkünfte im Rentenalter: Ich habe/möchte ein Kind"
-                        checked={selectedValue === 'Sonstige Einkünfte im Rentenalter: Ich habe/möchte ein Kind'}
+                        value="Sonstige Einkünfte im Rentenalter: Geförderte Rentenversicherung (Riester, Rürup)"
+                        checked={selectedValue === 'Sonstige Einkünfte im Rentenalter: Geförderte Rentenversicherung (Riester, Rürup)'}
                         onChange={handleChange}
                         className="form-checkbox h-5 w-5 " />
-                        <span>Ich habe/möchte ein Kind </span>
+                        <span>Geförderte Rentenversicherung (Riester, Rürup) </span>
                     </label>
                     <label className="flex items-center space-x-3">
                         <input type="checkbox" 
-                        value="Sonstige Einkünfte im Rentenalter: Ich habe/möchte ein bis zwei Kinder"
-                        checked={selectedValue === 'Sonstige Einkünfte im Rentenalter: Ich habe/möchte ein bis zwei Kinder'}
+                        value="Sonstige Einkünfte im Rentenalter: Mieteinnahmen/Pachteinnahmen"
+                        checked={selectedValue === 'Sonstige Einkünfte im Rentenalter: Mieteinnahmen/Pachteinnahmen'}
                         onChange={handleChange}
                         className="form-checkbox h-5 w-5 " />
-                        <span>Ich habe/möchte ein bis zwei Kinder</span>
+                        <span>Mieteinnahmen/Pachteinnahmen</span>
                     </label>
                     <label className="flex items-center space-x-3">
                         <input type="checkbox" 
-                        value="Sonstige Einkünfte im Rentenalter: Ich habe/möchte zwei Kinder"
-                        checked={selectedValue === 'Sonstige Einkünfte im Rentenalter: Ich habe/möchte zwei Kinder'}
+                        value="Sonstige Einkünfte im Rentenalter: Zinsen/Dividende aus Kapital/Aktien"
+                        checked={selectedValue === 'Sonstige Einkünfte im Rentenalter: Zinsen/Dividende aus Kapital/Aktien'}
                         onChange={handleChange}
                         className="form-checkbox h-5 w-5 " />
-                        <span>Ich habe/möchte zwei Kinder</span>
+                        <span>Zinsen/Dividende aus Kapital/Aktien</span>
                     </label>
                     <label className="flex items-center space-x-3">
                         <input type="checkbox" 
-                        value="Sonstige Einkünfte im Rentenalter: Ich habe/möchte zwei bis 3 Kinder"
-                        checked={selectedValue === 'Sonstige Einkünfte im Rentenalter: Ich habe/möchte zwei bis 3 Kinder'}
+                        value="Sonstige Einkünfte im Rentenalter: Sonstige Einkommen"
+                        checked={selectedValue === 'Sonstige Einkünfte im Rentenalter: Sonstige Einkommen'}
                         onChange={handleChange}
                         className="form-checkbox h-5 w-5 " />
-                        <span>Ich habe/möchte zwei bis 3 Kinder</span>
+                        <span>Sonstige Einkommen</span>
                     </label>
-                    <label className="flex items-center space-x-3">
-                        <input type="checkbox" 
-                        value="Sonstige Einkünfte im Rentenalter: Ich habe/möchte drei oder mehr Kinder"
-                        checked={selectedValue === 'Sonstige Einkünfte im Rentenalter: Ich habe/möchte drei oder mehr Kinder'}
-                        onChange={handleChange}
-                        className="form-checkbox h-5 w-5 " />
-                        <span>Ich habe/möchte drei oder mehr Kinder</span>
-                    </label>
+                  
 
                 </div>
 
@@ -123,12 +116,12 @@ const TestThirteen = ({ data, onChange }) => {
                 <input
                   type="range"
                   min="0"
-                  max="25000"
+                  max="20000"
                   value={income}
                   onChange={handleRangeChange}
                   className="appearance-none h-8 w-full max-w-xs md:max-w-48"
                   style={{
-                    background: `linear-gradient(to right, #f2aa84 0%, #f2aa84 ${(income / 25000) * 100}%, #fbe3d6 ${(income / 25000) * 100}%, #fbe3d6 100%)`,
+                    background: `linear-gradient(to right, #f2aa84 0%, #f2aa84 ${(income / 20000) * 100}%, #fbe3d6 ${(income / 20000) * 100}%, #fbe3d6 100%)`,
                     accentColor: '#c04f15',
                     WebkitAppearance: 'none',
                     MozAppearance: 'none',
