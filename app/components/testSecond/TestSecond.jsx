@@ -3,12 +3,17 @@ import ComHeader from '../comHeader/ComHeader';
 
 const TestSecond = ({ data, onChange }) => {
   const [selectedValue, setSelectedValue] = useState('');
+  const [selectedText, setSelectedText] = useState('');
 
   useEffect(() => {
     // Retrieve the value from localStorage when the component mounts
     const storedValue = localStorage.getItem('page2');
     if (storedValue) {
       setSelectedValue(storedValue);
+    }
+    const storedText = localStorage.getItem('page2Text');
+    if (storedText) {
+      setSelectedText(storedText);
     }
   }, []);
 
@@ -17,6 +22,13 @@ const TestSecond = ({ data, onChange }) => {
     setSelectedValue(value);
     localStorage.setItem('page2', value);
     onChange('page2', value);
+    console.log(`Selected: ${value}`);
+  };
+  const handleChangeText = (event) => {
+    const value = event.target.value;
+    setSelectedText(value);
+    localStorage.setItem('page2Text', value);
+    onChange('page2Text', value);
     console.log(`Selected: ${value}`);
   };
 
@@ -79,7 +91,8 @@ const TestSecond = ({ data, onChange }) => {
           <div className="mt-6 text-[#c25115] text-lg md:text-xl md:ml-20 flex items-center justify-start">
           <input
               type="text"
-              
+              value={selectedText ? selectedText : ''}
+              onChange={handleChangeText}
               className="bg-[#fbe3d6] text-lg h-10 text-gray-900 placeholder-white rounded-md border-none px-2 py-0 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 w-full md:max-w-[14rem]"
              
             />

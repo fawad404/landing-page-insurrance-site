@@ -1,3 +1,6 @@
+'use client'
+import Link from "next/link";
+
 export default function Datenschutz() {
         return (
                 <div className="w-full flex flex-col items-center">
@@ -7,8 +10,14 @@ export default function Datenschutz() {
                 </div>
         
                 <div className="md:pl-24 md:pr-24">
-                    
-                    <div className="w-full text-sm md:text-base p-6 md:p-12 md:pb-0 font-canadara mb-8 pt-0">
+                <div className="p-6 md:p-12 pb-2 md:pb-2 md:pt-4 pt-4">
+          <Link href='/'
+              className="text-[#f2aa84] font-semibold text-xl underline hover:text-orange-700"
+              >
+              Zurück
+            </Link>
+              </div>
+                    <div className="w-full text-sm md:text-base p-6 md:p-12 md:pb-0 font-canadara mb-8 pt-0 md:pt-4">
                         <p className="mt-2">
                             Datenschutz
                         </p>

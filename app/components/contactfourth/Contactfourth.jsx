@@ -1,3 +1,6 @@
+'use client'
+import Link from "next/link";
+
 export default function Contactfourth() {
   return (
     <div className="flex flex-col items-center">
@@ -5,9 +8,16 @@ export default function Contactfourth() {
       <div className="w-full bg-[#f2aa84] p-10 md:pl-36">
         <h1 className="text-white text-2xl font-semibold">Kontakt</h1>
       </div>
-
+      
       {/* Contact Section */}
-      <div className="w-full mx-auto flex flex-col md:flex-row justify-between items-start p-8 md:p-36 bg-white">
+      <div className="w-full p-6 p-10 md:pl-36 md:pb-0">
+          <Link href='/'
+              className="text-[#f2aa84] font-semibold text-xl underline hover:text-orange-700"
+              >
+              Zurück
+            </Link>
+              </div>
+      <div className="w-full mx-auto flex flex-col md:flex-row justify-between items-start p-8 md:p-36 md:pt-24 bg-white">
         <div className="md:w-3/5 w-full">
           <p className="text-lg ">Ralf Poggensee</p>
           <p className="text-lg mt-4">Große Bäckerstraße 10</p>

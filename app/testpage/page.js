@@ -45,39 +45,80 @@ const Page = () => {
     console.log('Form Data Parent', formData);
   };
 
-  const handleSubmit =  () => {
+  const handleSubmit =  async () => {
     // Retrieve all data from localStorage
-    const storedEmail = localStorage.getItem('email');
-    const storedPage10 = localStorage.getItem('page10') || '';
-    const storedpage10Two = localStorage.getItem('page10Two') || '';
-    const storedpage12Range = localStorage.getItem('page12Range') || '';
-    const storedpage13 = localStorage.getItem('page13') || '';
-    const storedpage13Range = localStorage.getItem('page13Range') || '';
-    const storedpage14Range = localStorage.getItem('page14Range') || '';
-    const storedpage14RangeTwo = localStorage.getItem('page14RangeTwo') || '';
-    const storedpage15Range = localStorage.getItem('page15Range') || '';
+    const storedselectedBerufStatus = localStorage.getItem('selectedBerufStatus') || ''; //page 1
+
+    //page 2
+
     const storedpage2 = localStorage.getItem('page2') || '';
-    const storedpage3Range = localStorage.getItem('page3Range') || '';
+    const storedpage2Text = localStorage.getItem('page2Text') || '';
+
+    //page 3 
+    const storedpage3Range = localStorage.getItem('page3Range') || ''; 
+
+    //page 4
     const storedpage4 = localStorage.getItem('page4') || '';
     const storedpage4Range = localStorage.getItem('page4Range') || '';
+
+    //page 5
     const storedpage5 = localStorage.getItem('page5') || '';
     const storedpage5Range = localStorage.getItem('page5Range') || '';
+
+    //page 6
     const storedpage6 = localStorage.getItem('page6') || '';
     const storedpage6Range = localStorage.getItem('page6Range') || '';
     const storedpage6Text = localStorage.getItem('page6Text') || '';
+
+    //page 7
+    const storedpage7 = localStorage.getItem('page7') || '';
+
+    //page 8
     const storedpage8 = localStorage.getItem('page8') || '';
     const storedpage8Two = localStorage.getItem('page8Two') || '';
-    const storedpage9 = localStorage.getItem('page9') || '';
-    const storedpage9Range = localStorage.getItem('page9Range') || '';
-    const storedpage9Three = localStorage.getItem('page9Three') || '';
+
+    //page 9
     const storedpage9Two = localStorage.getItem('page9Two') || '';
+    const storedpage9Three = localStorage.getItem('page9Three') || '';
+    const storedpage9Range = localStorage.getItem('page9Range') || '';
+
+    //page 10
+    const storedPage10 = localStorage.getItem('page10') || '';
+    const storedpage10Two = localStorage.getItem('page10Two') || '';
+
+    //page 11
+    const storedPage11 = localStorage.getItem('page11') || '';
+    const storedpage11Two = localStorage.getItem('page11Two') || '';
+    const storedPage11Three = localStorage.getItem('page11Three') || '';
+    const storedpage11Range = localStorage.getItem('page11Range') || '';
+    const storedPage11RangeTwo = localStorage.getItem('page11RangeTwo') || '';
+    const storedpage11RangeThree = localStorage.getItem('page11RangeThree') || '';
+
+    //page 12
+    const storedpage12Two = localStorage.getItem('page12Two') || '';
+    const storedpage12Range = localStorage.getItem('page12Range') || '';
+    const storedPage12RangeTwo = localStorage.getItem('page12RangeTwo') || '';
+
+    //page 13
+    const storedpage13 = localStorage.getItem('page13') || '';
+    const storedpage13Range = localStorage.getItem('page13Range') || '';
+
+    //page 14
+    const storedpage14Range = localStorage.getItem('page14Range') || '';
+    const storedpage14RangeTwo = localStorage.getItem('page14RangeTwo') || '';
+
+    //page 15
+    const storedpage15Range = localStorage.getItem('page15Range') || '';
+
+    //page 16
+    const storedEmail = localStorage.getItem('email');
     const storedphone = localStorage.getItem('phone');
-    const storedselectedBerufStatus = localStorage.getItem('selectedBerufStatus') || '';
     const storedusername = localStorage.getItem('username');
     const isChecked = localStorage.getItem('isChecked');
 
     // Prepare data for submission
     const dataToSubmit = {
+      storedpage2Text,
       username: storedusername,
       email: storedEmail,
       phone: storedphone,
@@ -89,10 +130,17 @@ const Page = () => {
       storedpage14Range,
       storedpage13Range,
       storedpage13,
+      storedPage11,
+      storedpage11Two,
+      storedPage11Three,
+      storedpage11Range,
+      storedPage11RangeTwo,
+      storedpage11RangeThree,
       storedpage12Range,
+      storedPage12RangeTwo,
+      storedpage12Two,
       storedpage10Two,
       storedPage10,
-      storedpage9,
       storedpage8Two,
       storedpage8,
       storedpage6Text,
@@ -106,33 +154,34 @@ const Page = () => {
       storedpage9Two,
       storedpage9Three,
       storedpage9Range,
+      storedpage7,
     };
 
     console.log("Form Data for API:", dataToSubmit);
 
-    // try {
-    //   // Make an API call
-    //   const response = await fetch('/api/submit', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(dataToSubmit),
-    //   });
+    try {
+      // Make an API call
+      const response = await fetch('/api/sendTestMail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dataToSubmit),
+      });
 
-    //   if (!response.ok) {
-    //     throw new Error('Network response was not ok');
-    //   }
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
 
-    //   const result = await response.json();
-    //   console.log('Submit result:', result);
+      const result = await response.json();
+      console.log('Submit result:', result);
 
-    //   // Optionally navigate or show a success message
-    //   router.push("/success");
+      // Optionally navigate or show a success message
+      router.push("/success");
 
-    // } catch (error) {
-    //   console.error('Submit error:', error);
-    // }
+    } catch (error) {
+      console.error('Submit error:', error);
+    }
   };
 
   const components = [

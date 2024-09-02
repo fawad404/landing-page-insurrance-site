@@ -6,8 +6,8 @@ export default function Impressumfifth() {
     return (
         <div className="w-full flex flex-col items-center font-canadara">
         {/* Header Section */}
-        <div className="w-full bg-[#f2aa84] p-10 md:pl-36">
-          <h1 className="text-white text-2xl font-canadara">Impressum</h1>
+        <div className="w-full bg-[#f2aa84] p-10 md:pl-32">
+          <h1 className="text-white text-2xl font-semibold font-canadara">Impressum</h1>
         </div>
 
           <div className="md:px-20">

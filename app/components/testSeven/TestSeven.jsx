@@ -1,9 +1,19 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ComHeader from '../comHeader/ComHeader';
 
 const TestSeven = ({ data, onChange }) => {
     const [selectedValues, setSelectedValues] = useState([]);
+
+    useEffect(() => {
+        // Retrieve the value from localStorage when the component mounts
+        const storedValue = localStorage.getItem('page7');
+        if (storedValue) {
+          // Split the stored value by commas and convert it to an array
+          const arrayValues = storedValue.split(',');
+          setSelectedValues(arrayValues);
+        }
+      }, []);
 
     const handleChange = (event) => {
         const value = event.target.value;
@@ -17,7 +27,7 @@ const TestSeven = ({ data, onChange }) => {
 
         setSelectedValues(updatedValues);
         onChange('page7', updatedValues);
-        console.log(`Selected Values: ${updatedValues}`);
+        localStorage.setItem('page7', updatedValues);
     };
 
     return (
@@ -56,6 +66,7 @@ const TestSeven = ({ data, onChange }) => {
                             <input 
                                 type="checkbox" 
                                 value="Rückenschmerzen"
+                                checked={selectedValues.includes('Rückenschmerzen')}
                                 onChange={handleChange}
                                 className="form-checkbox h-4 w-4 border-2 border-[#c04f15] focus:ring-orange-500" 
                             />
@@ -65,6 +76,7 @@ const TestSeven = ({ data, onChange }) => {
                             <input 
                                 type="checkbox" 
                                 value="Bandscheibenvorfall"
+                                checked={selectedValues.includes('Bandscheibenvorfall')}
                                 onChange={handleChange}
                                 className="form-checkbox h-4 w-4 text-[#c25115]" 
                             />
@@ -74,6 +86,7 @@ const TestSeven = ({ data, onChange }) => {
                             <input 
                                 type="checkbox" 
                                 value="Schilddrüsenerkrankung"
+                                checked={selectedValues.includes('Schilddrüsenerkrankung')}
                                 onChange={handleChange}
                                 className="form-checkbox h-4 w-4 text-[#c25115]" 
                             />
@@ -83,6 +96,7 @@ const TestSeven = ({ data, onChange }) => {
                             <input 
                                 type="checkbox" 
                                 value="Allergien"
+                                checked={selectedValues.includes('Allergien')}
                                 onChange={handleChange}
                                 className="form-checkbox h-4 w-4 text-[#c25115]" 
                             />
@@ -92,6 +106,7 @@ const TestSeven = ({ data, onChange }) => {
                             <input 
                                 type="checkbox" 
                                 value="Asthma"
+                                checked={selectedValues.includes('Asthma')}
                                 onChange={handleChange}
                                 className="form-checkbox h-4 w-4 text-[#c25115]" 
                             />
@@ -101,6 +116,7 @@ const TestSeven = ({ data, onChange }) => {
                             <input 
                                 type="checkbox" 
                                 value="Krebserkrankungen"
+                                checked={selectedValues.includes('Krebserkrankungen')}
                                 onChange={handleChange}
                                 className="form-checkbox h-4 w-4 text-[#c25115]" 
                             />
@@ -110,6 +126,7 @@ const TestSeven = ({ data, onChange }) => {
                             <input 
                                 type="checkbox" 
                                 value="Long COVID"
+                                checked={selectedValues.includes('Long COVID')}
                                 onChange={handleChange}
                                 className="form-checkbox h-4 w-4 text-[#c25115]" 
                             />
@@ -119,6 +136,7 @@ const TestSeven = ({ data, onChange }) => {
                             <input 
                                 type="checkbox" 
                                 value="Nieren/Lebererkrankungen"
+                                checked={selectedValues.includes('Nieren/Lebererkrankungen')}
                                 onChange={handleChange}
                                 className="form-checkbox h-4 w-4 text-[#c25115]" 
                             />
@@ -128,6 +146,7 @@ const TestSeven = ({ data, onChange }) => {
                             <input 
                                 type="checkbox" 
                                 value="Diabetes"
+                                checked={selectedValues.includes('Diabetes')}
                                 onChange={handleChange}
                                 className="form-checkbox h-4 w-4 text-[#c25115]" 
                             />
@@ -137,6 +156,7 @@ const TestSeven = ({ data, onChange }) => {
                             <input 
                                 type="checkbox" 
                                 value="Psychotherapien"
+                                checked={selectedValues.includes('Psychotherapien')}
                                 onChange={handleChange}
                                 className="form-checkbox h-4 w-4 text-[#c25115]" 
                             />

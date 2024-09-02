@@ -6,6 +6,7 @@ import ComHeader from '../comHeader/ComHeader'
 const TestSix = ({ data, onChange }) => {
   const [healthPercentage, setHealthPercentage] = useState(0); // Initial value set to 67%
   const [selectedValue, setSelectedValue] = useState('');
+  const [selectedText, setSelectedText] = useState('');
   const [textarea, setTextArea] = useState('');
 
   useEffect(() => {
@@ -21,6 +22,10 @@ const TestSix = ({ data, onChange }) => {
     const storedValueText = localStorage.getItem('page6Text');
     if (storedValueText) {
       setTextArea(storedValueText);
+    }
+    const storedText = localStorage.getItem('page6Text');
+    if (storedText) {
+      setSelectedText(storedText);
     }
   }, []);
   const handleChange = (event) => {
@@ -39,13 +44,13 @@ const TestSix = ({ data, onChange }) => {
     console.log(healthPercentage);
   };
   const handleTextArea = (event) => {
-    //const value = Math.round(event.target.value / 5) * 5; // Round to the nearest 5
-    const value = event.target.value
-    setTextArea(value);
+    const value = event.target.value;
+    setSelectedText(value);
     localStorage.setItem('page6Text', value);
     onChange('page6Text', value);
-    console.log(textarea);
+    console.log(`Selected: ${value}`);
   };
+
 
   return (
     <>
@@ -133,6 +138,7 @@ const TestSix = ({ data, onChange }) => {
           </label>
           <div className="mt-2">
             <textarea
+            value={selectedText ? selectedText : ''}
              onChange={handleTextArea}
               className="mt-6 bg-[#fbe3d6] text-lg text-gray-900 placeholder-white rounded-md border-none px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 w-full h-16 md:h-32"
               placeholder=""

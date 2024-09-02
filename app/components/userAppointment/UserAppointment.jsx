@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-const UserAppointment = () => {
+const   
+UserAppointment = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
@@ -75,20 +76,27 @@ const UserAppointment = () => {
                 />
             </header>
 
+            <div className="md:p-32 md:pt-8 md:pb-0">
+          <Link href='/'
+              className="text-[#f2aa84] font-semibold text-2xl underline hover:text-orange-700"
+              >
+              Zurück
+            </Link>
+              </div>
             <section className="bg-white py-4 md:p-10">
                 <div className="w-full mx-auto flex flex-col md:flex-row items-center bg-white p-6 rounded-lg">
                     <div className="md:w-2/4 md:p-16 p-2 pb-0">
-                        <p className="text-[#c04f15] font-semibold mb-4 text-sm md:text-2xl font-sans">
+                        <p className="text-[#c04f15] font-semibold mb-4 text-sm md:text-4xl font-sans">
                             Markt- und Tarifvergleich
                         </p>
                         <p className="text-gray-700 mb-4 text-sm md:text-xl font-serif lg:w-4/5">
                             Buchen Sie hier einen kostenlosen Termin mit unserem Fachberater zum Thema „Markt- und Tarifvergleich. Nach Terminbuchung erhalten Sie eine Bestätigung per Email und den Link für das Onlinemeeting
                         </p>
-                        <div className="flex justify-center md:justify-start mt-8">
+                        <div className="flex justify-center md:justify-start mt-16">
                             <img
-                                src="/a-landing-page-removebg-preview.png"
+                                src="/straight-a-landing-page-removebg-preview.png"
                                 alt="PKV - GKV Check"
-                                className="h-36 md:h-36 lg:h-52"
+                                className="h-36 md:h-72 lg:h-80"
                             />
                         </div>
                     </div>
