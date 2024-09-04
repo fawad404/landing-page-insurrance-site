@@ -161,7 +161,7 @@ const Page = () => {
 
     try {
       // Make an API call
-      const response = await fetch('https://landing-page-insurrance-site.vercel.app/api/sendTestMail', {
+      const response = await fetch('http://localhost:3000/api/sendTestMail', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -182,7 +182,7 @@ const Page = () => {
       // }
 
       // Optionally navigate or show a success message
-      router.push("/success");
+      //router.push("/success");
 
     } catch (error) {
       console.error('Submit error:', error);

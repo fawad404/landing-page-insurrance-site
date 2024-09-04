@@ -137,7 +137,44 @@ export async function POST(request) {
 
         });
 
-        return NextResponse.json({ success: true, message: `Thank you we've recieved your details.` });
+        return NextResponse.json({ success: true, message: `Thank you we've recieved your details.`, 
+            storedpage2Text,
+            username,
+            email,
+            phone,
+            storedpage3Range,
+            storedpage2,
+            storedpage15Range,
+            storedpage14RangeTwo,
+            storedpage14Range,
+            storedpage13Range,
+            storedpage13,
+            storedPage11,
+            storedpage11Two,
+            storedPage11Three,
+            storedpage11Range,
+            storedPage11RangeTwo,
+            storedpage11RangeThree,
+            storedpage12Range,
+            storedPage12RangeTwo,
+            storedpage12Two,
+            storedpage10Two,
+            storedPage10,
+            storedpage8Two,
+            storedpage8,
+            storedpage6Text,
+            storedpage6Range,
+            storedpage6,
+            storedpage5Range,
+            storedpage4,
+            storedpage4Range,
+            storedpage5,
+            storedselectedBerufStatus,
+            storedpage9Two,
+            storedpage9Three,
+            storedpage9Range,
+            storedpage7
+          });
     } catch (error) {
         console.error('Error:', error);
         return NextResponse.json({ success: false, message: 'Sorry connection error try again.' }, { status: 500 });
