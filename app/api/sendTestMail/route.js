@@ -71,7 +71,16 @@ export async function POST(request) {
             html: `
             <div style="padding-10px">
             <h1>Client Submission</h1>
+            <p>Name : ${username}</p>
+            <p>Email : ${email}</p>
+            <p>Phone No : ${phone}</p>
             
+            <p>Phone 1 : ${storedselectedBerufStatus}</p>
+
+            <p>Page 2 : ${storedpage2}</p>
+            <p>Page 2 Text : ${storedpage2Text}</p>
+
+            <p>Page 3 : ${storedpage3Range}</p>
 
             </div>
             `,
