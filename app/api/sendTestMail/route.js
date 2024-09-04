@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import nodemailer from 'nodemailer';
-import smtpTransport from "nodemailer-smtp-transport";
 export async function POST(request) {
     try {
         const { 
@@ -47,15 +46,15 @@ export async function POST(request) {
         console.log('Name:', username);
         console.log('Email:', email);
         console.log('Phone:', phone);
-        let transporter = nodemailer.createTransport(smtpTransport({
+        let transporter = nodemailer.createTransport({
             host: 'smtp.hostinger.com', // SMTP server details
-            port: 465, //SMTP server port
-            secure: true,
+            port: 465, // SMTP server port
+            secure: true, // use TLS
             auth: {
                 user: 'fawad@softhawks.com',
                 pass: 'Nuttertools@1122'
             }
-        }));
+        });
         // const transporter = nodemailer.createTransport({
         //     service: 'gmail',
         //     auth: {
