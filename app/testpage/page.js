@@ -175,11 +175,9 @@ const Page = () => {
 
       const result = await response.json();
       console.log('Submit result:', result);
-      // if(result.success){
-      //   localStorage.clear();
-      // }else{
-      //   throw new Error('Mail not sent');
-      // }
+      if(result.success){
+        localStorage.clear();
+      }
 
       // Optionally navigate or show a success message
       router.push("/success");

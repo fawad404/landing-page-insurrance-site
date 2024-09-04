@@ -177,7 +177,7 @@ const TestSixteen = ({ data, onChange }) => {
               className="form-checkbox h-7 w-7 mr-3"
             />
             <span>
-              <Link href="/">
+              <Link href="/testpage/datenschutz">
                 Ja, ich habe die Informationen zum Datenschutz zur Kenntnis genommen und bin einverstanden.
               </Link>
             </span>
