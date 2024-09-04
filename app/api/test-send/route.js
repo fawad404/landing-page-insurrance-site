@@ -64,6 +64,18 @@ export async function POST(request) {
             <p>Name : ${username}</p>
             <p>Email : ${email}</p>
             <p>Phone No : ${phone}</p>
+            <p>Phone 1 : ${storedselectedBerufStatus}</p>
+
+            <p>Page 2 : ${storedpage2}</p>
+            <p>Page 2 Text : ${storedpage2Text}</p>
+
+            <p>Page 3 : ${storedpage3Range}</p>
+
+            <p>Page 4 : ${storedpage4}</p>
+            <p>Page 4 Range : ${storedpage4Range}</p>
+
+            <p>Page 5 : ${storedpage5}</p>
+            <p>Page 5 Range : ${storedpage5Range}</p>
             </div>
             `,
         };
