@@ -76,6 +76,22 @@ export async function POST(request) {
 
             <p>Page 5 : ${storedpage5}</p>
             <p>Page 5 Range : ${storedpage5Range}</p>
+
+            <p>Page 6 : ${storedpage6}</p>
+            <p>Page 6 Range : ${storedpage6Range}</p>
+            <p>Page 6 Text : ${storedpage6Text}</p>
+
+            <p>Page 7 : ${storedpage7}</p>
+
+            <p>Page 8 : ${storedpage8}</p>
+            <p>Page 8 2nd : ${storedpage8Two}</p>
+
+            <p>Page 9 : ${storedpage9Two}</p>
+            <p>Page 9 2nd : ${storedpage9Three}</p>
+            <p>Page 9 Range : ${storedpage9Range}</p>
+
+            <p>Page 10 : ${storedPage10}</p>
+            <p>Page 10 2nd : ${storedpage10Two}</p>
             </div>
             `,
         };
