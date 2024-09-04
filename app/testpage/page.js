@@ -182,7 +182,7 @@ const Page = () => {
       // }
 
       // Optionally navigate or show a success message
-      //router.push("/success");
+      router.push("/success");
 
     } catch (error) {
       console.error('Submit error:', error);
