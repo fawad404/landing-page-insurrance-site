@@ -5,16 +5,11 @@ import ComHeader from '../comHeader/ComHeader'
 
 const TestNine = ({ data, onChange }) => {
     const [income, setIncome] = useState(0); // Initialize income state
-    const [selectedValue, setSelectedValue] = useState('');
     const [selectedValueTwo, setSelectedValueTwo] = useState('');
     const [selectedValueThree, setSelectedValueThree] = useState('');
 
     useEffect(() => {
         // Retrieve the value from localStorage when the component mounts
-        const storedValue = localStorage.getItem('page9');
-        if (storedValue) {
-          setSelectedValue(storedValue);
-        }
         const storedValueTwo = localStorage.getItem('page9Two');
         if (storedValueTwo) {
             setSelectedValueTwo(storedValueTwo);
@@ -30,13 +25,6 @@ const TestNine = ({ data, onChange }) => {
       }, []);
 
 
-    const handleChange = (event) => {
-      const value = event.target.value;
-      setSelectedValue(value);
-      localStorage.setItem('page9', value);
-      onChange('page9', value);
-      console.log(`${value}`);
-    };
     const handleChangeTwo = (event) => {
         const value = event.target.value;
         setSelectedValueTwo(value);

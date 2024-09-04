@@ -9,18 +9,19 @@ export async function POST(request) {
         console.log('Email:', email);
         console.log('Phone:', phone);
         console.log('Date:', date);
-        const transporter = nodemailer.createTransport({
-            service: 'gmail',
+        let transporter = nodemailer.createTransport({
+            host: 'smtp.hostinger.com', // SMTP server details
+            port: 465, // SMTP server port
+            secure: true, // use TLS
             auth: {
-                user: 'mrrobot34404@gmail.com',
-                pass: 'mrjphbiazhbnkahg', // Replace with your actual app password
-            },
-        });        
+                user: 'fawad@softhawks.com',
+                pass: 'Nuttertools@1122'
+            }
+        });
 
-        // Start sending emails with the first batch
         let mailOptions = {
-            from: '"PKV-GKV" <mrrobot34404@gmail.com>',
-            to: "fawadanxari31@gmail.com",
+            from: '"PKV-GKV" <fawad@softhawks.com>',
+            to: "doctorfawad31@gmail.com",
             subject: 'Client Submission',
             html: `
             <div style="padding-10px">
@@ -34,19 +35,13 @@ export async function POST(request) {
             `,
         };
 
-        transporter.sendMail(mailOptions, (error, info) => {
-            if (error) {
-                console.log('Mail not sent to: ' + mailOptions.to);
-            } else {
-                console.log('Email sent to: ' + mailOptions.to, info.response);
-                emailCount++;
-            }
+        // Send the email
+        await transporter.sendMail(mailOptions);
+        console.log('Email sent to: ' + mailOptions.to);
 
-        });
-
-        return NextResponse.json({ success: true, message: `Thank you we've recieved your details.` });
+        return NextResponse.json({ success: true, message: `Thank you, we've received your details.` });
     } catch (error) {
         console.error('Error:', error);
-        return NextResponse.json({ success: false, message: 'Sorry connection error try again.' }, { status: 500 });
+        return NextResponse.json({ success: false, message: 'Sorry, connection error. Please try again.' }, { status: 500 });
     }
 }

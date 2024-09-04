@@ -161,7 +161,7 @@ const Page = () => {
 
     try {
       // Make an API call
-      const response = await fetch('/api/sendTestMail', {
+      const response = await fetch('https://landing-page-insurrance-site.vercel.app/api/sendTestMail', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -175,6 +175,11 @@ const Page = () => {
 
       const result = await response.json();
       console.log('Submit result:', result);
+      // if(result.success){
+      //   localStorage.clear();
+      // }else{
+      //   throw new Error('Mail not sent');
+      // }
 
       // Optionally navigate or show a success message
       router.push("/success");
