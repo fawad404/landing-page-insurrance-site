@@ -69,16 +69,16 @@ export async function POST(request) {
             <p>Page 2 : ${storedpage2}</p>
             <p>Page 2 Text : ${storedpage2Text}</p>
 
-            <p>Page 3 : ${storedpage3Range}</p>
+            <p>Page 3 : ${storedpage3Range} Jahrgang </p>
 
             <p>Page 4 : ${storedpage4}</p>
-            <p>Page 4 Range : ${storedpage4Range}</p>
+            <p>Page 4 Range : ${storedpage4Range} Einkommen</p>
 
             <p>Page 5 : ${storedpage5}</p>
-            <p>Page 5 Range : ${storedpage5Range}</p>
+            <p>Page 5 Range : ${storedpage5Range} Anzahl Kinder</p>
 
             <p>Page 6 : ${storedpage6}</p>
-            <p>Page 6 Range : ${storedpage6Range}</p>
+            <p>Page 6 Range : ${storedpage6Range}% Selbsteinschätzung Gesundheit</p>
             <p>Page 6 Text : ${storedpage6Text}</p>
 
             <p>Page 7 : ${storedpage7}</p>
