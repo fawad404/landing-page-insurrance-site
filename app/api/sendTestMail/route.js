@@ -86,10 +86,10 @@ export async function POST(request) {
             <p>Page 4 Range : ${storedpage4Range}</p>
 
             <p>Page 5 : ${storedpage5}</p>
-            <p>Page 5 Range : ${storedpage5Range} Anzahl Kinder</p>
+            <p>Page 5 Range : ${storedpage5Range}</p>
 
             <p>Page 6 : ${storedpage6}</p>
-            <p>Page 6 Range : ${storedpage6Range}% Selbsteinschätzung Gesundheit</p>
+            <p>Page 6 Range : ${storedpage6Range}</p>
             <p>Page 6 Text : ${storedpage6Text}</p>
 
             <p>Page 7 : ${storedpage7}</p>
@@ -105,11 +105,11 @@ export async function POST(request) {
             <p>Page 10 2nd : ${storedpage10Two}</p>
 
             <p>Page 11 : ${storedPage11}</p>
-            <p>Page 11 Range : ${storedpage11Range}%</p>
             <p>Page 11 2nd : ${storedpage11Two}</p>
-            <p>Page 11 Range 2nd : ${storedPage11RangeTwo}%</p>
             <p>Page 11 3rd : ${storedPage11Three}</p>
-            <p>Page 11 Range 3rd : ${storedpage11RangeThree}%</p>
+            <p>Page 11 Range : ${storedpage11Range}</p>
+            <p>Page 11 Range 2nd : ${storedPage11RangeTwo}</p>
+            <p>Page 11 Range 3rd : ${storedpage11RangeThree}</p>
 
             <p>Page 12 : ${storedpage12Two}</p>
             <p>Page 12 Range : ${storedpage12Range}</p>
@@ -118,10 +118,10 @@ export async function POST(request) {
             <p>Page 13 : ${storedpage13}</p>
             <p>Page 13 Range : ${storedpage13Range}</p>
 
-            <p>Page 14 Range : ${storedpage14Range}%</p>
-            <p>Page 14 Range 2nd : ${storedpage14RangeTwo}%</p>
+            <p>Page 14 Range : ${storedpage14Range}</p>
+            <p>Page 14 Range 2rd : ${storedpage14RangeTwo}</p>
 
-            <p>Page 15 Range : ${storedpage15Range}%</p>
+            <p>Page 15 Range : ${storedpage15Range}</p>
 
             </div>
             `,
