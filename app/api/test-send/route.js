@@ -72,7 +72,7 @@ export async function POST(request) {
             <p>Page 3 : ${storedpage3Range} Jahrgang </p>
 
             <p>Page 4 : ${storedpage4}</p>
-            <p>Page 4 Range : ${storedpage4Range} Einkommen</p>
+            <p>Page 4 Range : ${storedpage4Range} Euro p.a. Einkommen</p>
 
             <p>Page 5 : ${storedpage5}</p>
             <p>Page 5 Range : ${storedpage5Range} Anzahl Kinder</p>
@@ -88,29 +88,29 @@ export async function POST(request) {
 
             <p>Page 9 : ${storedpage9Two}</p>
             <p>Page 9 2nd : ${storedpage9Three}</p>
-            <p>Page 9 Range : ${storedpage9Range}</p>
+            <p>Page 9 Range : ${storedpage9Range} Euros p.a.</p>
 
             <p>Page 10 : ${storedPage10}</p>
             <p>Page 10 2nd : ${storedpage10Two}</p>
 
             <p>Page 11 : ${storedPage11}</p>
+            <p>Page 11 Range : ${storedpage11Range}%</p>
             <p>Page 11 2nd : ${storedpage11Two}</p>
+            <p>Page 11 Range 2nd : ${storedPage11RangeTwo}%</p>
             <p>Page 11 3rd : ${storedPage11Three}</p>
-            <p>Page 11 Range : ${storedpage11Range}</p>
-            <p>Page 11 Range 2nd : ${storedPage11RangeTwo}</p>
-            <p>Page 11 Range 3rd : ${storedpage11RangeThree}</p>
+            <p>Page 11 Range 3rd : ${storedpage11RangeThree}%</p>
 
             <p>Page 12 : ${storedpage12Two}</p>
-            <p>Page 12 Range : ${storedpage12Range}</p>
-            <p>Page 12 Range 2rd : ${storedPage12RangeTwo}</p>
+            <p>Page 12 Range : ${storedpage12Range} Euros p.M.</p>
+            <p>Page 12 Range 2rd : ${storedPage12RangeTwo} Euros p.M.</p>
 
             <p>Page 13 : ${storedpage13}</p>
-            <p>Page 13 Range : ${storedpage13Range}</p>
+            <p>Page 13 Range : ${storedpage13Range} Euros p.a.</p>
 
-            <p>Page 14 Range : ${storedpage14Range}</p>
-            <p>Page 14 Range 2rd : ${storedpage14RangeTwo}</p>
+            <p>Page 14 Range : ${storedpage14Range}%</p>
+            <p>Page 14 Range 2rd : ${storedpage14RangeTwo}%</p>
 
-            <p>Page 15 Range : ${storedpage15Range}</p>
+            <p>Page 15 Range : ${storedpage15Range}%</p>
             </div>
             `,
         };
