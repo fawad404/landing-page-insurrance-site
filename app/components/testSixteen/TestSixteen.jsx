@@ -128,7 +128,7 @@ const TestSixteen = ({ data, onChange }) => {
           </div>
           <div className='pl-0 mb-6 text-[#c25115] w-full md:w-2/4 mx-auto mt-8'>
             <label className="flex items-center space-x-3">
-              Vorname, Nachname <span>(Pflichtfeld)​</span>
+              Vorname, Nachname <span className='ml-1'> (Pflichtfeld)​</span>
             </label>
             <input
               type="text"
@@ -142,7 +142,7 @@ const TestSixteen = ({ data, onChange }) => {
           </div>
           <div className='pl-0 mb-6 text-[#c25115] w-full md:w-2/4 mx-auto mt-8'>
             <label className="flex items-center space-x-3">
-              Email-Adresse<span>(Pflichtfeld)​​</span>
+              Email-Adresse<span className='ml-1'>(Pflichtfeld)​​</span>
             </label>
             <input
               type="email"
@@ -156,7 +156,7 @@ const TestSixteen = ({ data, onChange }) => {
           </div>
           <div className='pl-0 mb-6 text-[#c25115] w-full md:w-2/4 mx-auto mt-8'>
             <label className="flex items-center space-x-3">
-              Telefon-/Mobilnummer<span>(Pflichtfeld)​​</span>
+              Telefon-/Mobilnummer<span className='ml-1'>(Pflichtfeld)​​</span>
             </label>
             <input
               type="text"
@@ -177,7 +177,7 @@ const TestSixteen = ({ data, onChange }) => {
               className="form-checkbox h-7 w-7 mr-3"
             />
             <span>
-              <Link href="/testpage/datenschutz">
+              <Link href="/testpage/datenschutz" className='border-b border-[#c25115]'>
                 Ja, ich habe die Informationen zum Datenschutz zur Kenntnis genommen und bin einverstanden.
               </Link>
             </span>

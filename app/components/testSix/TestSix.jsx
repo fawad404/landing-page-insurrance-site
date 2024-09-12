@@ -73,7 +73,7 @@ const TestSix = ({ data, onChange }) => {
                 <p className='p-2'>
                   <img src='/info-circle-svgrepo-com (1).svg' className='h-4 w-4 mb-2' />
                   Beim Eintritt in die private Krankenversicherung erheben Versicherer Gesundheitsdaten.. Sie können im Antragsprozess bestimmen unter welchen Konditionen eine Annahme erfolgt. Bei Vorerkrankungen ist es möglich von Versichererseite Zuschläge zu verlangen oder den Antrag komplett abzulehnen. Der Gesundheitszustand und die Gesundheitshistorie bei Antragstellung ist aus diesem Grund ein wichtiger Faktor für die Beurteilung, ob die PKV eine Alternative darstellt. ​
-                Wir können hier hier nur
+                Wir können hier nur
                 Tendenzen ableiten. Eine konkrete Einschätzung des Versicherers ist
                   erst nach einer vollständigen Beantwortung aller im Antrag vorliegenden Fragen möglich​.
                 </p>

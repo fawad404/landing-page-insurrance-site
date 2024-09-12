@@ -40,15 +40,15 @@ const TestFourteen = ({ data, onChange }) => {
     <>
     <ComHeader />
     <h2 className="p-20 md:p-10 pb-0 md:pb-0 text-[#c25115] text-2xl md:text-2xl lg:text-2xl font-fijala italic mb-6 flex md:block md:justify-start -ml-16 md:-ml-0">
-    Persönliche Einschätzung zu Leistungen im Gesundheitswesen
+    Persönliche Einschätzung zu möglichen Mehrkosten in der PKV
       </h2>
 
       <div className="text-textColor flex items-center justify-center min-h-[55vh] font-fijala p-4  md:ml-8">
         <div className="w-full max-w-3xl relative">
             <div>
             <div className="mt-12">
-                <h1 className="relative text-xl md:text-2xl text-[#c25115] mb-4 hover-trigger">Leistungen, die die Gesetzliche nicht komplett abdeckt sind mir sehr wichtig (z.B. Zahnersatz, alternative Medizin, Brille, Privatpatient im Krankenhaus, etc)! 
-                <span className="inline-block ml-1 group">
+                <h1 className="relative text-xl md:text-2xl text-[#c25115] mb-4 hover-trigger">Leistungen, die die Gesetzliche nicht komplett abdeckt, sind mir sehr wichtig (z.B. Zahnersatz, alternative Medizin, Brille, Privatpatient im Krankenhaus, etc)! 
+                {/* <span className="inline-block ml-1 group">
             <span className="text-[#c25115] -top-3 ">
                 <img src='/info-circle-svgrepo-com (1).svg' className='h-5 w-5 text-red-900' />
               </span>
@@ -62,7 +62,7 @@ const TestFourteen = ({ data, onChange }) => {
                         vor.
                 </p>
               </div>
-            </span>
+            </span> */}
                 </h1>
             </div>
 

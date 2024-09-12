@@ -53,7 +53,7 @@ const TestTwelve = ({ data, onChange }) => {
   }
 
   const handleRangeChangeTwo = (e) => {
-    const roundedValue = Math.round(e.target.value / 500) * 500; // Round to nearest 500
+    const roundedValue = Math.round(e.target.value / 100) * 100; // Round to nearest 500
     setHealthPercentageTwo(roundedValue); // Update income state with rounded value
     localStorage.setItem('page12RangeTwo', roundedValue);
     onChange('page12RangeTwo', roundedValue);
@@ -140,12 +140,12 @@ const TestTwelve = ({ data, onChange }) => {
                 <input
                   type="range"
                   min="0"
-                  max="20000"
+                  max="5000"
                   value={healthPercentageTwo}
                   onChange={handleRangeChangeTwo}
                   className="mt-2 appearance-none h-8 w-full bg-[#f2aa84] max-w-xs md:max-w-48"
                   style={{
-                    background: `linear-gradient(to right, #f2aa84 0%, #f2aa84 ${(healthPercentageTwo / 20000) * 100}%, #fbe3d6 ${(healthPercentageTwo / 20000) * 100}%, #fbe3d6 100%)`,
+                    background: `linear-gradient(to right, #f2aa84 0%, #f2aa84 ${(healthPercentageTwo / 5000) * 100}%, #fbe3d6 ${(healthPercentageTwo / 5000) * 100}%, #fbe3d6 100%)`,
                     accentColor: '#c04f15',
                     WebkitAppearance: 'none',
                     MozAppearance: 'none',

@@ -117,11 +117,11 @@ const TestNine = ({ data, onChange }) => {
                 </label>
                 <label className="flex items-center space-x-3">
                     <input type="checkbox" 
-                    value="Familienplanung: Keine Lebenspartnerschaft geplantv"
-                    checked={selectedValueTwo === 'Familienplanung: Keine Lebenspartnerschaft geplantv'}
+                    value="Familienplanung: Keine Lebenspartnerschaft geplant"
+                    checked={selectedValueTwo === 'Familienplanung: Keine Lebenspartnerschaft geplant'}
                     onChange={handleChangeTwo}
                     className="form-checkbox h-5 w-5 " />
-                    <span>Keine Lebenspartnerschaft geplantv</span>
+                    <span>Keine Lebenspartnerschaft geplant</span>
                 </label>
                 
             </div>

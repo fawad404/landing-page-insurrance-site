@@ -38,7 +38,7 @@ const Featured = () => {
             Wo bin ich am besten aufgehoben?
           </p>
           <p className="text-gray-500 text-base font-semibold lg:text-lg mb-2 md:mb-6 lg:mb-2 max-w-[20rem] md:max-w-[27rem] lg:max-w-[34rem]">
-            Mach den kostenlosen PKV-GKV Scheck und unsere Experten senden Ihnen eine individuelle und ausführliche Chancen-Risiko-Bewertung per Email!
+            Machen Sie den kostenlosen PKV–GKV–Check! und unsere Experten senden Ihnen eine individuelle und ausführliche Chancen-Risiko-Bewertung per Email!
           </p>
 
         </div>
