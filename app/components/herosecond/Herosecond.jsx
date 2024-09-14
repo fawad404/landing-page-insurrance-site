@@ -2,7 +2,7 @@
 import { useRouter } from 'next/navigation';
 import React from 'react'
 
-const Herosecond = () => {
+const Herosecond = ({language}) => {
   const router = useRouter();
   return (
     <>
@@ -12,26 +12,39 @@ const Herosecond = () => {
     <div className="w-full mx-auto flex flex-col md:flex-row items-center bg-white p-6 rounded-lg">
       <div className="md:w-3/5 md:p-10 ">
         <h2 className="text-[#c25115] font-semibold text-xl md:text-4xl mb-5 font-roboto-condensed-italic">
-          Systemvergleich „PKV – GKV“
+        {language === 'de' ? 
+            'Systemvergleich „PKV – GKV“' 
+            : 
+            'Comparison „PKV – GKV“'
+            }
+          
         </h2>
         <p className="text-[#ed8b55] font-semibold mb-5 text-sm md:text-xl font-canadara">
-          Per Onlinemeeting schnell im Thema drin sein!
+        {language === 'de' ? 
+            'Per Onlinemeeting schnell im Thema drin sein!' 
+            : 
+            'Receive a consultation on system comparison.“'
+            }
+          
         </p>
         <p className="text-gray-700 mb-4 text-sm md:text-xl font-serif lg:w-4/5 ">
-          Wir bieten einen umfangreichen Systemvergleich zwischen der
-          gesetzlichen oder privaten Krankenversicherung per Onlineberatung.
-          Wir stellen die wichtigen entscheidungsrelevanten Punkte in der
-          Entscheidungsfindung gegenüber. Wir erläutern Ihnen die strukturellen
-          Unterschiede, gehen auf die Beitragskalkulation beider Systeme ein und
-          erörtern die wichtigen Punkte, wie Beitragsentwicklung,
-          Familieninstitution, Rentenalter und Exitstrategien. Buchen Sie noch
-          heute einen Termin!
+        {language === 'de' ? 
+            'Wir bieten einen umfangreichen Systemvergleich zwischen der gesetzlichen oder privaten Krankenversicherung per Onlineberatung.Wir stellen die wichtigen entscheidungsrelevanten Punkte in der Entscheidungsfindung gegenüber. Wir erläutern Ihnen die strukturellen Unterschiede, gehen auf die Beitragskalkulation beider Systeme ein und erörtern die wichtigen Punkte, wie Beitragsentwicklung, Familieninstitution, Rentenalter und Exitstrategien. Buchen Sie noch heute einen Termin!' 
+            : 
+            'We offer a comprehensive system comparison between public and private health insurance through online consultation. We compare the important decision-relevant points in your decision-making process. We explain the structural differences, discuss the tariffs calculations of both systems, and address important aspects such as tariffs development, family situation, retirement age, and exit strategies. Book an appointment today!"'
+            }
+          
         </p>
         <div className="flex justify-center mt-8">
   <button 
-  onClick={()=> router.push('/termin-buchen')}
+  onClick={()=> router.push(`/termin-buchen?language=${language}`)}
   className="bg-[#c25115] mb-2 md:mb-0 text-white px-6 text-base sm:px-10 md:px-16 py-3 sm:text-lg md:text-xl rounded-md hover:bg-orange-700 italic">
-    Termin buchen
+    {language === 'de' ? 
+            'Termin buchen' 
+            : 
+            'Book an onlinemeeting'
+            }
+    
   </button>
 </div>
       </div>
