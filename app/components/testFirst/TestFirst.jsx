@@ -1,8 +1,24 @@
-"use client"
+"use client";
 import { useState, useEffect } from 'react';
-import ComHeader from "../comHeader/ComHeader";
 
-const TestFirst = ({ data, language, onChange }) => {
+const languageTexts = {
+  de: {
+    title: 'Eintrittsvoraussetzungen',
+    professionalStatus: 'Berufsstatus',
+    employed: 'angestellt',
+    selfEmployed: 'selbständig',
+    civilServant: 'verbeamtet'
+  },
+  en: {
+    title: 'Entry requirements',
+    professionalStatus: 'Professional status',
+    employed: 'Employed',
+    selfEmployed: 'Self-employed',
+    civilServant: 'Civil servant'
+  }
+};
+
+const TestFirst = ({ data, language = 'de', onChange }) => {
   const [selectedValue, setSelectedValue] = useState(null);
 
   useEffect(() => {
@@ -12,7 +28,7 @@ const TestFirst = ({ data, language, onChange }) => {
       setSelectedValue(storedValue);
       onChange('berufStatus', storedValue);
     }
-  }, []);
+  }, [onChange]);
 
   const handleChange = (event) => {
     const value = event.target.value;
@@ -22,71 +38,55 @@ const TestFirst = ({ data, language, onChange }) => {
     localStorage.setItem('selectedBerufStatus', value);
   };
 
+  // Get text based on the selected language
+  const texts = languageTexts[language] || languageTexts['de'];
+
   return (
     <>
-      <ComHeader />
       <h2 className="p-20 md:p-10 pb-0 md:pb-0 text-[#c25115] text-xl md:text-2xl lg:text-2xl font-fijala italic mb-6 flex md:block md:justify-start -ml-12 md:-ml-0">
-        {language ==='en' ? 
-        'Entry requirements' 
-        :
-         'Eintrittsvoraussetzungen'
-         }
-        
+        {texts.title}
       </h2>
-      <div className="flex items-center justify-center min-h-[55vh] p-8 md:-mt-12 lg:-mt-20 ">
+      <div className="flex items-center justify-center min-h-[55vh] p-8 md:-mt-12 lg:-mt-20">
         <div className="w-full max-w-3xl bg-white font-fijala relative">
           <h2 className="text-2xl mb-8 font-fijala italic text-[#c25115]">
-            {language =='en' ? 
-            'Professional status' 
-            :
-            'Berufsstatus'
-          }
-            
-            </h2>
+            {texts.professionalStatus}
+          </h2>
           <div className="grid grid-rows-3 sm:grid-rows-2 md:grid-rows-1 text-base grid-flow-col mb-6 text-[#c25115]">
             <label className="flex items-center space-x-2">
-              <input type="checkbox" className="form-checkbox h-5 w-5 md:ml-24"
+              <input
+                type="checkbox"
+                className="form-checkbox h-5 w-5 md:ml-24"
                 value="angestellt"
                 checked={selectedValue === 'angestellt'}
                 onChange={handleChange}
               />
               <span className='text-xl'>
-              {language =='en' ? 
-            'Employed' 
-            :
-            'angestellt'
-          }
-                
-                </span>
+                {texts.employed}
+              </span>
             </label>
             <label className="flex items-center space-x-2 md:-ml-40">
-              <input type="checkbox" className="form-checkbox h-5 w-5"
+              <input
+                type="checkbox"
+                className="form-checkbox h-5 w-5"
                 value="selbständig"
                 checked={selectedValue === 'selbständig'}
                 onChange={handleChange}
               />
               <span className='text-xl'>
-              {language =='en' ? 
-            'self-employed' 
-            :
-            'selbständig'
-          }
-                
-                </span>
+                {texts.selfEmployed}
+              </span>
             </label>
             <label className="flex items-center space-x-2 md:-ml-44">
-              <input type="checkbox" className="form-checkbox h-5 w-5"
+              <input
+                type="checkbox"
+                className="form-checkbox h-5 w-5"
                 value="verbeamtet"
                 checked={selectedValue === 'verbeamtet'}
                 onChange={handleChange}
               />
               <span className='text-xl'>
-              {language =='en' ? 
-            'civil servant' 
-            :
-            'verbeamtet'
-          }
-                </span>
+                {texts.civilServant}
+              </span>
             </label>
           </div>
         </div>

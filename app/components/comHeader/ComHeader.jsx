@@ -2,11 +2,17 @@
 import Link from 'next/link'
 import React from 'react'
 
-const ComHeader = () => {
+const ComHeader = ({ language }) => {
   return (
     <header className="bg-[#f2aa84] flex justify-between items-center p-6 relative h-20 w-full">
     <div className="p-10 md:pl-36">
-          <Link  href="/" className="text-white text-2xl font-canadara">Zurück</Link>
+          <Link  href="/" className="text-white text-2xl font-canadara">
+          {language === 'en' ? 
+          'Back' 
+          :
+           'Zurück'
+           }
+          </Link>
         </div>
       <img
         src="/a-landing-page-removebg-preview.png"

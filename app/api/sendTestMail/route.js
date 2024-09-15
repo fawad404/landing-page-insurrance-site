@@ -66,7 +66,7 @@ export async function POST(request) {
         // Start sending emails with the first batch
         let mailOptions = {
             from: '"PKV-GKV" <fawad@softhawks.com>',
-            to: "poggensee@poggensee.de",
+            to: "fawadanxari31@gmail.com",
             subject: 'Client Submission',
             html: `
             <div style="padding-10px">

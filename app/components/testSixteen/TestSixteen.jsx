@@ -1,9 +1,8 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import ComHeader from '../comHeader/ComHeader';
 import Link from 'next/link';
 
-const TestSixteen = ({ data, onChange }) => {
+const TestSixteen = ({ data, onChange, language }) => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -56,19 +55,19 @@ const TestSixteen = ({ data, onChange }) => {
     
     if (field === 'username') {
       if (value.trim() === '') {
-        errorMsg = 'Username is required.';
+        errorMsg = text.errors.usernameRequired;
       } else if (/\d/.test(value)) {
-        errorMsg = "Username should not contain numbers.";
+        errorMsg = text.errors.usernameNumber;
       }
     } 
     if (field === 'email') {
       if (!validateEmail(value)) {
-        errorMsg = 'Please enter a valid email address.';
+        errorMsg = text.errors.invalidEmail;
       }
     }
     if (field === 'phone') {
       if (!validatePhone(value)) {
-        errorMsg = 'Please enter a valid phone number (10-15 digits).';
+        errorMsg = text.errors.invalidPhone;
       }
     }
 
@@ -85,13 +84,13 @@ const TestSixteen = ({ data, onChange }) => {
       onChange('isChecked', isChecked);
     } 
     
-    if(errorMsg === 'Please enter a valid phone number (10-15 digits).'){
+    if (errorMsg === text.errors.invalidPhone) {
       onChange('phone', '');
     }
-    if(errorMsg === 'Please enter a valid email address.'){
+    if (errorMsg === text.errors.invalidEmail) {
       onChange('email', '');
     }
-    if(errorMsg === 'Username should not contain numbers.' || errorMsg === 'Username is required.' ){
+    if (errorMsg === text.errors.usernameNumber || errorMsg === text.errors.usernameRequired) {
       onChange('username', '');
     }
   };
@@ -101,7 +100,7 @@ const TestSixteen = ({ data, onChange }) => {
     setIsChecked(isChecked);
     setErrors((prevErrors) => ({
       ...prevErrors,
-      isChecked: isChecked ? '' : 'You must agree to the privacy policy.',
+      isChecked: isChecked ? '' : text.errors.checkboxRequired,
     }));
     
     // Check if all fields are valid
@@ -110,25 +109,59 @@ const TestSixteen = ({ data, onChange }) => {
       onChange('email', email);
       onChange('phone', phone);
       onChange('isChecked', isChecked);
-    }else {
+    } else {
       onChange('isChecked', false);
     }
   };
 
+  // Define the text for both languages
+  const text = language === 'en' ? 
+    {
+      title: 'I would like to receive a free and individual opportunity-risk analysis!',
+      firstNameLabel: 'First Name, Last Name',
+      emailLabel: 'Email Address',
+      phoneLabel: 'Phone Number',
+      privacyPolicy: 'Privacy Policy.',
+      checkboxLabel: 'Yes, I have read the information about data protection and agree.',
+      errors: {
+        usernameRequired: 'Username is required.',
+        usernameNumber: 'Username should not contain numbers.',
+        invalidEmail: 'Please enter a valid email address.',
+        invalidPhone: 'Please enter a valid phone number (10-15 digits).',
+        checkboxRequired: 'You must agree to the privacy policy.',
+      }
+    } 
+    : 
+    {
+      title: 'Ich möchte eine kostenlose und individuelle Chancen-Risiko-Analyse erhalten!​',
+      firstNameLabel: 'Vorname, Nachname (Pflichtfeld)​',
+      emailLabel: 'Email-Adresse (Pflichtfeld)​​',
+      phoneLabel: 'Telefon-/Mobilnummer (Pflichtfeld)​​',
+      privacyPolicy: 'Datenschutzerklärung.',
+      checkboxLabel: 'Ja, ich habe die Informationen zum Datenschutz zur Kenntnis genommen und bin einverstanden.',
+      errors: {
+        usernameRequired: 'Benutzername ist erforderlich.',
+        usernameNumber: 'Benutzername darf keine Zahlen enthalten.',
+        invalidEmail: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.',
+        invalidPhone: 'Bitte geben Sie eine gültige Telefonnummer (10-15 Ziffern) ein.',
+        checkboxRequired: 'Sie müssen der Datenschutzerklärung zustimmen.',
+      }
+    };
+
   return (
     <>
-      <ComHeader />
+      
 
       <div className="text-textColor flex items-center justify-center min-h-[55vh] p-4 mt-12 md:mt-8 font-fijala md:ml-8">
         <div className="w-full max-w-5xl relative">
           <div className="relative">
             <h1 className="text-xl md:text-2xl italic text-[#c25115] mb-4 hover-trigger">
-              Ich möchte eine kostenlose und individuelle Chancen-Risiko-Analyse erhalten!​
+              {text.title}
             </h1>
           </div>
           <div className='pl-0 mb-6 text-[#c25115] w-full md:w-2/4 mx-auto mt-8'>
             <label className="flex items-center space-x-3">
-              Vorname, Nachname <span className='ml-1'> (Pflichtfeld)​</span>
+              {text.firstNameLabel}
             </label>
             <input
               type="text"
@@ -142,7 +175,7 @@ const TestSixteen = ({ data, onChange }) => {
           </div>
           <div className='pl-0 mb-6 text-[#c25115] w-full md:w-2/4 mx-auto mt-8'>
             <label className="flex items-center space-x-3">
-              Email-Adresse<span className='ml-1'>(Pflichtfeld)​​</span>
+              {text.emailLabel}
             </label>
             <input
               type="email"
@@ -156,7 +189,7 @@ const TestSixteen = ({ data, onChange }) => {
           </div>
           <div className='pl-0 mb-6 text-[#c25115] w-full md:w-2/4 mx-auto mt-8'>
             <label className="flex items-center space-x-3">
-              Telefon-/Mobilnummer<span className='ml-1'>(Pflichtfeld)​​</span>
+              {text.phoneLabel}
             </label>
             <input
               type="text"
@@ -168,7 +201,7 @@ const TestSixteen = ({ data, onChange }) => {
             />
             {errors.phone && <p className="text-red-500 mt-1">{errors.phone}</p>}
           </div>
-          <p className='pl-0 md:w-2/4 mx-auto mb-6 text-[#c25115] mt-8'>Datenschutzerklärung.</p>
+          <p className='pl-0 md:w-2/4 mx-auto mb-6 text-[#c25115] mt-8'>{text.privacyPolicy}</p>
           <div className='pl-0 mb-6 text-[#c25115] mt-8 items-center flex w-2/4 mx-auto'>
             <input
               type="checkbox"
@@ -178,7 +211,7 @@ const TestSixteen = ({ data, onChange }) => {
             />
             <span>
               <Link href="/testpage/datenschutz" className='border-b border-[#c25115]'>
-                Ja, ich habe die Informationen zum Datenschutz zur Kenntnis genommen und bin einverstanden.
+                {text.checkboxLabel}
               </Link>
             </span>
           </div>

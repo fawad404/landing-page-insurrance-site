@@ -1,12 +1,17 @@
 'use client'
 import Link from "next/link";
 
-export default function Contactfourth() {
+export default function Contactfourth({language}) {
   return (
     <div className="flex flex-col items-center">
       {/* Header Section */}
       <div className="w-full bg-[#f2aa84] p-10 md:pl-36">
-        <h1 className="text-white text-2xl font-semibold">Kontakt</h1>
+        <h1 className="text-white text-2xl font-semibold">
+          {language === 'en' ? 
+          'Contact' 
+          :
+           'Kontakt'}
+          </h1>
       </div>
       
       {/* Contact Section */}
@@ -14,7 +19,11 @@ export default function Contactfourth() {
           <Link href='/'
               className="text-[#f2aa84] font-semibold text-xl underline hover:text-orange-700"
               >
-              Zurück
+                {language === 'en' ? 
+          'Back' 
+          :
+           'Zurück'}
+              
             </Link>
               </div>
       <div className="w-full mx-auto flex flex-col md:flex-row justify-between items-start p-8 md:p-36 md:pt-24 bg-white">

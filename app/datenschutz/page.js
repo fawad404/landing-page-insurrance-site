@@ -4,6 +4,7 @@
 import React, { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Datenschutz from '../components/datenschutz/Datenschutz';
+import DataProtections from '../components/dataProtection/DataProtections';
 
 // Define the main content component
 const PageContent = () => {
@@ -15,7 +16,7 @@ const PageContent = () => {
   }, [search]); // This useEffect will run whenever the query changes
 
   if (search === 'en') {
-    return <div>English Version is not present for this</div>;
+    return <DataProtections />;
   } else {
     return <Datenschutz />;
   }
