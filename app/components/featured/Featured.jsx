@@ -20,7 +20,7 @@ const Featured = ({ language, toggleLanguage }) => {
         {language === 'de' ? 'deutsch' : 'english'}
       </Link>  
 </header>
-    <section className="relative pb-20 xl:pb-32 overflow-hidden h-[28rem] sm:h-[26rem] md:h-[30rem]">
+    <section className="relative pb-20 xl:pb-32 overflow-hidden h-[28rem] sm:h-[26rem] md:h-[32rem]">
           <Image
         layout="fill"
         objectFit="cover"
@@ -35,7 +35,7 @@ const Featured = ({ language, toggleLanguage }) => {
       </nav>
       <div className="container mt-16 md:mt-0 px-4 md:px-12  relative">
         <div className="max-w-60 sm:max-w-4xl  md:mx-3 text-left">
-          <h1 className="text-lg sm:text-3xl md:text-4xl lg:text-5xl text-[#c04f15] mb-3 md:mb-4 font-abc font-bold" style={{lineHeight: '1.3'}}>
+          <h1 className="text-lg sm:text-3xl md:text-4xl lg:text-6xl text-[#c04f15] mb-3 md:mb-4 font-abc font-bold" style={{lineHeight: '1.3'}}>
           {language === 'de' ? 'Gesetzliche oder private Krankenversicherung?' : 'Public or private health insurance?'
             }
           </h1>
@@ -57,7 +57,7 @@ const Featured = ({ language, toggleLanguage }) => {
         <div className="flex justify-center">
             <button 
             onClick={()=> router.push(`/testpage?language=${language}`)}
-            className="bg-[#c25115] mb-2 md:mb-0 text-white px-6 text-base sm:px-10 md:px-20 py-3 sm:text-lg md:text-xl rounded-md hover:bg-orange-700 italic">
+            className="bg-[#c25115] mb-2 md:mb-4 text-white px-6 text-base sm:px-10 md:px-20 py-3 sm:text-lg md:text-xl rounded-md hover:bg-orange-700 italic">
            {language === 'de' ? 
             'Los geht´s!' 
             : 

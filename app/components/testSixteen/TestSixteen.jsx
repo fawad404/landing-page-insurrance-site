@@ -27,7 +27,9 @@ const TestSixteen = ({ data, onChange, language }) => {
   }, []);
 
   const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  const validatePhone = (phone) => /^[0-9]{10,15}$/.test(phone);
+  
+  // Updated regex to allow special characters commonly used in phone numbers
+  const validatePhone = (phone) => /^(\+|\d|[\/\-().\s]){7,20}$/.test(phone);
 
   const handleChange = (field, value) => {
     switch (field) {
@@ -83,16 +85,6 @@ const TestSixteen = ({ data, onChange, language }) => {
       onChange('phone', phone);
       onChange('isChecked', isChecked);
     } 
-    
-    if (errorMsg === text.errors.invalidPhone) {
-      onChange('phone', '');
-    }
-    if (errorMsg === text.errors.invalidEmail) {
-      onChange('email', '');
-    }
-    if (errorMsg === text.errors.usernameNumber || errorMsg === text.errors.usernameRequired) {
-      onChange('username', '');
-    }
   };
 
   const handleCheckboxChange = (e) => {
@@ -127,7 +119,7 @@ const TestSixteen = ({ data, onChange, language }) => {
         usernameRequired: 'Username is required.',
         usernameNumber: 'Username should not contain numbers.',
         invalidEmail: 'Please enter a valid email address.',
-        invalidPhone: 'Please enter a valid phone number (10-15 digits).',
+        invalidPhone: 'Please enter a valid phone number. Allowed characters: +, /, (, ), -, .',
         checkboxRequired: 'You must agree to the privacy policy.',
       }
     } 
@@ -142,16 +134,14 @@ const TestSixteen = ({ data, onChange, language }) => {
       errors: {
         usernameRequired: 'Benutzername ist erforderlich.',
         usernameNumber: 'Benutzername darf keine Zahlen enthalten.',
-        invalidEmail: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.',
-        invalidPhone: 'Bitte geben Sie eine gültige Telefonnummer (10-15 Ziffern) ein.',
+        invalidEmail: 'Bitte geben Sie eine gültige E-Mail-Adresse ein!.',
+        invalidPhone: 'Bitte tragen Sie eine gültige Telefonnummer ein! Erlaubte Zeichen: +, /, (, ), -, .',
         checkboxRequired: 'Sie müssen der Datenschutzerklärung zustimmen.',
       }
     };
 
   return (
     <>
-      
-
       <div className="text-textColor flex items-center justify-center min-h-[55vh] p-4 mt-12 md:mt-8 font-fijala md:ml-8">
         <div className="w-full max-w-5xl relative">
           <div className="relative">
