@@ -4,26 +4,75 @@ import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-const EnglishUserrAppoinment = () => {
+const EnglishUserrAppoinment = ({ headContent , description}) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [agreement, setAgreement] = useState(false);
     const [selectedDate, setSelectedDate] = useState(null);
-    const [selectedTime, setSelectedTime] = useState('09:00'); // Default time
+    const [selectedTime, setSelectedTime] = useState('09:00');
     const [success, setSuccess] = useState('');
+    const [errors, setErrors] = useState({});
+    const [catchError, setCatchError] = useState(false);
+
+    const validateEmail = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
+        
+        return emailRegex.test(email);
+    };
+    
+
+    const validatePhoneNumber = (phone) => {
+        const phoneRegex = /^(\+|\d|[\/\-().\s]){7,20}$/;
+        return phoneRegex.test(phone);
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!name || !email || !phone || !selectedDate || !selectedTime) {
-            alert('Please fill all details!');
-            return;
+        const newErrors = {};
+
+        // Username validation
+        if (!name) {
+            newErrors.name = 'Username is Required!';
+        } else if (name.length > 40) {
+            newErrors.name = 'Der Benutzername darf nicht länger als 40 Zeichen sein!';
         }
+
+        // Email validation
+        if (!email) {
+            newErrors.email = 'E-Mail is Required!';
+        } else if (!validateEmail(email)) {
+            newErrors.email = 'Bitte geben Sie eine gültige E-Mail-Adresse ein!';
+        }
+
+        // Phone validation
+        if (!phone) {
+            newErrors.phone = 'Phone Number is Required!';
+        } else if (!validatePhoneNumber(phone)) {
+            newErrors.phone = 'Bitte geben Sie eine gültige Telefonnummer ein!';
+        }
+
+        // Date validation
+        if (!selectedDate) {
+            newErrors.date = 'Date is Required!';
+        }
+
+        // Time validation
+        if (!selectedTime) {
+            newErrors.time = 'Time is Required!';
+        }
+
+        // Agreement validation
         if (!agreement) {
-            alert('Kindly checkmark privacy policy!');
-            return;
+            newErrors.agreement = 'Please accept the privacy policy!';
         }
-        // Extract only the date part (YYYY-MM-DD)
+
+        setErrors(newErrors);
+
+        if (Object.keys(newErrors).length > 0) {
+            return; // Do not submit if there are errors
+        }
+
         const formattedDate = selectedDate ? selectedDate.toISOString().split('T')[0] : null;
 
         const data = {
@@ -49,7 +98,44 @@ const EnglishUserrAppoinment = () => {
             }
             console.log('Response from server:', result);
         } catch (error) {
+            setCatchError(true);
             console.error('Error sending data:', error);
+        }
+    };
+
+    // Handlers for updating input and clearing errors
+    const handleNameChange = (e) => {
+        setName(e.target.value);
+        if (errors.name && e.target.value.length <= 40) {
+            setErrors((prevErrors) => ({ ...prevErrors, name: '' }));
+        }
+    };
+
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+        if (errors.email && validateEmail(e.target.value)) {
+            setErrors((prevErrors) => ({ ...prevErrors, email: '' }));
+        }
+    };
+
+    const handlePhoneChange = (e) => {
+        setPhone(e.target.value);
+        if (errors.phone && validatePhoneNumber(e.target.value)) {
+            setErrors((prevErrors) => ({ ...prevErrors, phone: '' }));
+        }
+    };
+
+    const handleDateChange = (date) => {
+        setSelectedDate(date);
+        if (errors.date) {
+            setErrors((prevErrors) => ({ ...prevErrors, date: '' }));
+        }
+    };
+
+    const handleAgreementChange = (e) => {
+        setAgreement(e.target.checked);
+        if (errors.agreement && e.target.checked) {
+            setErrors((prevErrors) => ({ ...prevErrors, agreement: '' }));
         }
     };
 
@@ -64,11 +150,11 @@ const EnglishUserrAppoinment = () => {
 
     return (
         <>
-            <header className="bg-[#f2aa84] flex justify-between items-center p-12 relative h-24 md:h-28 w-full">
-            <h1 className="text-white text-lg md:text-3xl font-semibold md:ml-24">
-                 Book an appointment for an online meeting<br />
-                    <p className='text-lg mt-2'>PKV vs GKV Comparison</p>
-            </h1>
+            <header className="bg-[#f2aa84] flex justify-between p-8 relative h-24 md:h-28 w-full">
+            <h1 className="text-white text-lg md:text-2xl font-semibold md:ml-24">
+                    Terminbuchung für ein Onlinemeeting <br />
+                    <span className='text-lg mt-1'>{headContent}</span>
+                </h1>
                 <img
                     src="/a-landing-page-removebg-preview.png"
                     alt="PKV-GKV Logo"
@@ -86,11 +172,9 @@ const EnglishUserrAppoinment = () => {
             <section className="bg-white py-4 md:p-10">
                 <div className="w-full mx-auto flex flex-col md:flex-row items-center bg-white p-6 rounded-lg">
                     <div className="md:w-2/4 md:p-16 p-2 pb-0">
-                        <p className="text-[#c04f15] font-semibold mb-4 text-sm md:text-4xl font-sans">
-                        Market and tariff check
-                        </p>
-                        <p className="text-gray-700 mb-4 text-sm md:text-xl font-serif lg:w-4/5">
-                        Book a free appointment with our expert advisor on ‘PKV vs GKV Comparison&apos; here. After booking, you will receive a confirmation by email and the link for the online meeting.
+                        
+                        <p className="text-gray-500 mb-4 text-sm md:text-2xl font-serif lg:w-4/5">
+                        Book a free appointment with our expert advisor on ‘{description}&apos; here. After booking, you will receive a confirmation by email and the link for the online meeting.
                         </p>
                         <div className="flex justify-center md:justify-start mt-16">
                             <img
@@ -115,6 +199,7 @@ const EnglishUserrAppoinment = () => {
                                         className="mt-1 block w-full bg-[#FBEDE5] border border-[#c04f15] rounded-md py-2 px-3 text-base text-[#c04f15] placeholder-[#c04f15] focus:outline-none focus:ring-2 focus:ring-[#c04f15]"
                                         placeholder=""
                                     />
+                                    {errors.name && <p className='font-medium text-[#f92222]'>{errors.name}</p>}
                                 </div>
                                 <div>
                                     <label htmlFor="email" className="block text-sm font-medium text-[#c04f15]">
@@ -128,6 +213,7 @@ const EnglishUserrAppoinment = () => {
                                         className="mt-1 block w-full bg-[#FBEDE5] border border-[#c04f15] rounded-md py-2 px-3 text-base text-[#c04f15] placeholder-[#c04f15] focus:outline-none focus:ring-2 focus:ring-[#c04f15]"
                                         placeholder=""
                                     />
+                                    {errors.email && <p className='font-medium text-[#f92222]'>{errors.email}</p>}
                                 </div>
                                 <div>
                                     <label htmlFor="phone" className="block text-sm font-medium text-[#c04f15]">
@@ -141,6 +227,7 @@ const EnglishUserrAppoinment = () => {
                                         className="mt-1 block w-full bg-[#FBEDE5] border border-[#c04f15] rounded-md py-2 px-3 text-base text-[#c04f15] placeholder-[#c04f15] focus:outline-none focus:ring-2 focus:ring-[#c04f15]"
                                         placeholder=""
                                     />
+                                    {errors.phone && <p className='font-medium text-[#f92222]'>{errors.phone}</p>}
                                 </div>
                                 <div>
                                     <label htmlFor="date" className="block text-sm font-medium text-[#c04f15]">
@@ -152,6 +239,7 @@ const EnglishUserrAppoinment = () => {
                                         className="mt-1 block w-full bg-[#FBEDE5] border border-[#c04f15] rounded-md py-2 px-3 text-base text-[#c04f15] focus:outline-none focus:ring-2 focus:ring-[#c04f15]"
                                         placeholderText="Choose a date"
                                     />
+                                    {errors.date && <p className='font-medium text-[#f92222]'>{errors.date}</p>}
                                 </div>
                                 <div>
                                     <label htmlFor="time" className="block text-sm font-medium text-[#c04f15]">
@@ -169,6 +257,7 @@ const EnglishUserrAppoinment = () => {
                                             </option>
                                         ))}
                                     </select>
+                                    {errors.time && <p className='font-medium text-[#f92222]'>{errors.time}</p>}
                                 </div>
                                 <div className=''>
                                     <label htmlFor="agreement" className="font-medium text-[#c04f15]">
@@ -194,6 +283,7 @@ const EnglishUserrAppoinment = () => {
                                         </p>
                                     </div>
                                 </div>
+                                {errors.agreement && <p className='font-medium text-[#f92222]'>{errors.agreement}</p>}
                                 <div className="flex justify-center mt-4">
                                     <button
                                         type="submit"

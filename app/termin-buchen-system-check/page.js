@@ -3,8 +3,6 @@
 // Import necessary modules
 import React, { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
-import Impressumfifth from '../components/impressumfifth/Impressumfifth';
-import EnglishImpressum from '../components/englishImpressum/EnglishImpressum';
 import UserAppointment from '../components/userAppointment/UserAppointment';
 import EnglishUserrAppoinment from '../components/englishUserrAppoinment/EnglishUserrAppoinment';
 
@@ -18,9 +16,9 @@ const PageContent = () => {
   }, [search]); // This useEffect will run whenever the query changes
 
   if (search === 'en') {
-    return <EnglishUserrAppoinment headContent={'Market tariff comparison'} description={'PKV vs GKV Comparison'}/>;
+    return <EnglishUserrAppoinment headContent={'System comparison ,,PKV-GKV”'} description={'PKV vs GKV System Comparison'}/>;
   } else {
-    return <UserAppointment headContent={'Markt Tarifvergleich'} description={'Markt- und Tarifvergleich'}/>;
+    return <UserAppointment headContent={'Systemvergleich ,,PKV-GKV”'} description={'PKV-GKV Systemvergleich'}/>;
   }
 };
 

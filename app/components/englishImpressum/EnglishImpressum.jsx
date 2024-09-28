@@ -47,7 +47,7 @@ export default function EnglishImpressum() {
 
         
         <p className="mt-2">
-        or insurance mediation and other insurance distribution activities, I receive commissions as well as other forms of compensation, such as from tenders. All fees are already included in the insurance premium and do not need to be paid separately by you.If you have any complaints in connection with my advice, you can contact our customer service center at phone number 0800 3746 017.
+        I receive commissions as well as other forms of compensation, such as from tenders. All fees are already included in the insurance premium and do not need to be paid separately by you.If you have any complaints in connection with my advice, you can contact our customer service center at phone number 0800 3746 017.
         </p>
         <p className="mt-2">
         Additionally, I am required to participate in the following extrajudicial arbitration boards as dispute resolution bodies in accordance with the Consumer Dispute Resolution Act:

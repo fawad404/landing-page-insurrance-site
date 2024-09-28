@@ -9,9 +9,11 @@ const languageTexts = {
     healthStatusLabel: 'Gesundheitsstatus',
     healthStatusTooltip: 'Beim Eintritt in die private Krankenversicherung erheben Versicherer Gesundheitsdaten.. Sie können im Antragsprozess bestimmen unter welchen Konditionen eine Annahme erfolgt. Bei Vorerkrankungen ist es möglich von Versichererseite Zuschläge zu verlangen oder den Antrag komplett abzulehnen. Der Gesundheitszustand und die Gesundheitshistorie bei Antragstellung ist aus diesem Grund ein wichtiger Faktor für die Beurteilung, ob die PKV eine Alternative darstellt. ​Wir können hier nur Tendenzen ableiten. Eine konkrete Einschätzung des Versicherers ist erst nach einer vollständigen Beantwortung aller im Antrag vorliegenden Fragen möglich​.',
     selfAssessmentLabel: 'Selbsteinschätzung Gesundheit:',
-    verySick: 'sehr krank',
-    veryHealthy: 'Sehr gesund',
-    treatedInLast5Years: 'Waren Sie in den letzten 5 Jahren in Behandlung: ',
+    Körpergröße: 'Körpergröße',
+    Gewicht: 'Gewicht',
+    verySick: 'Sehr krank',
+    veryHealthy: 'sehr gesund',
+    treatedInLast5Years: 'Waren Sie in den letzten 5 Jahren wegen Rückenschmerzen Bandscheibenvorfall, Schilddrüsenerkrankung, Allergien, Asthma, Krebserkrankungen, Longcovid, Nieren/Lebererkrankungen, Diabetes oder anderen Erkankungen in Behandlung oder haben Psychotherapien Stattgefunden?',
     yes: 'ja',
     no: 'nein',
     diagnosesLabel: 'Wenn Ja, welche Diagnosen',
@@ -19,11 +21,13 @@ const languageTexts = {
   en: {
     title: 'Entry requirements',
     healthStatusLabel: 'Health status',
-    healthStatusTooltip: 'When you join a private health insurance company, insurers collect health data. During the application process, you can determine under which conditions acceptance will take place. In the case of pre-existing medical conditions, the insurer may charge a surcharge or reject the application completely. For this reason, the state of health and health history at the time of application is an important factor in assessing whether private health insurance is an alternative. We can only derive tendencies here. A concrete assessment of the insurer is only possible after all questions in the application have been fully answered.',
+    healthStatusTooltip: 'Have you been treated for the following diagnoses in the last 5 years: Intervertebral disc, back pain, allergies, asthma, long covid, kidney disease, liver disease, cardiovascular disease, cancer, diabetes, psychotherapy or other treatments',
     selfAssessmentLabel: 'Self-assessment of health:',
+    Körpergröße: 'Height',
+    Gewicht: 'Weight',
     verySick: 'Very sick',
-    veryHealthy: 'Very healthy',
-    treatedInLast5Years: 'Have you been treated in the last 5 years:',
+    veryHealthy: 'very healthy',
+    treatedInLast5Years: 'Have you been treated for the following diagnoses in the last 5 years: Intervertebral disc, back pain, allergies, asthma, long covid, kidney disease, liver disease, cardiovascular disease, cancer, diabetes, psychotherapy or other treatments',
     yes: 'yes',
     no: 'no',
     diagnosesLabel: 'If yes, what diagnoses',
@@ -31,7 +35,9 @@ const languageTexts = {
 };
 
 const TestSix = ({ data, language = 'de', onChange }) => {
-  const [healthPercentage, setHealthPercentage] = useState(0); // Initial value set to 67%
+  const [healthPercentage, setHealthPercentage] = useState(0); 
+  const [healthPercentage2, setHealthPercentage2] = useState(0);
+  const [healthPercentage3, setHealthPercentage3] = useState(0);
   const [selectedValue, setSelectedValue] = useState('');
   const [selectedText, setSelectedText] = useState('');
   const [textarea, setTextArea] = useState('');
@@ -45,6 +51,14 @@ const TestSix = ({ data, language = 'de', onChange }) => {
     const storedValueRange = localStorage.getItem('page6Range');
     if (storedValueRange) {
       setHealthPercentage(storedValueRange);
+    }
+    const storedValueRange2 = localStorage.getItem('page6Range2');
+    if (storedValueRange2) {
+      setHealthPercentage2(storedValueRange2);
+    }
+    const storedValueRange3 = localStorage.getItem('page6Range3');
+    if (storedValueRange3) {
+      setHealthPercentage3(storedValueRange3);
     }
     const storedValueText = localStorage.getItem('page6Text');
     if (storedValueText) {
@@ -66,6 +80,21 @@ const TestSix = ({ data, language = 'de', onChange }) => {
     setHealthPercentage(value);
     localStorage.setItem('page6Range', value);
     onChange('page6Range', value);
+    console.log(value);
+  };
+  const handleRangeChange2 = (event) => {
+    const value = event.target.value;
+    setHealthPercentage2(value);
+    localStorage.setItem('page6Range2', value);
+    onChange('page6Range2', value);
+    console.log(value);
+  };
+
+  const handleRangeChange3 = (event) => {
+    const value = event.target.value;
+    setHealthPercentage3(value);
+    localStorage.setItem('page6Range3', value);
+    onChange('page6Range3', value);
     console.log(value);
   };
 
@@ -96,7 +125,7 @@ const TestSix = ({ data, language = 'de', onChange }) => {
                   <span className="text-[#c25115] absolute -top-1 left-84">
                     <img src='/info-circle-svgrepo-com (1).svg' className='h-5 w-5 text-red-900' />
                   </span>
-                  <div className="-ml-20 mt-3 md:-ml-8 absolute hidden group-hover:block bg-white border border-orange-500 text-black text-sm rounded p-2 whitespace-normal md:max-w-xs lg:max-w-sm z-10">
+                  <div className="-ml-20 mt-6 md:-ml-8 absolute hidden group-hover:block bg-white border border-orange-500 text-black text-sm rounded p-2 whitespace-normal md:max-w-xs lg:max-w-sm z-10">
                     <p className='p-2'>
                       <img src='/info-circle-svgrepo-com (1).svg' className='h-4 w-4 mb-2' />
                       {texts.healthStatusTooltip}
@@ -106,7 +135,7 @@ const TestSix = ({ data, language = 'de', onChange }) => {
               </h1>
             </div>
 
-            <label className="mt-6 text-[#c25115] relative text-base md:text-xl flex flex-col md:flex-row items-center justify-between w-full">
+            <label className="mt-6 mb-6 text-[#c25115] relative text-base md:text-xl flex flex-col md:flex-row items-center justify-between w-full">
               <span className="flex-shrink-0 mb-4 md:mt-5 md:mb-0">
                 {texts.selfAssessmentLabel}
               </span>
@@ -134,9 +163,9 @@ const TestSix = ({ data, language = 'de', onChange }) => {
               <span className="text-base md:text-xl mt-4 md:mt-5">{healthPercentage}%</span>
             </label>
 
-            <label className="mt-6 text-[#c25115] text-base md:text-xl flex items-center justify-start">
+            <label className="mt-6 text-[#c25115] mt-4 text-base md:text-xl">
               {texts.treatedInLast5Years}
-              <div className="ml-4 items-center">
+              <div className="mt-2 items-center">
                 <label className="mr-4 text-xl">
                   <input
                     type="checkbox"
@@ -163,13 +192,46 @@ const TestSix = ({ data, language = 'de', onChange }) => {
             <label className="mt-4 text-[#c25115] text-base md:text-xl flex items-center justify-start">
               {texts.diagnosesLabel}
             </label>
-            <div className="mt-2">
-              <textarea
-                value={selectedText || ''}
-                onChange={handleTextArea}
-                className="mt-6 bg-[#fbe3d6] text-lg text-gray-900 placeholder-white rounded-md border-none px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#c04f15] focus:ring-opacity-50 w-full h-16 md:h-32"
-                placeholder=""
-              />
+            <div className='flex flex-col md:flex-row items-center justify-between'>
+
+            <label className="mt-6 text-[#c25115] relative text-base md:text-xl flex flex-row items-center justify-between w-full">
+             {texts.Körpergröße}
+            <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value={healthPercentage2}
+                  onChange={handleRangeChange2}
+                  className="mt-2 ml-3 mr-3 appearance-none h-8 w-[45%] bg-[#f2aa84]"
+                  style={{
+                    accentColor: '#f2aa84',
+                    background: `linear-gradient(to right, #f2aa84 0%, #f2aa84 ${healthPercentage2}%, #fbe3d6 ${healthPercentage2}%, #fbe3d6 100%)`,
+                    WebkitAppearance: 'none', // Ensure the custom style applies on WebKit browsers
+                    MozAppearance: 'none', // Ensure the custom style applies on Mozilla browsers
+                    msAppearance: 'none' // Ensure the custom style applies on MS browsers
+                  }}
+                />
+              <span className="text-base md:text-lg">{Number(healthPercentage2).toLocaleString('de-DE')} cm</span>
+            </label>
+            <label className="mt-6 ml-6 text-[#c25115] relative text-base md:text-xl flex flex-row items-center justify-between w-full">
+                  {texts.Gewicht}
+                  <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value={healthPercentage3}
+                  onChange={handleRangeChange3}
+                  className="mt-2 ml-0 mr-0 appearance-none h-8 w-[60%] bg-[#f2aa84]"
+                  style={{
+                    accentColor: '#f2aa84',
+                    background: `linear-gradient(to right, #f2aa84 0%, #f2aa84 ${healthPercentage3}%, #fbe3d6 ${healthPercentage3}%, #fbe3d6 100%)`,
+                    WebkitAppearance: 'none', // Ensure the custom style applies on WebKit browsers
+                    MozAppearance: 'none', // Ensure the custom style applies on Mozilla browsers
+                    msAppearance: 'none' // Ensure the custom style applies on MS browsers
+                  }}
+                />
+              <span className="text-base md:text-lg">{Number(healthPercentage3).toLocaleString('de-DE')} kg</span>
+            </label>
             </div>
           </div>
         </div>

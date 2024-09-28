@@ -4,26 +4,33 @@ import React, { useEffect, useState } from 'react';
 
 const TestThirteen = ({ data, onChange, language }) => {
     const [income, setIncome] = useState(0); // Initialize income state
-    const [selectedValue, setSelectedValue] = useState('');
+    const [selectedValues, setSelectedValues] = useState(''); // Initialize selectedValues as a string
 
     useEffect(() => {
-        // Retrieve the value from localStorage when the component mounts
-        const storedValue = localStorage.getItem('page13');
-        if (storedValue) {
-            setSelectedValue(storedValue);
-        }
-        const storedValueTwo = localStorage.getItem('page13Range');
-        if (storedValueTwo) {
-            setIncome(storedValueTwo);
+        // Retrieve the values from localStorage when the component mounts
+        const storedValues = localStorage.getItem('page13') || '';
+        setSelectedValues(storedValues);
+
+        const storedIncome = localStorage.getItem('page13Range');
+        if (storedIncome) {
+            setIncome(storedIncome);
         }
     }, []);
 
-    const handleChange = (event) => {
+    const handleCheckboxChange = (event) => {
         const value = event.target.value;
-        setSelectedValue(value);
-        localStorage.setItem('page13', value);
-        onChange('page13', value);
-        console.log(`${value}`);
+        let updatedValues = selectedValues ? selectedValues.split(', ') : [];
+
+        if (event.target.checked) {
+            updatedValues.push(value);
+        } else {
+            updatedValues = updatedValues.filter((item) => item !== value);
+        }
+
+        const updatedString = updatedValues.join(', ');
+        setSelectedValues(updatedString);
+        onChange('page13', updatedString);
+        localStorage.setItem('page13', updatedString);
     };
 
     const handleRangeChange = (e) => {
@@ -31,7 +38,6 @@ const TestThirteen = ({ data, onChange, language }) => {
         setIncome(roundedValue); // Update income state with rounded value
         localStorage.setItem('page13Range', roundedValue);
         onChange('page13Range', roundedValue);
-        console.log(roundedValue);
     };
 
     // Define the text for both languages
@@ -60,7 +66,6 @@ const TestThirteen = ({ data, onChange, language }) => {
 
     return (
         <>
-          
             <h2 className="p-20 md:p-10 pb-0 md:pb-0 text-[#c25115] text-2xl md:text-2xl lg:text-2xl font-fijala italic mb-6 flex md:block md:justify-start -ml-16 md:-ml-0">
                 {text.title}
             </h2>
@@ -89,29 +94,30 @@ const TestThirteen = ({ data, onChange, language }) => {
                             <label className="flex items-center space-x-3">
                                 <input 
                                     type="checkbox" 
-                                    value="Sonstige Einkünfte im Rentenalter: Private Rentenversicherungen"
-                                    checked={selectedValue === 'Sonstige Einkünfte im Rentenalter: Private Rentenversicherungen'}
-                                    onChange={handleChange}
+                                    value={text.checkbox1}
+                                    checked={selectedValues.includes(text.checkbox1)}
+                                    onChange={handleCheckboxChange}
                                     className="form-checkbox h-5 w-5 " 
                                 />
                                 <span>{text.checkbox1}</span>
                             </label>
                             <label className="flex items-center space-x-3">
-                                <input 
-                                    type="checkbox" 
-                                    value="Sonstige Einkünfte im Rentenalter: Geförderte Rentenversicherung (Riester, Rürup)"
-                                    checked={selectedValue === 'Sonstige Einkünfte im Rentenalter: Geförderte Rentenversicherung (Riester, Rürup)'}
-                                    onChange={handleChange}
-                                    className="form-checkbox h-5 w-5 " 
-                                />
-                                <span>{text.checkbox2}</span>
-                            </label>
+                            <input 
+                                type="checkbox" 
+                                value={text.checkbox2} // Ensure value is based on the `text` object
+                                checked={selectedValues.includes(text.checkbox2)} // Compare with translated text
+                                onChange={handleCheckboxChange}
+                                className="form-checkbox h-5 w-5 " 
+                                    />
+                                    <span>{text.checkbox2}</span>
+                                </label>
+
                             <label className="flex items-center space-x-3">
                                 <input 
                                     type="checkbox" 
-                                    value="Sonstige Einkünfte im Rentenalter: Mieteinnahmen/Pachteinnahmen"
-                                    checked={selectedValue === 'Sonstige Einkünfte im Rentenalter: Mieteinnahmen/Pachteinnahmen'}
-                                    onChange={handleChange}
+                                    value={text.checkbox3}
+                                    checked={selectedValues.includes(text.checkbox3)}
+                                    onChange={handleCheckboxChange}
                                     className="form-checkbox h-5 w-5 " 
                                 />
                                 <span>{text.checkbox3}</span>
@@ -119,9 +125,9 @@ const TestThirteen = ({ data, onChange, language }) => {
                             <label className="flex items-center space-x-3">
                                 <input 
                                     type="checkbox" 
-                                    value="Sonstige Einkünfte im Rentenalter: Zinsen/Dividende aus Kapital/Aktien"
-                                    checked={selectedValue === 'Sonstige Einkünfte im Rentenalter: Zinsen/Dividende aus Kapital/Aktien'}
-                                    onChange={handleChange}
+                                    value={text.checkbox4}
+                                    checked={selectedValues.includes(text.checkbox4)}
+                                    onChange={handleCheckboxChange}
                                     className="form-checkbox h-5 w-5 " 
                                 />
                                 <span>{text.checkbox4}</span>
@@ -129,9 +135,9 @@ const TestThirteen = ({ data, onChange, language }) => {
                             <label className="flex items-center space-x-3">
                                 <input 
                                     type="checkbox" 
-                                    value="Sonstige Einkünfte im Rentenalter: Sonstige Einkommen"
-                                    checked={selectedValue === 'Sonstige Einkünfte im Rentenalter: Sonstige Einkommen'}
-                                    onChange={handleChange}
+                                    value={text.checkbox5}
+                                    checked={selectedValues.includes(text.checkbox5)}
+                                    onChange={handleCheckboxChange}
                                     className="form-checkbox h-5 w-5 " 
                                 />
                                 <span>{text.checkbox5}</span>
@@ -139,7 +145,7 @@ const TestThirteen = ({ data, onChange, language }) => {
                         </div>
 
                         <h2 className="text-xl text-[#c25115] mb-4">
-                            {text.sumLabel} {Number(income).toLocaleString('de-DE')} Euros p.a.
+                            {text.sumLabel} {Number(income).toLocaleString('de-DE')} Euros p.M.
                         </h2>
                         <div className="mb-6">
                             <label className="block">

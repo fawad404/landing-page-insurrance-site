@@ -3,7 +3,8 @@ import nodemailer from 'nodemailer';
 
 export async function POST(request) {
     try {
-        const { storedpage2Text,
+        const { 
+            storedpage2Text,
             username,
             email,
             phone,
@@ -28,7 +29,8 @@ export async function POST(request) {
             storedPage10,
             storedpage8Two,
             storedpage8,
-            storedpage6Text,
+            storedpage6Range2,
+            storedpage6Range3,
             storedpage6Range,
             storedpage6,
             storedpage5Range,
@@ -39,15 +41,18 @@ export async function POST(request) {
             storedpage9Two,
             storedpage9Three,
             storedpage9Range,
-            storedpage7,  } = await request.json();
+            storedpage18,
+            storedpage7
+        } = await request.json();
 
         console.log('Name:', username);
         console.log('Email:', email);
         console.log('Phone:', phone);
+
         let transporter = nodemailer.createTransport({
-            host: 'smtp.hostinger.com', // SMTP server details
-            port: 465, // SMTP server port
-            secure: true, // use TLS
+            host: 'smtp.hostinger.com',
+            port: 465,
+            secure: true,
             auth: {
                 user: 'fawad@softhawks.com',
                 pass: 'Nuttertools@1122'
@@ -57,60 +62,48 @@ export async function POST(request) {
         let mailOptions = {
             from: '"PKV-GKV" <fawad@softhawks.com>',
             to: "poggensee@poggensee.de",
-            subject: 'Client Submission',
+            subject: 'Client Test Page Submission',
             html: `
             <div style="padding-10px">
-            <h1>Client Submission</h1>
-            <p>Name : ${username}</p>
-            <p>Email : ${email}</p>
-            <p>Phone No : ${phone}</p>
-            <p>Phone 1 : ${storedselectedBerufStatus}</p>
-
-            <p>Page 2 : ${storedpage2}</p>
-            <p>Page 2 Text : ${storedpage2Text}</p>
-
-            <p>Page 3 : ${storedpage3Range} Jahrgang </p>
-
-            <p>Page 4 : ${storedpage4}</p>
-            <p>Page 4 Range : ${storedpage4Range} Euro p.a. Einkommen</p>
-
-            <p>Page 5 : ${storedpage5}</p>
-            <p>Page 5 Range : ${storedpage5Range} Anzahl Kinder</p>
-
-            <p>Page 6 : ${storedpage6}</p>
-            <p>Page 6 Range : ${storedpage6Range}% Selbsteinschätzung Gesundheit</p>
-            <p>Page 6 Text : ${storedpage6Text}</p>
-
-            <p>Page 7 : ${storedpage7}</p>
-
-            <p>Page 8 : ${storedpage8}</p>
-            <p>Page 8 2nd : ${storedpage8Two}</p>
-
-            <p>Page 9 : ${storedpage9Two}</p>
-            <p>Page 9 2nd : ${storedpage9Three}</p>
-            <p>Page 9 Range : ${storedpage9Range} Euros p.a.</p>
-
-            <p>Page 10 : ${storedPage10}</p>
-            <p>Page 10 2nd : ${storedpage10Two}</p>
-
-            <p>Page 11 : ${storedPage11}</p>
-            <p>Page 11 Range : ${storedpage11Range}%</p>
-            <p>Page 11 2nd : ${storedpage11Two}</p>
-            <p>Page 11 Range 2nd : ${storedPage11RangeTwo}%</p>
-            <p>Page 11 3rd : ${storedPage11Three}</p>
-            <p>Page 11 Range 3rd : ${storedpage11RangeThree}%</p>
-
-            <p>Page 12 : ${storedpage12Two}</p>
-            <p>Page 12 Range : ${storedpage12Range} Euros p.M.</p>
-            <p>Page 12 Range 2rd : ${storedPage12RangeTwo} Euros p.M.</p>
-
-            <p>Page 13 : ${storedpage13}</p>
-            <p>Page 13 Range : ${storedpage13Range} Euros p.a.</p>
-
-            <p>Page 14 Range : ${storedpage14Range}%</p>
-            <p>Page 14 Range 2rd : ${storedpage14RangeTwo}%</p>
-
-            <p>Page 15 Range : ${storedpage15Range}%</p>
+                <h1>Client Submission</h1>
+                ${username ? `<p>Name: ${username}</p>` : ''}
+                ${email ? `<p>Email: ${email}</p>` : ''}
+                ${phone ? `<p>Phone No: ${phone}</p>` : ''}
+                ${storedselectedBerufStatus ? `<p>Phone 1: ${storedselectedBerufStatus}</p>` : ''}
+                ${storedpage2 ? `<p>Page 2: ${storedpage2}</p>` : ''}
+                ${storedpage2Text ? `<p>Page 2 Text: ${storedpage2Text}</p>` : ''}
+                ${storedpage3Range ? `<p>Page 3: ${storedpage3Range} Jahrgang</p>` : ''}
+                ${storedpage4 ? `<p>Page 4: ${storedpage4}</p>` : ''}
+                ${storedpage4Range ? `<p>Page 4 Range: ${storedpage4Range} Euro p.a. Einkommen</p>` : ''}
+                ${storedpage5 ? `<p>Page 5: ${storedpage5}</p>` : ''}
+                ${storedpage5Range ? `<p>Page 5 Range: ${storedpage5Range} Anzahl Kinder</p>` : ''}
+                ${storedpage6 ? `<p>Page 6: ${storedpage6}</p>` : ''}
+                ${storedpage6Range ? `<p>Page 6 Range: ${storedpage6Range}% Selbsteinschätzung Gesundheit</p>` : ''}
+                ${storedpage6Range2 ? `<p>Page 6 Height: ${storedpage6Range2} cm</p>` : ''}
+                ${storedpage6Range3 ? `<p>Page 6 Weight: ${storedpage6Range3} kg</p>` : ''}
+                ${storedpage7 ? `<p>Page 7: ${storedpage7}</p>` : ''}
+                ${storedpage8 ? `<p>Page 8: ${storedpage8}</p>` : ''}
+                ${storedpage8Two ? `<p>Page 8 2nd: ${storedpage8Two}</p>` : ''}
+                ${storedpage9Two ? `<p>Page 9: ${storedpage9Two}</p>` : ''}
+                ${storedpage9Three ? `<p>Page 9 2nd: ${storedpage9Three}</p>` : ''}
+                ${storedpage9Range ? `<p>Page 9 Range: ${storedpage9Range} Euros p.a.</p>` : ''}
+                ${storedPage10 ? `<p>Page 10: ${storedPage10}</p>` : ''}
+                ${storedpage10Two ? `<p>Page 10 2nd: ${storedpage10Two}</p>` : ''}
+                ${storedPage11 ? `<p>Page 11: ${storedPage11}</p>` : ''}
+                ${storedpage11Range ? `<p>Page 11 Range: ${storedpage11Range}%</p>` : ''}
+                ${storedpage11Two ? `<p>Page 11 2nd: ${storedpage11Two}</p>` : ''}
+                ${storedPage11RangeTwo ? `<p>Page 11 Range 2nd: ${storedPage11RangeTwo}%</p>` : ''}
+                ${storedPage11Three ? `<p>Page 11 3rd: ${storedPage11Three}</p>` : ''}
+                ${storedpage11RangeThree ? `<p>Page 11 Range 3rd: ${storedpage11RangeThree}%</p>` : ''}
+                ${storedpage12Two ? `<p>Page 12: ${storedpage12Two}</p>` : ''}
+                ${storedpage12Range ? `<p>Page 12 Range: ${storedpage12Range} Euros p.M.</p>` : ''}
+                ${storedPage12RangeTwo ? `<p>Page 12 Range 2rd: ${storedPage12RangeTwo} Euros p.M.</p>` : ''}
+                ${storedpage13 ? `<p>Page 13: ${storedpage13}</p>` : ''}
+                ${storedpage13Range ? `<p>Page 13 Range: ${storedpage13Range} Euros p.a.</p>` : ''}
+                ${storedpage14Range ? `<p>Page 14 Range: ${storedpage14Range}%</p>` : ''}
+                ${storedpage14RangeTwo ? `<p>Page 14 Range 2rd: ${storedpage14RangeTwo}%</p>` : ''}
+                ${storedpage15Range ? `<p>Page 15 Range: ${storedpage15Range}%</p>` : ''}
+                ${storedpage18 ? `<p>Page 18 Text: ${storedpage18}</p>` : ''}
             </div>
             `,
         };

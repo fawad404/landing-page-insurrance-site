@@ -20,6 +20,7 @@ import TestFifteen from '../components/testFifteen/TestFifteen';
 import TestSixteen from '../components/testSixteen/TestSixteen';
 import TestFooter from '../components/testFooter/TestFooter';
 import ComHeader from '../components/comHeader/ComHeader';
+import TestEighteen from '../components/testEighteen/TestEighteen';
 
 const PageContent = () => {
   const router = useRouter();
@@ -73,6 +74,8 @@ const PageContent = () => {
     //page 6
     const storedpage6 = localStorage.getItem('page6') || '';
     const storedpage6Range = localStorage.getItem('page6Range') || '';
+    const storedpage6Range2 = localStorage.getItem('page6Range2') || '';
+    const storedpage6Range3 = localStorage.getItem('page6Range3') || '';
     const storedpage6Text = localStorage.getItem('page6Text') || '';
 
     //page 7
@@ -123,6 +126,11 @@ const PageContent = () => {
      const storedusername = localStorage.getItem('username');
     const isChecked = localStorage.getItem('isChecked');
 
+    //page 18
+
+    const storedpage18 = localStorage.getItem('page18Text') || '';
+
+
     // Prepare data for submission
     const dataToSubmit = {
       storedpage2Text,
@@ -146,7 +154,8 @@ const PageContent = () => {
       storedPage10,
       storedpage8Two,
       storedpage8,
-      storedpage6Text,
+      storedpage6Range2,
+      storedpage6Range3,
       storedpage9Two,
       storedpage9Three,
       storedpage9Range,
@@ -161,7 +170,8 @@ const PageContent = () => {
       storedselectedBerufStatus,
       storedpage15Range,
       storedpage14RangeTwo,
-      storedpage9
+      storedpage9,
+      storedpage18
     };
 
     console.log("Form Data for API:", dataToSubmit);
@@ -208,6 +218,7 @@ const PageContent = () => {
     <TestThirteen key="TestThirteen" data={formData} language={search}  onChange={handleInputChange} />,
     <TestFourteen key="TestFourteen" data={formData} language={search} onChange={handleInputChange} />,
     <TestFifteen key="TestFifteen" data={formData} language={search} onChange={handleInputChange} />,
+    <TestEighteen key="TestSixteen" data={formData} language={search} onChange={handleInputChange} />,
     <TestSixteen key="TestSixteen" data={formData} language={search} onChange={handleInputChange} />,
   ];
 

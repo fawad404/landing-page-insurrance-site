@@ -89,7 +89,7 @@ const TestEleven = ({ data, language, onChange }) => {
       checkbox2: 'I will probably change employers at some point.',
       checkbox3: 'I can also imagine working part-time at some point.',
       rangeLabel1: 'Very unlikely',
-      rangeLabel: 'very likely'
+      rangeLabel: 'very likely',
     } 
     : 
     {
@@ -98,8 +98,8 @@ const TestEleven = ({ data, language, onChange }) => {
       checkbox1: 'Ich tendiere dazu, später mal ein Sabbatical zu absolvieren.​​',
       checkbox2: 'Ich werde meinen Arbeitgeber wahrscheinlich irgendwann wechseln.​',
       checkbox3: 'Ich kann mir vorstellen auch mal in Teilzeit zu arbeiten.​​',
-      rangeLabel1: 'sehr unwahrscheinlich​',
-      rangeLabel: 'Wahrscheinlichkeit'
+      rangeLabel1: 'Sehr unwahrscheinlich​',
+      rangeLabel: 'sehr wahrscheinlich',
     };
 
   return (

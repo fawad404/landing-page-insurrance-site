@@ -4,27 +4,75 @@ import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-const   
-UserAppointment = () => {
+const UserAppointment = ({ headContent , description}) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [agreement, setAgreement] = useState(false);
     const [selectedDate, setSelectedDate] = useState(null);
-    const [selectedTime, setSelectedTime] = useState('09:00'); // Default time
+    const [selectedTime, setSelectedTime] = useState('09:00');
     const [success, setSuccess] = useState('');
+    const [errors, setErrors] = useState({});
+    const [catchError, setCatchError] = useState(false);
+
+    const validateEmail = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
+        
+        return emailRegex.test(email);
+    };
+    
+
+    const validatePhoneNumber = (phone) => {
+        const phoneRegex = /^(\+|\d|[\/\-().\s]){7,20}$/;
+        return phoneRegex.test(phone);
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!name || !email || !phone || !selectedDate || !selectedTime) {
-            alert('Please fill all details!');
-            return;
+        const newErrors = {};
+
+        // Username validation
+        if (!name) {
+            newErrors.name = 'Benutzername ist erforderlich!';
+        } else if (name.length > 40) {
+            newErrors.name = 'Der Benutzername darf nicht länger als 40 Zeichen sein!';
         }
+
+        // Email validation
+        if (!email) {
+            newErrors.email = 'E-Mail ist erforderlich!';
+        } else if (!validateEmail(email)) {
+            newErrors.email = 'Bitte geben Sie eine gültige E-Mail-Adresse ein!';
+        }
+
+        // Phone validation
+        if (!phone) {
+            newErrors.phone = 'Telefonnummer ist erforderlich!';
+        } else if (!validatePhoneNumber(phone)) {
+            newErrors.phone = 'Bitte geben Sie eine gültige Telefonnummer ein!';
+        }
+
+        // Date validation
+        if (!selectedDate) {
+            newErrors.date = 'Datum ist erforderlich!';
+        }
+
+        // Time validation
+        if (!selectedTime) {
+            newErrors.time = 'Uhrzeit ist erforderlich!';
+        }
+
+        // Agreement validation
         if (!agreement) {
-            alert('Kindly checkmark privacy policy!');
-            return;
+            newErrors.agreement = 'Bitte akzeptieren Sie die Datenschutzerklärung!';
         }
-        // Extract only the date part (YYYY-MM-DD)
+
+        setErrors(newErrors);
+
+        if (Object.keys(newErrors).length > 0) {
+            return; // Do not submit if there are errors
+        }
+
         const formattedDate = selectedDate ? selectedDate.toISOString().split('T')[0] : null;
 
         const data = {
@@ -50,7 +98,44 @@ UserAppointment = () => {
             }
             console.log('Response from server:', result);
         } catch (error) {
+            setCatchError(true);
             console.error('Error sending data:', error);
+        }
+    };
+
+    // Handlers for updating input and clearing errors
+    const handleNameChange = (e) => {
+        setName(e.target.value);
+        if (errors.name && e.target.value.length <= 40) {
+            setErrors((prevErrors) => ({ ...prevErrors, name: '' }));
+        }
+    };
+
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+        if (errors.email && validateEmail(e.target.value)) {
+            setErrors((prevErrors) => ({ ...prevErrors, email: '' }));
+        }
+    };
+
+    const handlePhoneChange = (e) => {
+        setPhone(e.target.value);
+        if (errors.phone && validatePhoneNumber(e.target.value)) {
+            setErrors((prevErrors) => ({ ...prevErrors, phone: '' }));
+        }
+    };
+
+    const handleDateChange = (date) => {
+        setSelectedDate(date);
+        if (errors.date) {
+            setErrors((prevErrors) => ({ ...prevErrors, date: '' }));
+        }
+    };
+
+    const handleAgreementChange = (e) => {
+        setAgreement(e.target.checked);
+        if (errors.agreement && e.target.checked) {
+            setErrors((prevErrors) => ({ ...prevErrors, agreement: '' }));
         }
     };
 
@@ -65,9 +150,10 @@ UserAppointment = () => {
 
     return (
         <>
-            <header className="bg-[#f2aa84] flex justify-between items-center p-12 relative h-24 md:h-28 w-full">
+            <header className="bg-[#f2aa84] flex justify-between p-8 relative h-24 md:h-28 w-full">
                 <h1 className="text-white text-lg md:text-2xl font-semibold md:ml-24">
-                    Terminbuchung für ein Onlinemeeting
+                    Terminbuchung für ein Onlinemeeting <br />
+                    <span className='text-lg mt-1'>{headContent}</span>
                 </h1>
                 <img
                     src="/a-landing-page-removebg-preview.png"
@@ -77,20 +163,17 @@ UserAppointment = () => {
             </header>
 
             <div className="md:p-32 md:pt-8 md:pb-0">
-          <Link href='/'
-              className="text-[#f2aa84] font-semibold text-2xl underline hover:text-orange-700"
-              >
-              Zurück
-            </Link>
-              </div>
+                <Link href='/'
+                    className="text-[#f2aa84] font-semibold text-2xl underline hover:text-orange-700">
+                    Zurück
+                </Link>
+            </div>
             <section className="bg-white py-4 md:p-10">
                 <div className="w-full mx-auto flex flex-col md:flex-row items-center bg-white p-6 rounded-lg">
                     <div className="md:w-2/4 md:p-16 p-2 pb-0">
-                        <p className="text-[#c04f15] font-semibold mb-4 text-sm md:text-4xl font-sans">
-                            Markt- und Tarifvergleich
-                        </p>
-                        <p className="text-gray-700 mb-4 text-sm md:text-xl font-serif lg:w-4/5">
-                            Buchen Sie hier einen kostenlosen Termin mit unserem Fachberater zum Thema „Markt- und Tarifvergleich. Nach Terminbuchung erhalten Sie eine Bestätigung per Email und den Link für das Onlinemeeting
+                        
+                        <p className="text-gray-500 mb-4 text-sm md:text-2xl font-serif lg:w-4/5">
+                            Buchen Sie hier einen kostenlosen Termin mit unserem Fachberater zum Thema „{description}. Nach Terminbuchung erhalten Sie eine Bestätigung per Email und den Link für das Onlinemeeting
                         </p>
                         <div className="flex justify-center md:justify-start mt-16">
                             <img
@@ -100,7 +183,7 @@ UserAppointment = () => {
                             />
                         </div>
                     </div>
-                    <div className="md:w-2/4 flex justify-start md:justify-start mt-6 md:mt-0">
+                    <div className="md:w-2/4 flex justify-start md:justify-start mt-0 md:mt-0">
                         <div className="max-w-md mx-auto p-6 rounded-md">
                             <form className="space-y-6" onSubmit={handleSubmit}>
                                 <div>
@@ -111,10 +194,11 @@ UserAppointment = () => {
                                         type="text"
                                         id="name"
                                         value={name}
-                                        onChange={(e) => setName(e.target.value)}
+                                        onChange={handleNameChange}
                                         className="mt-1 block w-full bg-[#FBEDE5] border border-[#c04f15] rounded-md py-2 px-3 text-base text-[#c04f15] placeholder-[#c04f15] focus:outline-none focus:ring-2 focus:ring-[#c04f15]"
                                         placeholder=""
                                     />
+                                    {errors.name && <p className='font-medium text-[#f92222]'>{errors.name}</p>}
                                 </div>
                                 <div>
                                     <label htmlFor="email" className="block text-sm font-medium text-[#c04f15]">
@@ -124,10 +208,11 @@ UserAppointment = () => {
                                         type="email"
                                         id="email"
                                         value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
+                                        onChange={handleEmailChange}
                                         className="mt-1 block w-full bg-[#FBEDE5] border border-[#c04f15] rounded-md py-2 px-3 text-base text-[#c04f15] placeholder-[#c04f15] focus:outline-none focus:ring-2 focus:ring-[#c04f15]"
                                         placeholder=""
                                     />
+                                    {errors.email && <p className='font-medium text-[#f92222]'>{errors.email}</p>}
                                 </div>
                                 <div>
                                     <label htmlFor="phone" className="block text-sm font-medium text-[#c04f15]">
@@ -137,31 +222,35 @@ UserAppointment = () => {
                                         type="text"
                                         id="phone"
                                         value={phone}
-                                        onChange={(e) => setPhone(e.target.value)}
+                                        onChange={handlePhoneChange}
                                         className="mt-1 block w-full bg-[#FBEDE5] border border-[#c04f15] rounded-md py-2 px-3 text-base text-[#c04f15] placeholder-[#c04f15] focus:outline-none focus:ring-2 focus:ring-[#c04f15]"
                                         placeholder=""
                                     />
+                                    {errors.phone && <p className='font-medium text-[#f92222]'>{errors.phone}</p>}
                                 </div>
                                 <div>
                                     <label htmlFor="date" className="block text-sm font-medium text-[#c04f15]">
-                                    Wählen Sie ein Datum aus
+                                        Wählen Sie ein Datum aus
                                     </label>
-                                    <DatePicker
+                                    
+                                     <DatePicker
                                         selected={selectedDate}
-                                        onChange={(date) => setSelectedDate(date)}
-                                        className="mt-1 block w-full bg-[#FBEDE5] border border-[#c04f15] rounded-md py-2 px-3 text-base text-[#c04f15] focus:outline-none focus:ring-2 focus:ring-[#c04f15]"
-                                        placeholderText="Datum aus"
+                                        onChange={handleDateChange}
+                                        minDate={new Date()} // This prevents selecting past dates
+                                        className="mt-1 block w-full bg-[#FBEDE5] border border-[#c04f15] rounded-md py-2 px-3 text-[#c04f15]"
+                                        placeholderText="Wählen Sie ein Datum"
                                     />
+                                    {errors.date && <p className='font-medium text-[#f92222]'>{errors.date}</p>}
                                 </div>
                                 <div>
                                     <label htmlFor="time" className="block text-sm font-medium text-[#c04f15]">
-                                    Wählen Sie eine Uhrzeit aus
+                                        Wählen Sie eine Uhrzeit aus
                                     </label>
                                     <select
                                         id="time"
                                         value={selectedTime}
                                         onChange={(e) => setSelectedTime(e.target.value)}
-                                        className="mt-1 block w-full bg-[#FBEDE5] border border-[#c04f15] rounded-md py-2 px-3 text-base text-[#c04f15] focus:outline-none focus:ring-2 focus:ring-[#c04f15]"
+                                        className="mt-1 block w-full bg-[#FBEDE5] border border-[#c04f15] rounded-md py-2 px-3 text-base text-[#c04f15] placeholder-[#c04f15] focus:outline-none focus:ring-2 focus:ring-[#c04f15]"
                                     >
                                         {timeOptions.map((time) => (
                                             <option key={time} value={time}>
@@ -169,51 +258,49 @@ UserAppointment = () => {
                                             </option>
                                         ))}
                                     </select>
-                                </div>
-                                <div className=''>
-                                    <label htmlFor="agreement" className="font-medium text-[#c04f15]">
-                                        Datenschutzerklärung
-                                    </label>
+                                    {errors.time && <p className='font-medium text-[#f92222]'>{errors.time}</p>}
                                 </div>
                                 <div className="flex items-start">
-                                    <div className="flex items-center h-5">
-                                        <input
-                                            id="agreement"
-                                            type="checkbox"
-                                            checked={agreement}
-                                            onChange={(e) => setAgreement(e.target.checked)}
-                                            className="focus:ring-[#c04f15] h-4 w-4 text-[#c04f15] border border-[#c04f15] rounded"
-                                        />
-                                    </div>
-                                    <div className="ml-3 text-sm">
-                                        <p className="text-[#c04f15]">
+                                    <input
+                                        type="checkbox"
+                                        id="agreement"
+                                        checked={agreement}
+                                        onChange={handleAgreementChange}
+                                        className="h-4 w-4 text-[#c04f15] border-gray-300 rounded focus:ring-[#c04f15]"
+                                    />
+                                    <div className="ml-3 text-sm" htmlFor='aggrement'>
+                                        <p className="text-[#c04f15] underline">
                                             <Link href="/datenschutz">
                                             Ja, ich habe die Informationen zum Datenschutz zur Kenntnis genommen und bin einverstanden.
                                             </Link>
                                         </p>
                                     </div>
                                 </div>
-                                <div className="flex justify-center mt-4">
-                                    <button
-                                        type="submit"
-                                        className="bg-[#c04f15] text-white px-6 py-2 rounded-md hover:bg-orange-700 italic"
-                                        disabled={success}
-                                    >
-                                        Abschicken
-                                    </button>
-                                  
-                                    
+                                    {errors.agreement && <p className='font-medium text-[#f92222]'>{errors.agreement}</p>}
+                                    <div className="flex justify-center mt-4">
+                                <button
+                                    type="submit"
+                                    className="bg-[#c04f15] text-white px-16 py-2 rounded-md hover:bg-orange-700 italic"
+                                >
+                                    Abschicken
+                                </button>
                                 </div>
-                                {success && 
-                                    <p className="text-gray-900 flex justify-center px-6 py-2 rounded-md hover:bg-orange-700">{success}</p>
-                                }
                             </form>
+                            {success && <p className="mt-4 text-green-600 font-medium">
+                                Vielen Dank! Wir haben Ihre
+                                Terminanfrage erhalten. Wir
+                                senden Ihnen zeitnah eine
+                                Terminbestätigung
+                                </p>}
+                                {catchError && <p className="mt-4 text-green-600 font-medium">
+                                    Oops, es ist ein Fehler aufgetreten beim Senden Ihrer Anfrage. Bitte aktualisieren Sie die Seite und versuchen Sie es erneut!
+                                </p>}
                         </div>
                     </div>
                 </div>
             </section>
         </>
     );
-}
+};
 
 export default UserAppointment;

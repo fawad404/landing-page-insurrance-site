@@ -37,7 +37,7 @@ const Herosecond = ({language}) => {
         </p>
         <div className="flex justify-center mt-8">
   <button 
-  onClick={()=> router.push(`/termin-buchen?language=${language}`)}
+  onClick={()=> router.push(`/termin-buchen-system-check?language=${language}`)}
   className="bg-[#c25115] mb-2 md:mb-0 text-white px-6 text-base sm:px-10 md:px-16 py-3 sm:text-lg md:text-xl rounded-md hover:bg-orange-700 italic">
     {language === 'de' ? 
             'Termin buchen' 

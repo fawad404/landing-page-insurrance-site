@@ -40,14 +40,16 @@ const TestFourteen = ({ data, onChange, language }) => {
             title: 'Personal Assessment of Possible Additional Costs in Private Health Insurance',
             importantText1: 'Services not fully covered by statutory insurance are very important to me (e.g., dental prosthetics, alternative medicine, glasses, private patient in hospital, etc)!',
             importantText2: 'Quick appointment scheduling (e.g., specialists, MRI, etc) is very important to me!',
-            rangeLabel: 'Importance Level'
+            rangeLabel: 'Importance Level',
+            rangeLabel: 'Importance Level',
         } 
         : 
         {
             title: 'Persönliche Einschätzung zu möglichen Mehrkosten in der PKV',
             importantText1: 'Leistungen, die die Gesetzliche nicht komplett abdeckt, sind mir sehr wichtig (z.B. Zahnersatz, alternative Medizin, Brille, Privatpatient im Krankenhaus, etc)!',
             importantText2: 'Schnelle Terminvergabe (z.B. Fachärzte, MRT, etc) ist mir sehr wichtig!',
-            rangeLabel: 'Wichtigkeitsgrad'
+            rangeLabel: 'Weniger wichtig',
+            rangeLabel1: 'sehr wichtig'
         };
 
     return (
@@ -69,8 +71,8 @@ const TestFourteen = ({ data, onChange, language }) => {
                         <label className="mt-6 text-[#c25115] relative text-base md:text-xl flex flex-col md:flex-row items-center w-full">
                             <div className="flex flex-col w-full md:w-1/2 mx-4">
                                 <div className="flex justify-between text-xs">
-                                    <span>{text.rangeLabel} (0%)</span>
-                                    <span>{text.rangeLabel} (100%)</span>
+                                    <span>{text.rangeLabel}</span>
+                                    <span>{text.rangeLabel1}</span>
                                 </div>
                                 <input
                                     type="range"

@@ -26,13 +26,15 @@ const TestFifteen = ({ data, onChange, language }) => {
         {
             title: 'Personal Assessment of Contribution and Services in Healthcare',
             rangeDescription: 'For an improved range of services in health insurance, I am willing to pay more in private insurance than in statutory insurance',
-            rangeLabel: 'Importance Level'
+            rangeLabel: 'Importance Level',
+            rangeLabel1: 'Importance Level',
         } 
         : 
         {
             title: 'Persönliche Einschätzung zu Beitrag und Leistungen im Gesundheitswesen',
             rangeDescription: 'Für ein verbessertes Leistungsspektrum in der Krankenversicherung bin ich bereit in der Privaten auch mehr zu zahlen, als in der Gesetzlichen',
-            rangeLabel: 'Wichtigkeitsgrad'
+            rangeLabel: 'bin nicht bereit',
+            rangeLabel1: 'bin bereit'
         };
 
     return (
@@ -50,7 +52,7 @@ const TestFifteen = ({ data, onChange, language }) => {
                         <div className="flex flex-col w-full md:w-1/2 mx-4">
                             <div className="flex justify-between text-xs">
                                 <span>{text.rangeLabel} (0%)</span>
-                                <span>{text.rangeLabel} (100%)</span>
+                                <span>{text.rangeLabel1} (100%)</span>
                             </div>
                             <input
                                 type="range"
