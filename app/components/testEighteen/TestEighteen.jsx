@@ -9,7 +9,7 @@ const languageTexts = {
     healthStatusTooltip: 'Sie wollen noch etwas ergänzen oder uns Ihren speziellen Sachverhalt übermitteln? Sie haben noch Fragen an uns? Nutzen Sie dieses Formularfeld!',
   },
   en: {
-    healthStatusLabel: 'Health status',
+    healthStatusLabel: 'Your Message To Us',
     healthStatusTooltip: 'Would you like to add something else or share your specific situation with us? Do you have any further questions for us?',
   }
 };

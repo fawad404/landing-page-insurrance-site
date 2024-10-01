@@ -3,46 +3,29 @@ import React, { useEffect, useState } from 'react';
 
 // Define texts for each language
 const languageTexts = {
-  de: {
-    title: 'Eintrittsvoraussetzungen',
-    healthStatusLabel: 'Gesundheitsstatus',
-    healthStatusTooltip: 'Beim Eintritt in die private Krankenversicherung erheben Versicherer Gesundheitsdaten. Sie können im Antragsprozess bestimmen, unter welchen Konditionen eine Annahme erfolgt. Bei Vorerkrankungen ist es möglich, von Versichererseite Zuschläge zu verlangen oder den Antrag komplett abzulehnen. Der Gesundheitszustand und die Gesundheitshistorie bei Antragstellung sind aus diesem Grund wichtige Faktoren für die Beurteilung, ob die PKV eine Alternative darstellt. Wir können hier nur Tendenzen ableiten. Eine konkrete Einschätzung des Versicherers ist erst nach einer vollständigen Beantwortung aller im Antrag vorliegenden Fragen möglich.',
-    existingDiagnosesLabel: 'Vorhandene Diagnosen/Behandlungen in den letzten 5 Jahren',
-    diagnoses: [
-      'Rückenschmerzen',
-      'Bandscheibenvorfall',
-      'Schilddrüsenerkrankung',
-      'Allergien',
-      'Asthma',
-      'Krebserkrankungen',
-      'Long COVID',
-      'Nieren/Lebererkrankungen',
-      'Diabetes',
-      'Psychotherapien'
-    ]
-  },
   en: {
-    title: 'Entry requirements',
-    healthStatusLabel: 'Health status',
-    healthStatusTooltip: 'When you join a private health insurance company, insurers collect health data. During the application process, you can determine under which conditions acceptance will take place. In the case of pre-existing medical conditions, the insurer may charge a surcharge or reject the application completely. For this reason, the state of health and health history at the time of application is an important factor in assessing whether private health insurance is an alternative. We can only derive tendencies here. A concrete assessment of the insurer is only possible after all questions in the application have been fully answered.',
+    title: 'Duration of stay',
+    healthStatusLabel: 'How long do you want to stay in Germany?',
+    selfAssessmentLabel: 'I will stay about',
     existingDiagnosesLabel: 'Existing diagnoses/treatments in the last 5 years',
     diagnoses: [
-      'Back pain',
-      'Herniated disc',
-      'Thyroid disease',
-      'Allergies',
-      'Asthma',
-      'Cancer',
-      'Long COVID',
-      'Kidney/Liver diseases',
-      'Diabetes',
-      'Psychotherapies'
+      'I will stay in Germany indefinitely',
+      'It is still completely open',
+      'I want to leave Germany by retirement age at the latest',
     ]
   }
 };
 
 const TestSeven = ({ data, language = 'de', onChange }) => {
     const [selectedValues, setSelectedValues] = useState([]);
+    const [healthPercentage, setHealthPercentage] = useState(0); 
+    const handleRangeChange = (event) => {
+        const value = event.target.value;
+        setHealthPercentage(value);
+        localStorage.setItem('page7Range', value);
+        onChange('page7Range', value);
+        console.log(value);
+      };
 
     useEffect(() => {
         // Retrieve the value from localStorage when the component mounts
@@ -52,6 +35,10 @@ const TestSeven = ({ data, language = 'de', onChange }) => {
           const arrayValues = storedValue.split(',');
           setSelectedValues(arrayValues);
         }
+        const storedValueRange = localStorage.getItem('page7Range');
+            if (storedValueRange) {
+            setHealthPercentage(storedValueRange);
+            }
       }, []);
 
     const handleChange = (event) => {
@@ -70,7 +57,7 @@ const TestSeven = ({ data, language = 'de', onChange }) => {
     };
 
     // Get text based on the selected language
-    const texts = languageTexts[language] || languageTexts['de'];
+    const texts = languageTexts['en'];
 
     return (
         <>
@@ -82,23 +69,36 @@ const TestSeven = ({ data, language = 'de', onChange }) => {
                     <div className="relative">
                         <h1 className="text-2xl italic text-[#c25115] mb-4 hover-trigger">
                             {texts.healthStatusLabel}
-                            <span className="inline-block ml-1 group">
-                                <span className="text-[#c25115] absolute -top-2 left-52">
-                                    <img src='/info-circle-svgrepo-com (1).svg' className='h-5 w-5 text-red-900' />
-                                </span>
-                                <div className="-ml-52 mt-3 md:-ml-8 absolute hidden group-hover:block bg-white border border border-orange-500 text-black text-sm rounded p-2 whitespace-normal md:max-w-xs lg:max-w-sm z-10">
-                                    <p className='p-2'>
-                                        <img src='/info-circle-svgrepo-com (1).svg' className='h-4 w-4 mb-2' />
-                                        {texts.healthStatusTooltip}
-                                    </p>
-                                </div>
-                            </span>
+                            
                         </h1>
                     </div>
-                    <h2 className="text-lg md:text-2xl text-[#c25115] mt-8 mb-8">
+                    <label className="mt-6 mb-6 text-[#c25115] relative text-base md:text-xl flex flex-col md:flex-row items-center w-full">
+              <span className="flex-shrink-0 mb-2 md:mb-0">
+                {texts.selfAssessmentLabel}
+              </span>
+              <div className="flex flex-col w-full md:w-1/2 mx-4">
+                <input
+                  type="range"
+                  min="0"
+                  max="50"
+                  value={healthPercentage}
+                  onChange={handleRangeChange}
+                  className="appearance-none h-8 w-full bg-[#f2aa84]"
+                  style={{
+                    accentColor: '#f2aa84',
+                    background: `linear-gradient(to right, #f2aa84 0%, #f2aa84 ${(healthPercentage / 50) * 100}%, #fbe3d6 ${(healthPercentage / 50) * 100}%, #fbe3d6 100%)`,
+                    WebkitAppearance: 'none', // Ensure the custom style applies on WebKit browsers
+                    MozAppearance: 'none', // Ensure the custom style applies on Mozilla browsers
+                    msAppearance: 'none' // Ensure the custom style applies on MS browsers
+                  }}
+                />
+              </div>
+              <span className="text-base md:text-xl">{healthPercentage} years</span>
+            </label>
+                    {/* <h2 className="text-lg md:text-2xl text-[#c25115] mt-8 mb-8">
                         {texts.existingDiagnosesLabel}
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 text-lg gap-4 mb-6 text-[#c25115]">
+                    </h2> */}
+                    <div className="flex flex-col text-lg gap-4 mb-6 text-[#c25115]">
                         {texts.diagnoses.map((diagnosis) => (
                             <label key={diagnosis} className="flex checkbox-label gap-x-3 items-center">
                                 <input

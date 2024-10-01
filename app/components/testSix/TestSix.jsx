@@ -11,12 +11,11 @@ const languageTexts = {
     selfAssessmentLabel: 'Selbsteinschätzung Gesundheit:',
     Körpergröße: 'Körpergröße',
     Gewicht: 'Gewicht',
-    verySick: 'Sehr krank',
+    verySick: 'sehr krank',
     veryHealthy: 'sehr gesund',
     treatedInLast5Years: 'Waren Sie in den letzten 5 Jahren wegen Rückenschmerzen Bandscheibenvorfall, Schilddrüsenerkrankung, Allergien, Asthma, Krebserkrankungen, Longcovid, Nieren/Lebererkrankungen, Diabetes oder anderen Erkankungen in Behandlung oder haben Psychotherapien Stattgefunden?',
     yes: 'ja',
     no: 'nein',
-    diagnosesLabel: 'Wenn Ja, welche Diagnosen',
   },
   en: {
     title: 'Entry requirements',
@@ -25,12 +24,11 @@ const languageTexts = {
     selfAssessmentLabel: 'Self-assessment of health:',
     Körpergröße: 'Height',
     Gewicht: 'Weight',
-    verySick: 'Very sick',
+    verySick: 'very sick',
     veryHealthy: 'very healthy',
     treatedInLast5Years: 'Have you been treated for the following diagnoses in the last 5 years: Intervertebral disc, back pain, allergies, asthma, long covid, kidney disease, liver disease, cardiovascular disease, cancer, diabetes, psychotherapy or other treatments',
     yes: 'yes',
     no: 'no',
-    diagnosesLabel: 'If yes, what diagnoses',
   }
 };
 
@@ -189,42 +187,43 @@ const TestSix = ({ data, language = 'de', onChange }) => {
               </div>
             </label>
 
-            <label className="mt-4 text-[#c25115] text-base md:text-xl flex items-center justify-start">
-              {texts.diagnosesLabel}
-            </label>
+           
             <div className='flex flex-col md:flex-row items-center justify-between'>
 
             <label className="mt-6 text-[#c25115] relative text-base md:text-xl flex flex-row items-center justify-between w-full">
-             {texts.Körpergröße}
-            <input
-                  type="range"
-                  min="0"
-                  max="100"
-                  value={healthPercentage2}
-                  onChange={handleRangeChange2}
-                  className="mt-2 ml-3 mr-3 appearance-none h-8 w-[45%] bg-[#f2aa84]"
-                  style={{
-                    accentColor: '#f2aa84',
-                    background: `linear-gradient(to right, #f2aa84 0%, #f2aa84 ${healthPercentage2}%, #fbe3d6 ${healthPercentage2}%, #fbe3d6 100%)`,
-                    WebkitAppearance: 'none', // Ensure the custom style applies on WebKit browsers
-                    MozAppearance: 'none', // Ensure the custom style applies on Mozilla browsers
-                    msAppearance: 'none' // Ensure the custom style applies on MS browsers
-                  }}
-                />
-              <span className="text-base md:text-lg">{Number(healthPercentage2).toLocaleString('de-DE')} cm</span>
-            </label>
+                    {texts.Körpergröße}
+                    <input
+                      type="range"
+                      min="0"
+                      max="220"
+                      value={healthPercentage2}
+                      onChange={handleRangeChange2}
+                      className="mt-2 ml-3 mr-3 appearance-none h-8 w-[45%] bg-[#f2aa84]"
+                      style={{
+                        accentColor: '#f2aa84',
+                        background: `linear-gradient(to right, #f2aa84 0%, #f2aa84 ${(healthPercentage2 / 220) * 100}%, #fbe3d6 ${(healthPercentage2 / 220) * 100}%, #fbe3d6 100%)`,
+                        WebkitAppearance: 'none',
+                        MozAppearance: 'none',
+                        msAppearance: 'none'
+                      }}
+                    />
+                    <span className="text-base md:text-lg">
+                      {Number(healthPercentage2).toLocaleString('de-DE')} cm
+                    </span>
+                  </label>
+
             <label className="mt-6 ml-6 text-[#c25115] relative text-base md:text-xl flex flex-row items-center justify-between w-full">
                   {texts.Gewicht}
                   <input
                   type="range"
                   min="0"
-                  max="100"
+                  max="200"
                   value={healthPercentage3}
                   onChange={handleRangeChange3}
                   className="mt-2 ml-0 mr-0 appearance-none h-8 w-[60%] bg-[#f2aa84]"
                   style={{
                     accentColor: '#f2aa84',
-                    background: `linear-gradient(to right, #f2aa84 0%, #f2aa84 ${healthPercentage3}%, #fbe3d6 ${healthPercentage3}%, #fbe3d6 100%)`,
+                    background: `linear-gradient(to right, #f2aa84 0%, #f2aa84 ${(healthPercentage3 / 200) * 100}%, #fbe3d6 ${(healthPercentage3 / 200) * 100}%, #fbe3d6 100%)`,
                     WebkitAppearance: 'none', // Ensure the custom style applies on WebKit browsers
                     MozAppearance: 'none', // Ensure the custom style applies on Mozilla browsers
                     msAppearance: 'none' // Ensure the custom style applies on MS browsers

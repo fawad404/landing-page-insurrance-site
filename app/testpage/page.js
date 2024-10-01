@@ -80,6 +80,7 @@ const PageContent = () => {
 
     //page 7
     const storedpage7 = localStorage.getItem('page7') || '';
+    const storedpageRange = localStorage.getItem('page7Range') || '';
 
     //page 8
     const storedpage8 = localStorage.getItem('page8') || '';
@@ -160,6 +161,7 @@ const PageContent = () => {
       storedpage9Three,
       storedpage9Range,
       storedpage7,
+      storedpageRange,
       storedpage6Range,
       storedpage6,
       storedpage5Range,
@@ -209,18 +211,25 @@ const PageContent = () => {
     <TestFourth key="TestFourth" data={formData} language={search} onChange={handleInputChange} />,
     <TestFifth key="TestFifth" data={formData} language={search} onChange={handleInputChange} />,
     <TestSix key="TestSix" data={formData} language={search} onChange={handleInputChange} />,
-    <TestSeven key="TestSeven" data={formData} language={search} onChange={handleInputChange} />,
+    
+    // Only add TestSeven if the language is 'en'
+    ...(search === 'en' 
+        ? [<TestSeven key="TestSeven" data={formData} language={search} onChange={handleInputChange} />]
+        : []),
+    
     <TestEight key="TestEight" data={formData} language={search} onChange={handleInputChange} />,
     <TestNine key="TestNine" data={formData} language={search} onChange={handleInputChange} />,
-    <TestTen key="TestTen" data={formData} language={search}  onChange={handleInputChange} />,
-    <TestEleven key="TestEleven" data={formData} language={search}  onChange={handleInputChange} />,
-    <TestTwelve key="TestTwelve" data={formData} language={search}  onChange={handleInputChange} />,
-    <TestThirteen key="TestThirteen" data={formData} language={search}  onChange={handleInputChange} />,
+    <TestTen key="TestTen" data={formData} language={search} onChange={handleInputChange} />,
+    <TestEleven key="TestEleven" data={formData} language={search} onChange={handleInputChange} />,
+    <TestTwelve key="TestTwelve" data={formData} language={search} onChange={handleInputChange} />,
+    <TestThirteen key="TestThirteen" data={formData} language={search} onChange={handleInputChange} />,
     <TestFourteen key="TestFourteen" data={formData} language={search} onChange={handleInputChange} />,
     <TestFifteen key="TestFifteen" data={formData} language={search} onChange={handleInputChange} />,
-    <TestEighteen key="TestSixteen" data={formData} language={search} onChange={handleInputChange} />,
     <TestSixteen key="TestSixteen" data={formData} language={search} onChange={handleInputChange} />,
+    <TestEighteen key="TestEighteen" data={formData} language={search} onChange={handleInputChange} />,
   ];
+  
+  
 
   const progressBarWidth = ((currentComponentIndex + 1) / components.length) * 100;
 

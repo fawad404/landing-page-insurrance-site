@@ -42,7 +42,8 @@ export async function POST(request) {
             storedpage9Three,
             storedpage9Range,
             storedpage18,
-            storedpage7
+            storedpage7,
+            storedpageRange,
         } = await request.json();
 
         console.log('Name:', username);
@@ -82,6 +83,7 @@ export async function POST(request) {
                 ${storedpage6Range2 ? `<p>Page 6 Height: ${storedpage6Range2} cm</p>` : ''}
                 ${storedpage6Range3 ? `<p>Page 6 Weight: ${storedpage6Range3} kg</p>` : ''}
                 ${storedpage7 ? `<p>Page 7: ${storedpage7}</p>` : ''}
+                ${storedpageRange ? `<p>Page 7: ${storedpageRange}</p>` : ''}
                 ${storedpage8 ? `<p>Page 8: ${storedpage8}</p>` : ''}
                 ${storedpage8Two ? `<p>Page 8 2nd: ${storedpage8Two}</p>` : ''}
                 ${storedpage9Two ? `<p>Page 9: ${storedpage9Two}</p>` : ''}

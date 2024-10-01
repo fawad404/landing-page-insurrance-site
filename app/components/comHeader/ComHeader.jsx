@@ -6,7 +6,7 @@ const ComHeader = ({ language }) => {
   return (
     <header className="bg-[#f2aa84] flex justify-between items-center p-6 relative h-20 w-full">
     <div className="p-10  mt-10 md:pl-24">
-          <Link  href="/" className="text-white text-xl font-canadara underline">
+          <Link  href="/" className="text-white text-slate font-canadara underline">
           {language === 'en' ? 
           'Home' 
           :

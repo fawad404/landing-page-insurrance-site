@@ -26,8 +26,8 @@ const TestFifteen = ({ data, onChange, language }) => {
         {
             title: 'Personal Assessment of Contribution and Services in Healthcare',
             rangeDescription: 'For an improved range of services in health insurance, I am willing to pay more in private insurance than in statutory insurance',
-            rangeLabel: 'Importance Level',
-            rangeLabel1: 'Importance Level',
+            rangeLabel: 'not important',
+            rangeLabel1: 'very important',
         } 
         : 
         {

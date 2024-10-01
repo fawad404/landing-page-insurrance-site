@@ -16,8 +16,8 @@ const Featured = ({ language, toggleLanguage }) => {
       alt="PKV-GKV Logo"
       className="object-cover absolute h-36 md:h-48 top-0 md:-top-1 start-2 md:start-8 "
       />
-      <img src={language === 'de' ? '/united-kingdom.png' : '/germany2.png'} alt="" className="h-8 mr-2"/>
-        <Link href="#" onClick={toggleLanguage} className="mr-5 text-[#f2aa84] font-semibold text-xl underline hover:text-orange-700">
+      <img src={language === 'de' ? '/united-kingdom.png' : '/germany2.png'} alt="" className="h-6 mr-2"/>
+        <Link href="#" onClick={toggleLanguage} className="mr-5 text-[#f2aa84] font-semibold text-slate underline hover:text-orange-700">
         {language === 'de' ? 'english' : 'deutsch'}
       </Link>  
 </header>
@@ -46,7 +46,7 @@ const Featured = ({ language, toggleLanguage }) => {
           </p>
           <p className="text-gray-500 text-base font-semibold lg:text-lg mb-2 md:mb-6 lg:mb-2 max-w-[20rem] md:max-w-[27rem] lg:max-w-[34rem]">
           {language === 'de' ? 
-          ' Machen Sie den kostenlosen PKV–GKV–Check! und unsere Experten senden Ihnen eine individuelle und ausführliche Chancen-Risiko-Bewertung per Email!' 
+          ' Machen Sie den kostenlosen PKV–GKV–Check und unsere Experten senden Ihnen eine individuelle und ausführliche Chancen-Risiko-Bewertung per Email!' 
           : 
           'Take the free private vs. public health insurance check and our experts will send you an individual and detailed analyze and risk assessment via email!'
             }
