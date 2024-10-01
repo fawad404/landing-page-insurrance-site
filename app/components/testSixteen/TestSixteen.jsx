@@ -136,7 +136,7 @@ const TestSixteen = ({ data, onChange, language }) => {
         usernameNumber: 'Benutzername darf keine Zahlen enthalten.',
         invalidEmail: 'Bitte geben Sie eine gültige E-Mail-Adresse ein!.',
         invalidPhone: 'Bitte tragen Sie eine gültige Telefonnummer ein! Erlaubte Zeichen: +, /, (, ), -, .',
-        checkboxRequired: 'Sie müssen der Datenschutzerklärung zustimmen.',
+        checkboxRequired: 'Bitte erklären Sie, dass Sie die Informationen zum Datenschutz zur Kenntnis genommen haben und einverstanden sind.',
       }
     };
 

@@ -71,8 +71,8 @@ const TestFourteen = ({ data, onChange, language }) => {
                         <label className="mt-6 text-[#c25115] relative text-base md:text-xl flex flex-col md:flex-row items-center w-full">
                             <div className="flex flex-col w-full md:w-1/2 mx-4">
                                 <div className="flex justify-between text-xs">
-                                    <span>{text.rangeLabel}</span>
-                                    <span>{text.rangeLabel1}</span>
+                                    <span>{text.rangeLabel} (0%)</span>
+                                    <span>{text.rangeLabel1} (100%)</span>
                                 </div>
                                 <input
                                     type="range"
