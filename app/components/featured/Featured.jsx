@@ -22,7 +22,7 @@ const Featured = ({ language, toggleLanguage }) => {
       </Link>  
 </header>
     <section className="relative pb-20 xl:pb-32 overflow-hidden h-[28rem] sm:h-[26rem] md:h-[32rem]">
-          <Image
+    <Image
         layout="fill"
         objectFit="cover"
         src="/featured-image.jpeg"
@@ -30,6 +30,7 @@ const Featured = ({ language, toggleLanguage }) => {
         priority={true}
         loading="eager"
       />
+
 
       <nav className="py-6 mb-12 md:mb-20 bg-white">
         <div className="container px-4 mx-auto"></div>
