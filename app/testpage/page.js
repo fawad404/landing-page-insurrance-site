@@ -179,7 +179,7 @@ const PageContent = () => {
     console.log("Form Data for API:", dataToSubmit);
 
     try {
-      const response = await fetch('https://landing-page-insurrance-site.vercel.app/api/test-send', {
+      const response = await fetch('/api/test-send', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
