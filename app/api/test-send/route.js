@@ -67,7 +67,7 @@ export async function POST(request) {
 
         let mailOptions = {
             from: '"PKV-GKV" <mrrobot34404@gmail.com>',
-            to: "fawadanxari31@gmail.com",
+            to: "poggensee@poggensee.de",
             subject: 'Client Test Page Submission',
             html: `
             <div style="padding-10px">

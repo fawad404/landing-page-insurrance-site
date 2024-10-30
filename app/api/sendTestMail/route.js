@@ -47,13 +47,18 @@ export async function POST(request) {
         console.log('Email:', email);
         console.log('Phone:', phone);
         let transporter = nodemailer.createTransport({
-            host: 'smtp.hostinger.com', // SMTP server details
-            port: 465, // SMTP server port
-            secure: true, // use TLS
-            auth: {
-                user: 'fawad@softhawks.com',
-                pass: 'Nuttertools@1122'
-            }
+            // host: 'smtp.hostinger.com', // SMTP server details
+            // port: 465, // SMTP server port
+            // secure: true, // use TLS
+            // auth: {
+            //     user: 'fawad@softhawks.com',
+            //     pass: 'Nuttertools@1122'
+            // }
+            service: 'gmail',
+                auth: {
+                    user: 'mrrobot34404@gmail.com', // your Gmail address
+                    pass: 'hcem kjbl oeub czua' // your Gmail app password
+                }
         });
         // const transporter = nodemailer.createTransport({
         //     service: 'gmail',
