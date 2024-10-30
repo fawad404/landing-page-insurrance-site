@@ -51,18 +51,23 @@ export async function POST(request) {
         console.log('Phone:', phone);
 
         let transporter = nodemailer.createTransport({
-            host: 'smtp.hostinger.com',
-            port: 465,
-            secure: true,
-            auth: {
-                user: 'fawad@softhawks.com',
-                pass: 'Nuttertools@1122'
-            }
+            // host: 'smtp.hostinger.com',
+            // port: 465,
+            // secure: true,
+            // auth: {
+            //     user: 'fawad@softhawks.com',
+            //     pass: 'Nuttertools@1122'
+            // }
+            service: 'gmail',
+                auth: {
+                    user: 'mrrobot34404@gmail.com', // your Gmail address
+                    pass: 'hcem kjbl oeub czua' // your Gmail app password
+                }
         });
 
         let mailOptions = {
-            from: '"PKV-GKV" <fawad@softhawks.com>',
-            to: "poggensee@poggensee.de",
+            from: '"PKV-GKV" <mrrobot34404@gmail.com>',
+            to: "fawadanxari31@gmail.com",
             subject: 'Client Test Page Submission',
             html: `
             <div style="padding-10px">
