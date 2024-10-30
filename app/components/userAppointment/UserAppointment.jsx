@@ -84,7 +84,7 @@ const UserAppointment = ({ headContent , description}) => {
         };
 
         try {
-            const response = await fetch('https://landing-page-insurrance-site.vercel.app/api/sendMailer', {
+            const response = await fetch('/api/sendMailer', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
